@@ -1,0 +1,379 @@
+/*
+
+RESETS
+
+*/
+
+html, body,
+html body .modal,
+html body .section,
+html body
+{
+    background: #674ea7;
+    background: #4c1130;
+}
+html body .fold,
+html body .section
+{
+    display: block;
+    position: relative;
+    padding: 3rem;
+    text-align: center;
+}
+html body .fold.above
+{
+    padding-bottom: 5rem;
+}
+html body.circuits::before
+{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/data-gif-12.gif);
+    background-size: 150% 150%;
+    background-position: center center;
+    opacity: 0.15;
+}
+html body
+{
+    padding-top: 5rem;
+}
+html body.loading::before
+{
+    content: "";
+    color: #FFF;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../img/loading.gif);
+    background-size: 100% 100%;
+    z-index: 99999999;
+    opacity: 0.25;
+}
+html body.loading::after
+{
+    content: attr(data-text);
+    color: #FFF;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 100vh;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #0d0a24;
+    z-index: 9999999;
+}
+.pull-right
+{
+    float: right;
+}
+html body .img-thumbnail
+{
+    background: #000;
+    border-color: #757575;
+}
+.copy
+{
+    display: block;
+    position: relative;
+    text-align: center;
+    font-size: 75%;
+}
+a
+{
+    color: #0d6efd;
+    text-decoration: none;
+}
+a:hover
+{
+    color: #FFF;
+    text-decoration: none;
+}
+html body .sado-markdown
+{
+    text-align: justify;
+}
+html body .sado-markdown a
+{
+    color: #FFF999;
+}
+html body .sado-markdown a:hover,
+html body .sado-markdown a:focus
+{
+    color: #FFF;
+}
+html body .sado-markdown em code
+{
+    font-style: normal;
+    background: #FFF;
+    padding: 3px 6px;
+    margin: auto 3px;
+}
+html body .sado-markdown pre
+{
+    background: #000;
+    padding: 1rem;
+    color: #CCC;
+}
+
+/*
+
+BOOTSTRAP MODS
+
+*/
+
+html body .alert-block,
+html body .btn-block,
+html body .img-block
+{
+    display: block;
+    position: relative;
+    width: 100%;
+    text-align: center;
+}
+
+html body .nav-tabs
+{
+    border-color: transparent;
+    margin-bottom: -10px;
+}
+
+html body .tab-content
+{
+    padding: 1rem;
+}
+html body .nav-tabs .nav-link
+{
+    padding-bottom: 1rem;
+}
+html body .btn.btn-outline-light
+{
+    opacity: 0.5;
+}
+html body .btn.btn-outline-light:hover,
+html body .btn.btn-outline-light:focus
+{
+    opacity: 0.75;
+}
+
+/*
+
+HOMEPAGE
+
+*/
+
+html body .row.icons i
+{
+    background: #000;
+    border: 1px solid #FF99EE;
+    width: 200px;
+    height: 200px;
+    border-radius: 100px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 5rem;
+    margin: 1rem 2rem 3rem;
+    opacity: 0.65;
+}
+html body .section h3 small
+{
+    opacity: 0.6;
+}
+
+/*
+
+COLORS
+
+*/
+
+html body .btn.btn-primary
+{
+    border-color: #757575;
+    background: #5b10ff;
+    color: #FFF;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+html body .btn.btn-primary:hover,
+html body .btn.btn-primary:focus
+{
+    background: #4716b2;
+    color: #FFF999;
+    border-color: #000;
+}
+html body .special,
+html body .fold h1,
+html body .fold h2,
+html body .fold h3,
+html body .copy a.special,
+html body nav.navbar.bg-dark,
+html body nav.navbar.bg-dark.navbar-light .navbar-brand,
+html body alert.alert-info h1,
+html body alert.alert-info small
+{
+    color: #0a9fff;
+    color: #ff00ff;
+    color: #ead1dc;
+    color: #d5a6bd;
+}
+
+html body .form-control:disabled, 
+html body .form-control[readonly],
+html body .section.below,
+html body alert.alert-info
+{
+    background: #2e0a1d;
+    border-color: #000;
+    color: #EEE;
+}
+
+html body .nav-tabs .nav-link.active, 
+html body .nav-tabs .nav-item.show .nav-link,
+html body .modal-content,
+html body .modal-content .modal-body,
+html body .card,
+html body .card .card-body
+{
+    background: #222;
+    border-color: #000;
+    color: #FAFAFA;
+}
+
+html body .modal-content .modal-header,
+html body .card .card-header
+{
+    background: #333;
+    border-color: #000;
+    color: #FFF999;
+}
+
+html body form .form-control::file-selector-button,
+html body form .form-control
+{
+    background: #000;
+    border-color: #160a3f;
+    color: #FFF;
+}
+html body .copy a,
+html body .fold h4,
+html body .fold h5,
+html body .fold h6,
+html body .section a,
+html body .nav-tabs .nav-link,
+html body .sado-markdown ul li strong code,
+html body .navbar-light .navbar-nav .nav-link:hover, 
+html body .navbar-light .navbar-nav .nav-link:focus,
+html body form .form-control::file-selector-button
+{
+    color: #FFF999;
+}
+
+html body .copy a:hover,
+html body .copy a:focus,
+html body .section a:hover,
+html body .section a:focus,
+html body .fold h6 b,
+html body .nav-tabs .nav-link:hover, 
+html body .navbar-light .navbar-nav .nav-link,
+html body .nav-tabs .nav-link:focus
+{
+    color: #FFF;
+    border-color: transparent;
+}
+html body .copy,
+html body .nav-tabs .nav-link.active, 
+html body .navbar-light .navbar-nav .nav-link.active,
+html body .nav-tabs .nav-item.show .nav-link
+{
+    color: #999;
+}
+html body .section
+{
+    color: #CCC;
+}
+html body .navbar-toggler i
+{
+    color: #CCC;
+}
+html body .navbar-toggler button:hover i
+{
+    color: #FFF;
+}
+
+/*
+
+RESPONSIVENESS
+
+*/
+
+html body .fold.above h1 b
+{
+    font-weight: normal;
+}
+
+@media (max-width: 1399px) 
+{
+    
+}
+
+@media (max-width: 1199px) 
+{
+    html body .navbar-collapse ul.navbar-nav,
+    html body .navbar-collapse ul.navbar-nav li.nav-item
+    {
+        display: block;
+        position: relative;
+        text-align: center;
+    }
+    html body .navbar-collapse ul.navbar-nav li.nav-item a.nav-link
+    {
+        padding: 2rem;
+    }
+}
+
+@media (max-width: 991px) 
+{
+    html body .fold.above,
+    html body .section.below,
+    html body .section,
+    html body .container .card .card-body form label
+    {
+        text-align: center;
+    }
+    html body .container .card .card-body .btn.btn-block
+    {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    html body ul.nav-tabs li.nav-item button.nav-link
+    {
+        font-size: 80%;
+    }
+    html body .fold.above h1 b
+    {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) 
+{
+    
+}
+
+@media (max-width: 575px) 
+{
+    
+}
