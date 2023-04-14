@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        
+        <!-- META -->
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+        <link rel='dns-prefetch' href='//s.w.org' />
+        <title>TOOLS | SADO</title>
+        
+        <!-- FAVICONS -->
+        <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
+        <link rel="manifest" href="../site.webmanifest">
+        
+        <!-- META TAGS -->
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="SADO SDK" />
+        <meta property="og:description" content="Self-Authenticating Decentralized (Interplanetary) Ordinalbook" />
+        <meta property="og:url" content="http://sado.space/tools/" />
+        <meta property="og:site_name" content="http://sado.space" />
+        <meta property="og:image" content="http://sado.space/img/meta.png?v=0.0.1" /> 
+        
+        <!-- STYLES -->
+        <link rel="stylesheet" href="../css/bootstrap.css">
+        <link rel="stylesheet" href="../fontawesome/css/all.css">
+        <link rel="stylesheet" href="../css/sado.css?v=0.0.1">
+        
+    </head>
+    <body class="loading" data-text="LOADING" id="main-body">
+        
+        <nav class="navbar navbar-expand-xl navbar-light fixed-top bg-dark">
+            <div class="container">
+                <b class="navbar-brand">
+                    SADO
+                </b>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-navigation-menu" aria-controls="main-navigation-menu" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="main-navigation-menu">
+                    <ul id="menu-main-navigation" class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a href="../" class="nav-link">FEATURES</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="../docs/" class="nav-link">DOCUMENTATION</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="" class="nav-link active">DEMO</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="section">
+            <p>&nbsp;</p>
+            <div class="container">
+                <div class="row batter-mustache" style="text-align: left;">
+                    <div class="col-lg-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>
+                                    PUBLIC ORDERBOOK
+                                    <a href="#" class="btn btn-sm btn-xs btn-primary pull-right btn-sado-clear-cache">REFRESH</a>
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <alert class="alert alert-block alert-info">
+                                            <small>Orders:</small>
+                                            <h2>{{dashboard.orders}}</h2>
+                                        </alert>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <alert class="alert alert-block alert-info">
+                                            <small>Offers:</small>
+                                            <h2>{{dashboard.offers}}</h2>
+                                        </alert>
+                                    </div>
+                                </div>
+                                <hr>
+                                <alert class="alert alert-block alert-info">
+                                    <small>THESE RESULTS <strong>HAVE</strong> BEEN AUTHENTICATED ON-CHAIN</small>
+                                </alert>
+                                <hr>
+                                <div class="card">
+                                    <div class="card-header">
+                                        <ul class="nav nav-tabs" id="sado-tabs" role="tablist">
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link active" id="sorders-tab" data-bs-toggle="tab" data-bs-target="#sorders" type="button" role="tab" aria-controls="sorders" aria-selected="true">ORDERS</button>
+                                            </li>
+                                            <li class="nav-item" role="presentation">
+                                                <button class="nav-link" id="offers-tab" data-bs-toggle="tab" data-bs-target="#offers" type="button" role="tab" aria-controls="offers" aria-selected="false">OFFERS</button>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="tab-content" id="sado-tabsContent">
+                                            <div class="tab-pane fade show active" id="sorders" role="tabpanel" aria-labelledby="sorders-tab">
+
+                                                {{#orders}}
+                                                <alert class="alert alert-block {{#buy}}alert-danger{{/buy}}{{^buy}}alert-success{{/buy}}">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            
+                                                            {{#formats.image}}
+                                                            <img src="{{inscription.media_content}}" class="img img-thumbnail img-responsive img-block ordit-steno-img" id="img-{{ordinal.start}}" crossorigin="anonymous" />
+                                                            {{/formats.image}}
+
+                                                            {{#formats.audio}}
+                                                            <audio controls class="ordit-video" src="{{inscription.media_content}}" type="{{inscription.media_type}}" id="audio-{{ordinal.start}}" crossorigin="anonymous"></audio>
+                                                            {{/formats.audio}}
+
+                                                            {{#formats.video}}
+                                                            <video controls class="ordit-video" src="{{inscription.media_content}}" type="{{inscription.media_type}}" id="video-{{ordinal.start}}" crossorigin="anonymous"></video>
+                                                            {{/formats.video}}
+
+                                                            {{#formats.text}}
+                                                            <textarea class="form-control ordit-text" readonly="readonly" data-src="{{inscription.media_content}}" crossorigin="anonymous" loading="lazy"></textarea>
+                                                            {{/formats.text}}
+                                                            
+                                                        </div>
+                                                        <div class="col-md-8" style="text-align: left">
+                                                            <strong>
+                                                                {{#buy}}
+                                                                BUY ORDER
+                                                                {{/buy}}
+                                                                {{^buy}}
+                                                                {{#meta.name}}
+                                                                {{meta.name}} - 
+                                                                {{/meta.name}}
+                                                                SELL ORDER
+                                                                {{/buy}}
+                                                                {{#meta.description}}
+                                                                <br /><small style="font-weight: normal">{{meta.description}}</small>
+                                                                {{/meta.description}}
+                                                                <br /><br /><small>CID: <a href="{{apis.gateway}}{{cid}}" target="_blank"><code>{{cid}}</code></a><br>Published {{ago}}</small>
+                                                                <br /><br />
+                                                                <a href="#" class="btn btn-sm btn-xs btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapse-{{cid}}" aria-expanded="false" aria-controls="collapse-{{cid}}">MORE INFO</a>
+                                                            </strong>
+                                                            <p>&nbsp;</p>
+                                                            <hr>
+                                                            <div class="collapse" id="collapse-{{cid}}">
+                                                                <pre><small>Location <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{location}}"><small>COPY</small></a><br /><code>{{location}}</code><br /><br />{{#satoshi}}Satoshi <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{satoshi}}"><small>COPY</small></a><br /><code>{{satoshi}}</code>{{/satoshi}}{{^satoshi}}Cardinals <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{satoshis}}"><small>COPY</small></a><br /><code>{{satoshis}}</code>{{/satoshi}}<br /><br />Maker <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{maker}}"><small>COPY</small></a><br /><code>{{maker}}</code><br /><br />Signature <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{signature}}"><small>COPY</small></a><br /><code>{{signature}}</code>{{#desc}}<br /><br />Descriptor <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{desc}}"><small>COPY</small></a><br /><code>{{desc}}</code>{{/desc}}{{#expiry}}<br /><br />Expiry Block <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{expiry}}"><small>COPY</small></a><br /><code>{{expiry}}</code>{{/expiry}}</small></pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </alert>
+                                                <br />
+                                                {{/orders}}
+                                                {{^orders}}
+                                                <p>&nbsp;</p>
+                                                <alert class="alert alert-block alert-info">
+                                                    <small>
+                                                        NO ORDERS FOUND
+                                                    </small>
+                                                </alert>
+                                                {{/orders}}
+
+                                            </div>
+                                            <div class="tab-pane fade" id="offers" role="tabpanel" aria-labelledby="offers-tab">
+                                                
+                                                {{#offers}}
+                                                <alert class="alert alert-block {{#buy}}alert-danger{{/buy}}{{^buy}}alert-success{{/buy}}">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
+                                                            
+                                                            {{#formats.image}}
+                                                            <img src="{{inscription.media_content}}" class="img img-thumbnail img-responsive img-block ordit-steno-img" id="img-{{ordinal.start}}" crossorigin="anonymous" />
+                                                            {{/formats.image}}
+
+                                                            {{#formats.audio}}
+                                                            <audio controls class="ordit-video" src="{{inscription.media_content}}" type="{{inscription.media_type}}" id="audio-{{ordinal.start}}" crossorigin="anonymous"></audio>
+                                                            {{/formats.audio}}
+
+                                                            {{#formats.video}}
+                                                            <video controls class="ordit-video" src="{{inscription.media_content}}" type="{{inscription.media_type}}" id="video-{{ordinal.start}}" crossorigin="anonymous"></video>
+                                                            {{/formats.video}}
+
+                                                            {{#formats.text}}
+                                                            <textarea class="form-control ordit-text" readonly="readonly" data-src="{{inscription.media_content}}" crossorigin="anonymous" loading="lazy"></textarea>
+                                                            {{/formats.text}}
+                                                            
+                                                        </div>
+                                                        <div class="col-md-8" style="text-align: left">
+                                                            <strong>
+                                                                {{#buy}}
+                                                                SELL OFFER
+                                                                {{/buy}}
+                                                                {{^buy}}
+                                                                BUY OFFER
+                                                                {{/buy}}
+                                                                <br /><br /><small>CID: <a href="{{apis.gateway}}{{cid}}" target="_blank"><code>{{cid}}</code></a><br>Published {{ago}}</small>
+                                                                <br /><br />
+                                                                <a href="#" class="btn btn-sm btn-xs btn-outline-light" data-bs-toggle="collapse" data-bs-target="#collapse-{{cid}}" aria-expanded="false" aria-controls="collapse-{{cid}}">MORE INFO</a>
+                                                            </strong>
+                                                            <p>&nbsp;</p>
+                                                            <hr>
+                                                            <div class="collapse" id="collapse-{{cid}}">
+                                                                <pre><small>Offer <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{offer}}"><small>COPY</small></a><br /><code>{{offer}}</code><br /><br />Taker <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{taker}}"><small>COPY</small></a><br /><code>{{taker}}</code><br /><br />Signature <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{signature}}"><small>COPY</small></a><br /><code>{{signature}}</code>{{#desc}}<br /><br />Descriptor <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-batter-copy" data-content="{{desc}}"><small>COPY</small></a><br /><code>{{desc}}</code>{{/desc}}{{#expiry}}<br /><br />Expiry Block <a href="#" class="btn btn-sm btn-xs btn-outline-light btn-bater-copy" data-content="{{expiry}}"><small>COPY</small></a><br /><code>{{expiry}}</code>{{/expiry}}</small></pre>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </alert>
+                                                <br />
+                                                {{/offers}}
+                                                {{^offers}}
+                                                <p>&nbsp;</p>
+                                                <alert class="alert alert-block alert-info">
+                                                    <small>
+                                                        NO OFFERS FOUND
+                                                    </small>
+                                                </alert>
+                                                {{/offers}}
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>
+                                    GET ORDER
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form class="sado-orders-form">
+                                    <div class="row mb-3">
+                                        <label for="sado_orders_order" class="col-sm-4 col-form-label">CID</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control sado-input-cid" id="sado_orders_order">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="sado_orders_network" class="col-sm-4 col-form-label">NETWORK</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control sado-input-network" id="sado_orders_network">
+                                                <option value="regtest">BTC REGTEST</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row actions">
+                                        <div class="col-sm-6"></div>
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary btn-block btn-sm btn-xs">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>
+                                    GET OFFER
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form class="sado-offers-form">
+                                    <div class="row mb-3">
+                                        <label for="sado_offers_order" class="col-sm-4 col-form-label">CID</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control sado-input-cid" id="sado_offers_order">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="sado_offers_network" class="col-sm-4 col-form-label">NETWORK</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control sado-input-network" id="sado_offers_network">
+                                                <option value="regtest">BTC REGTEST</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row actions">
+                                        <div class="col-sm-6"></div>
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary btn-block btn-sm btn-xs">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                        <div class="card">
+                            <div class="card-header">
+                                <h5>
+                                    CHECK ADDRESS
+                                </h5>
+                            </div>
+                            <div class="card-body">
+                                <form class="sado-address-form">
+                                    <alert class="alert alert-block alert-info">
+                                        <small>TESTNET &amp; MAINNET SUPPORT SOON</small>
+                                    </alert>
+                                    <div class="row mb-3">
+                                        <label for="sado_address_address" class="col-sm-4 col-form-label">ADDRESS</label>
+                                        <div class="col-sm-8">
+                                            <input type="text" class="form-control sado-input-address" id="sado_address_address">
+                                        </div>
+                                    </div>
+                                    <div class="row mb-3">
+                                        <label for="sado_address_network" class="col-sm-4 col-form-label">NETWORK</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control sado-input-network" id="sado_address_network">
+                                                <option value="regtest">BTC REGTEST</option>
+                                                <!--
+                                                <option value="testnet">BTC TESTNET</option>
+                                                <option value="mainnet">BTC MAINNET</option>
+                                                -->
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div class="row actions">
+                                        <div class="col-sm-6"></div>
+                                        <div class="col-sm-6">
+                                            <button type="submit" class="btn btn-primary btn-block btn-sm btn-xs">SUBMIT</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <p>&nbsp;</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="container">
+                <small>
+                    &copy; 2023 - Manifested by <a href="https://birthday.dev/" target="_blank">Birthday Research</a>
+                </small>
+            </div>
+        </div>
+        
+        <div class="modal fade" tabindex="-1" id="default-modal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Unknown error</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+    
+    <!-- UX DEPENDENCIES -->
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/jquery.js"></script>
+    <script src="../js/ago.js"></script>
+    <script src="../js/marked.js"></script>
+    <script src="../js/mustache.js"></script>
+    <script src="../js/db.js"></script>
+    <script src="../js/bitcoin-v5.15.1.js"></script>
+    <script src="../js/ordit-apis.js"></script>
+    <script src="../js/ordit-utils.js"></script>
+    <script src="../js/ordit-ordinals.js"></script>
+    <script src="../js/clipboard.js"></script>
+    <script src="../js/sado.js"></script>
+    <script src="../js/batter.js"></script>
+    
+</html>
