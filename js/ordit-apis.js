@@ -1,6 +1,6 @@
 var ordit_apis = 
 {    
-    batter: function(func, input, callback = false, network = 'regtest')
+    batter: function(func, input, callback = false, network = ordit_db.defaults.network)
     {
         if(func && input && typeof callback == 'function')
         {

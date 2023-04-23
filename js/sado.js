@@ -216,7 +216,9 @@ var sado =
             {
                 e.preventDefault();
                 batter.loader(true, 'REFRESHING');
-                sessionStorage.removeItem('ordit_orderbook_cache');
+                var v = ordit_db.defaults.version;
+                var n = ordit_db.defaults.network;
+                sessionStorage.removeItem('ordit_orderbook_cache_' + v + '_' + n);
                 setTimeout(function()
                 {
                     winodw.location.reload();

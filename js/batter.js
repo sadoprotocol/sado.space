@@ -392,7 +392,9 @@ var batter =
             {
                 if(typeof callback == 'function')
                 {
-                    var saved_orders = sessionStorage.getItem('ordit_orderbook_cache');
+                    var v = ordit_db.defaults.version;
+                    var n = ordit_db.defaults.network;
+                    var saved_orders = sessionStorage.getItem('ordit_orderbook_cache_' + v + '_' + n);
                     if(saved_orders)
                     {
                         saved_orders = JSON.parse(saved_orders);
@@ -414,7 +416,9 @@ var batter =
                             ){
                                 try
                                 {
-                                    sessionStorage.setItem('ordit_orderbook_cache', JSON.stringify(orderbook));
+                                    var v = ordit_db.defaults.version;
+                                    var n = ordit_db.defaults.network;
+                                    sessionStorage.setItem('ordit_orderbook_cache_' + v + '_' + n, JSON.stringify(orderbook));
                                 }
                                 catch(err)
                                 {
