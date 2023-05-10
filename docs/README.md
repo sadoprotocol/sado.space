@@ -4,9 +4,10 @@
 
 ##### Abstract
 
-Ordinals as a mathematical concept for notation are not new, but using them to identify and track individual satoshis for transporting digital artifacts upon the Bitcoin blockchain is a relatively new craze where the majority of trade takes place within a Google spreadsheet. Despite the trustless nature of blockchain technology, easily trading ordinals between two unknown entities without involving third-party arbitration and (or) services has proven illusive.
+Ordinals as a mathematical concept for notation are not new. However, using them to identify and track individual satoshis for the transportation of digital artifacts on the Bitcoin blockchain is a relatively new craze. At present, the majority of trade is tracked in a Google spreadsheet. Despite the trustless nature of blockchain technology, the seamless trading of Ordinals between two unknown entities without the involvement of third-party arbitration and/or services has proven to be elusive.
 
-By utilizing a content-addressable decentralized data storage method, it is possible to broadcast and (or) fulfill self-authenticating orders to buy or sell ordinals at specific prices and to do so without needing to involve any third-parties for anything other than relaying signed transactions.
+By utilizing a content-addressable decentralized data storage method, it is possible to broadcast and fulfill self-authenticating orders to buy or sell Ordinals at specific prices. This can be done without needing to involve any third-parties for anything other than relaying signed transactions.
+
 
 --------------------
 

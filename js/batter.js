@@ -418,7 +418,7 @@ var batter =
                                 {
                                     var v = ordit_db.defaults.version;
                                     var n = ordit_db.defaults.network;
-                                    sessionStorage.setItem('ordit_orderbook_cache_' + v + '_' + n, JSON.stringify(orderbook));
+                                    //sessionStorage.setItem('ordit_orderbook_cache_' + v + '_' + n, JSON.stringify(orderbook));
                                 }
                                 catch(err)
                                 {

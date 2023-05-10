@@ -1,3 +1,3 @@
 ## SADO
 
-* [Documentation](tools/)
+* [Documentation](docs/)
