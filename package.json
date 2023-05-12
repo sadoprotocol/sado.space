@@ -1,0 +1,79 @@
+{
+  "private": true,
+  "name": "sado-space",
+  "version": "0.0.0",
+  "description": "",
+  "scripts": {
+    "build": "vite build",
+    "start": "vite --host"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@markdoc/markdoc": "^0.2.2",
+    "@sindresorhus/slugify": "^2.2.0",
+    "@tailwindcss/typography": "^0.5.9",
+    "@valkyr/db": "0.19.8",
+    "@valkyr/router": "0.19.8",
+    "@valkyr/solid": "0.19.8",
+    "clsx": "^1.2.1",
+    "fast-equals": "5.0.1",
+    "focus-visible": "^5.2.0",
+    "history": "^5.3.0",
+    "joi": "17.9.2",
+    "js-yaml": "^4.1.0",
+    "marked": "^4.3.0",
+    "nanoid": "^4.0.2",
+    "prismjs": "^1.29.0",
+    "rxjs": "^7.8.1",
+    "solid-headless": "^0.13.1",
+    "solid-heroicons": "^3.1.1",
+    "solid-hotkeys": "0.3.2",
+    "solid-js": "^1.7.3",
+    "solid-transition-group": "0.2.2",
+    "solidjs-markdoc": "^0.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "0.5.3",
+    "@types/marked": "^4.0.8",
+    "@types/prismjs": "^1.26.0",
+    "@valkyr/eslint-config": "0.19.7",
+    "@valkyr/prettier": "0.19.7",
+    "@valkyr/typescript": "0.19.7",
+    "autoprefixer": "^10.4.14",
+    "css-loader": "6.7.3",
+    "postcss": "^8.4.23",
+    "postcss-cli": "^10.1.0",
+    "postcss-focus-visible": "^8.0.2",
+    "postcss-import": "^15.1.0",
+    "postcss-loader": "^7.3.0",
+    "style-loader": "^3.3.2",
+    "tailwindcss": "3.3.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "vite": "^4.3.3",
+    "vite-plugin-solid": "^2.7.0",
+    "vite-plugin-wasm": "3.2.2",
+    "vite-tsconfig-paths": "^4.2.0"
+  },
+  "prettier": "@valkyr/prettier",
+  "jest": {
+    "preset": "@valkyr/jest"
+  },
+  "eslintConfig": {
+    "parserOptions": {
+      "project": "./tsconfig.json"
+    },
+    "extends": [
+      "@valkyr"
+    ]
+  },
+  "lint-staged": {
+    "*": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{ts,tsx}": [
+      "eslint --fix"
+    ]
+  }
+}
