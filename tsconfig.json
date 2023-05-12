@@ -16,9 +16,6 @@
       "~Components/*": [
         "./src/Components/*"
       ],
-      "~Libraries/*": [
-        "./src/Libraries/*"
-      ],
       "~Middleware/*": [
         "./src/Middleware/*"
       ],
