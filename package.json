@@ -13,7 +13,6 @@
   "dependencies": {
     "@markdoc/markdoc": "^0.2.2",
     "@sindresorhus/slugify": "^2.2.0",
-    "@sparticuz/chromium": "^92.0.0",
     "@tailwindcss/typography": "^0.5.9",
     "@valkyr/db": "0.19.8",
     "@valkyr/router": "0.19.8",
@@ -25,8 +24,8 @@
     "jsdom": "^22.0.0",
     "marked": "^4.3.0",
     "nanoid": "^4.0.2",
+    "prerender-node": "^3.6.0",
     "prismjs": "^1.29.0",
-    "puppeteer-core": "^10.0.0",
     "rxjs": "^7.8.1",
     "solid-headless": "^0.13.1",
     "solid-heroicons": "^3.1.1",
