@@ -7,22 +7,6 @@ import { config } from "../Config";
 import { Logo } from "./Logo";
 import { Navigation } from "./Navigation";
 
-function MenuIcon(props) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" {...props}>
-      <path d="M4 7h16M4 12h16M4 17h16" />
-    </svg>
-  );
-}
-
-function CloseIcon(props) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" {...props}>
-      <path d="M5 5l14 14M19 5l-14 14" />
-    </svg>
-  );
-}
-
 export function MobileNavigation({ navigation }) {
   const [isOpen, setIsOpen] = createSignal(false);
 
@@ -50,13 +34,29 @@ export function MobileNavigation({ navigation }) {
             <button type="button" onClick={closeModal} aria-label="Close navigation">
               <CloseIcon class="h-6 w-6 stroke-slate-500" />
             </button>
-            <Link href={config.landing} class="ml-6" aria-label="Home page">
+            <Link href={config.landing} class="ml-6" aria-label="Home page" onClicked={closeModal}>
               <Logo />
             </Link>
           </div>
-          <Navigation navigation={navigation} class="mt-5 px-1" />
+          <Navigation navigation={navigation} class="mt-5 px-1" onNavigated={closeModal} />
         </DialogPanel>
       </Dialog>
     </>
+  );
+}
+
+function MenuIcon(props) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" {...props}>
+      <path d="M4 7h16M4 12h16M4 17h16" />
+    </svg>
+  );
+}
+
+function CloseIcon(props) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" strokeWidth="2" strokeLinecap="round" {...props}>
+      <path d="M5 5l14 14M19 5l-14 14" />
+    </svg>
   );
 }

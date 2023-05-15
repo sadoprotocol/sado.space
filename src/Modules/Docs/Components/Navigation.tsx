@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { For } from "solid-js";
 
 import { Link } from "~Components/Atoms/Link/Link.Component";
@@ -7,7 +6,12 @@ import { NavigationController } from "./Navigation.Controller";
 
 export const Navigation = NavigationController.view(({ props, state }) => {
   return (
-    <nav class={clsx("text-base lg:text-sm", props.class)}>
+    <nav
+      classList={{
+        ["text-base lg:text-sm"]: true,
+        [props.class]: true
+      }}
+    >
       <ul role="list" class="space-y-9">
         <For each={props.navigation}>
           {(section) => (
@@ -29,6 +33,7 @@ export const Navigation = NavigationController.view(({ props, state }) => {
                           ["text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"]:
                             state.path !== link.href
                         })}
+                        onClicked={props.onNavigated}
                       >
                         {link.title}
                       </Link>

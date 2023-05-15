@@ -11,6 +11,7 @@ export class NavigationController extends Controller<
   {
     navigation: Navigation[];
     class?: string;
+    onNavigated?: () => void;
   }
 > {
   async onInit() {

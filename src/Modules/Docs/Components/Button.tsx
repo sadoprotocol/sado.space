@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 import { Link } from "~Components/Atoms/Link/Link.Component";
 
 const styles = {
@@ -19,6 +17,21 @@ export function Button({
   href: string;
   class?: string;
 }) {
-  className = clsx(styles[variant], className);
-  return href ? <Link href={href} class={className} /> : <button class={className} {...props} />;
+  return href ? (
+    <Link
+      href={href}
+      classList={() => ({
+        [styles[variant]]: true,
+        [className]: true
+      })}
+    />
+  ) : (
+    <button
+      classList={{
+        [styles[variant]]: true,
+        [className]: true
+      }}
+      {...props}
+    />
+  );
 }

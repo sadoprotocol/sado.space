@@ -1,5 +1,3 @@
-import clsx from "clsx";
-
 import { Icon } from "./Icon";
 
 const styles = {
@@ -24,11 +22,30 @@ export function Callout({ type = "note", title, children }) {
   const IconComponent = icons[type];
 
   return (
-    <div class={clsx("my-8 flex rounded-3xl p-6", styles[type].container)}>
+    <div
+      classList={{
+        "my-8 flex rounded-3xl p-6": true,
+        [styles[type].container]: true
+      }}
+    >
       <IconComponent class="h-8 w-8 flex-none" />
       <div class="ml-4 flex-auto">
-        <p class={clsx("m-0 font-display text-xl", styles[type].title)}>{title}</p>
-        <div class={clsx("prose mt-2.5", styles[type].body)}>{children}</div>
+        <p
+          classList={{
+            "m-0 font-display text-xl": true,
+            [styles[type].title]: true
+          }}
+        >
+          {title}
+        </p>
+        <div
+          classList={{
+            "prose mt-2.5": true,
+            [styles[type].body]: true
+          }}
+        >
+          {children}
+        </div>
       </div>
     </div>
   );

@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { nanoid } from "nanoid";
 
 import { InstallationIcon } from "./Icons/InstallationIcon";
@@ -26,7 +25,16 @@ export function Icon({ color = "blue", icon, className, ...props }: any) {
   const id = nanoid(6);
   const IconComponent = icons[icon];
   return (
-    <svg aria-hidden="true" viewBox="0 0 32 32" fill="none" class={clsx(className, iconStyles[color])} {...props}>
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 32 32"
+      fill="none"
+      classList={{
+        [className]: true,
+        [iconStyles[color]]: true
+      }}
+      {...props}
+    >
       <IconComponent id={id} color={color} />
     </svg>
   );
@@ -51,9 +59,25 @@ export function Gradient({ color = "blue", ...props }) {
 }
 
 export function LightMode({ className = "", ...props }) {
-  return <g class={clsx("dark:hidden", className)} {...props} />;
+  return (
+    <g
+      classList={{
+        "dark:hidden": true,
+        [className]: true
+      }}
+      {...props}
+    />
+  );
 }
 
 export function DarkMode({ className = "", ...props }) {
-  return <g class={clsx("hidden dark:inline", className)} {...props} />;
+  return (
+    <g
+      classList={{
+        "hidden dark:inline": true,
+        [className]: true
+      }}
+      {...props}
+    />
+  );
 }

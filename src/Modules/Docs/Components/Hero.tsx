@@ -1,4 +1,3 @@
-import clsx from "clsx";
 import { Show } from "solid-js";
 
 import { Link } from "~Components/Atoms/Link/Link.Component";
@@ -76,14 +75,19 @@ export const Hero = HeroController.view(({ state }) => {
                     <div class="mt-4 flex space-x-2 text-xs">
                       {tabs.map((tab) => (
                         <div
-                          class={clsx(
-                            "flex h-6 rounded-full",
-                            tab.isActive
-                              ? "bg-gradient-to-r from-sky-400/30 via-sky-400 to-sky-400/30 p-px font-medium text-sky-300"
-                              : "text-slate-500"
-                          )}
+                          classList={{
+                            "flex h-6 rounded-full": true,
+                            "bg-gradient-to-r from-sky-400/30 via-sky-400 to-sky-400/30 p-px font-medium text-sky-300":
+                              tab.isActive,
+                            "text-slate-500": !tab.isActive
+                          }}
                         >
-                          <div class={clsx("flex items-center rounded-full px-2.5", tab.isActive && "bg-slate-800")}>
+                          <div
+                            classList={{
+                              "flex items-center rounded-full px-2.5": true,
+                              "bg-slate-800": tab.isActive
+                            }}
+                          >
                             {tab.name}
                           </div>
                         </div>
