@@ -1,4 +1,4 @@
-export const crawlers = [
+const crawlers = [
   "Googlebot", // Google
   "Bingbot", // Bing
   "Slurp", // Yahoo
@@ -20,4 +20,6 @@ export const crawlers = [
   "slackbot", // Slack
   "vkShare", // VKontakte
   "W3C_Validator" // W3C Validator
-];
+]
+
+module.exports = { crawlers };

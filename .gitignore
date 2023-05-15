@@ -12,7 +12,6 @@ node_modules
 
 # dist & pack
 
-api
 dist
 *.tgz
 

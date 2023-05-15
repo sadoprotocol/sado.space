@@ -1,9 +1,8 @@
-import chromium from "@sparticuz/chromium";
-import { Request } from "express";
-import { JSDOM } from "jsdom";
-import puppeteer from "puppeteer-core";
+const chromium = require("@sparticuz/chromium");
+const { JSDOM } = require("jsdom");
+const puppeteer = require("puppeteer-core");
 
-export async function renderPage(req: Request) {
+async function renderPage(req) {
   const browser = await puppeteer.launch({
     args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--single-process"],
     executablePath: await chromium.executablePath,
@@ -26,7 +25,7 @@ export async function renderPage(req: Request) {
   return removeScriptTags(content);
 }
 
-function removeScriptTags(html: string) {
+function removeScriptTags(html) {
   const dom = new JSDOM(html);
   const document = dom.window.document;
 
@@ -51,9 +50,9 @@ function removeScriptTags(html: string) {
   return dom.serialize();
 }
 
-function getHeadScripts(document: Document): [HTMLScriptElement[], HTMLLinkElement[]] {
-  let scripts: HTMLScriptElement[] = [];
-  let links: HTMLLinkElement[] = [];
+function getHeadScripts(document) {
+  let scripts = [];
+  let links = [];
 
   const head = document.querySelector("head");
   if (head === null) {
@@ -72,3 +71,5 @@ function getHeadScripts(document: Document): [HTMLScriptElement[], HTMLLinkEleme
 
   return [scripts, links];
 }
+
+module.exports = { renderPage };
