@@ -1,4 +1,4 @@
-import { Icon } from "./Icon";
+import { Icon } from "../../Components/Icon";
 
 const styles = {
   note: {

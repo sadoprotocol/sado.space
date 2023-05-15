@@ -8,5 +8,13 @@ export const nodes: Config["nodes"] = {
         type: String
       }
     }
+  },
+  link: {
+    render: "Link",
+    attributes: {
+      href: {
+        type: String
+      }
+    }
   }
 };

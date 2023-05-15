@@ -2,7 +2,7 @@ import { Show } from "solid-js";
 
 import { Link } from "~Components/Atoms/Link/Link.Component";
 
-import { CodeHighlighter } from "./Fence";
+import { CodeHighlighter } from "../Library/Components/Fence";
 import { HeroController } from "./Hero.Controller";
 import { HeroBackground } from "./HeroBackground";
 import { HeroText } from "./HeroText";
