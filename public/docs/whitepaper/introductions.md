@@ -6,6 +6,11 @@ description: A protocol for selling, buying and trading Ordinals on the bitcoin 
 
 Ordinal Theory has been around since 1883. It is a form of mathematical notation used to describe infinite sets of numbers. However, it was only in 2023 that it was applied to Bitcoin as a way of tracking individual satoshis, the lowest denomination of Bitcoin. Ordinal Theory gives satoshis individual identities and allows them to be tracked by linking them to data that is permanently stored on the blockchain within segregated-witness scripts.
 
+{% quick-links %}
+{% quick-link title="ORD" href="https://github.com/casey/ord" description="Check out the ORD repository." /%}
+{% quick-link title="Ordinals" href="https://ordinals.com/" description="Browser the ordinal explorer." /%}
+{% /quick-links %}
+
 Although the ORD server is relatively infant and only recently available to the public, Casey Rodarmor who started the project has been working behind the scenes on Ordinal Theory and its application to Bitcoin for some time. His terminology and explanations regarding these theories and how they create a sense of rarity for each individual satoshi is quite extensive whilst also drawing parallels to archeology and even astrology when discussing the “cycles” that occurs every 24 years when the same block is used for both halving and difficult adjustments. The first satoshi found within one of those blocks is considered one of only five legendary Ordinals.
 
 Ordinals on their own have no resemblance to NFTs. Although clearly inspired by them in some way, Rodarmor has expressed that he is not a fan of their lack of immutability and heavy reliance on InterPlanetary File System (IPFS), which provides no guarantee of future availability in the same way that Bitcoin inscriptions do.
