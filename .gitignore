@@ -1,3 +1,31 @@
-__MACOSX
+# IDE - VSCode
+
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# node_modules
+
+node_modules
+
+# dist & pack
+
+dist
+*.tgz
+
+# OS
+
 .DS_Store
-js/db.js
+
+# TypeScript
+
+tsconfig.*.tsbuildinfo
+
+# Logs
+
+logs
+*.log
+npm-debug.log*
+.vercel
