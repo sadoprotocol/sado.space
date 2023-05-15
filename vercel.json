@@ -8,7 +8,7 @@
           "value": "sado.space"
         }
       ],
-      "destination": "/index.html"
+      "destination": "/api/serverless.js"
     }
   ]
 }

@@ -12,6 +12,7 @@ node_modules
 
 # dist & pack
 
+api
 dist
 *.tgz
 
@@ -28,3 +29,4 @@ tsconfig.*.tsbuildinfo
 logs
 *.log
 npm-debug.log*
+.vercel
