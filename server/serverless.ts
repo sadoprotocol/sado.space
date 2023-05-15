@@ -1,42 +1,23 @@
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 
-import fastify, { FastifyRequest } from "fastify";
+import express from "express";
 
 import { crawlers } from "./Crawlers";
 import { renderPage } from "./Render";
 
-const app = fastify();
+const app = express();
 
 const index = readFileSync(resolve(__dirname, "..", "dist", "index.html"), "utf-8");
 
-app.register(
-  async function (instance, _opts, done) {
-    instance.all("*", async (request: Request, reply) => {
-      reply.headers({
-        "Content-Type": "text/html",
-        "Cache-Control": "s-max-age=1, stale-while-revalidate"
-      });
+app.all("*", async (req, res) => {
+  res.setHeader("Content-Type", "text/html");
+  res.setHeader("Cache-Control", "s-max-age=1, stale-while-revalidate");
 
-      const userAgent = request.query["user-agent"] ?? request.headers["user-agent"];
-      const isCrawler = userAgent !== undefined && crawlers.some((crawler) => userAgent.includes(crawler)) === true;
+  const userAgent = (req.query["user-agent"] ?? req.headers["user-agent"]) as string | undefined;
+  const isCrawler = userAgent !== undefined && crawlers.some((crawler) => userAgent.includes(crawler)) === true;
 
-      reply.status(200).send(isCrawler === true ? await renderPage(request) : index);
-    });
-    done();
-  },
-  {
-    prefix: "/"
-  }
-);
+  res.end(isCrawler === true ? await renderPage(req) : index);
+});
 
-type Request = FastifyRequest<{
-  Querystring: {
-    "user-agent"?: string;
-  };
-}>;
-
-export default async (req: any, res: any) => {
-  await app.ready();
-  app.server.emit("request", req, res);
-};
+export default app;

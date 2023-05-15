@@ -1,9 +1,9 @@
 import chromium from "@sparticuz/chromium";
-import type { FastifyRequest } from "fastify";
+import { Request } from "express";
 import { JSDOM } from "jsdom";
 import puppeteer from "puppeteer-core";
 
-export async function renderPage(req: FastifyRequest) {
+export async function renderPage(req: Request) {
   const browser = await puppeteer.launch({
     args: [...chromium.args, "--no-sandbox", "--disable-setuid-sandbox", "--disable-dev-shm-usage", "--single-process"],
     executablePath: await chromium.executablePath,
@@ -15,7 +15,7 @@ export async function renderPage(req: FastifyRequest) {
   const page = await browser.newPage();
 
   // Navigate to the page and generate a static HTML version
-  await page.goto(`https://sado.space${req.routerPath}`, { waitUntil: "networkidle0" });
+  await page.goto(`https://sado.space${req.path}`, { waitUntil: "networkidle0" });
   await new Promise((r) => setTimeout(r, 1000));
 
   const content = await page.content();
