@@ -1,5 +1,8 @@
 /* @refresh reload */
 
+import "./Modules";
+import "./Configs/Docs";
+
 import { controllers } from "@valkyr/solid";
 import { createComponent } from "solid-js";
 import { render } from "solid-js/web";
@@ -15,17 +18,15 @@ let currentComponent: () => void | undefined;
  |--------------------------------------------------------------------------------
  */
 
-export function start() {
-  router
-    .render((component, props = {}) => {
-      currentComponent?.();
-      currentComponent = render(() => createComponent(component, props), document.body);
-    })
-    .error((error) => {
-      console.error(error);
-    })
-    .listen();
-}
+router
+  .render((component, props = {}) => {
+    currentComponent?.();
+    currentComponent = render(() => createComponent(component, props), document.body);
+  })
+  .error((error) => {
+    console.error(error);
+  })
+  .listen();
 
 /*
  |--------------------------------------------------------------------------------

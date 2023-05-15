@@ -1,5 +1,3 @@
-import "./Configs/Docs";
-
 import { Route } from "@valkyr/router";
 
 import { render } from "~Middleware/Render";
@@ -9,8 +7,6 @@ import { getTitleByHref } from "~Modules/Docs/Utils";
 import { ContentView } from "~Modules/Docs/Views/Content.View";
 import { DocsView } from "~Modules/Docs/Views/Docs.View";
 import { router } from "~Services/Router";
-
-import { start } from "../main";
 
 const APP_TITLE = "SADO";
 
@@ -46,5 +42,3 @@ router.register([
 function getDocTitle(): string {
   return getTitleByHref(router.location.pathname, "");
 }
-
-start();
