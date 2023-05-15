@@ -11,28 +11,26 @@ config.hero.description = "Navigate the world of Ordinals with SADO space.";
 config.navigation = [
   {
     title: "Introduction",
-    links: [
-      { title: "Features", href: "/", file: "/docs/0-features.md" },
-      { title: "Abstract", href: "/docs/abstract", file: "/docs/1-abstract.md" },
-      { title: "Specifications", href: "/docs/specifications", file: "/docs/2-specifications.md" }
-    ]
+    links: [{ title: "Features", href: "/", file: "/docs/introduction/features.md" }]
   },
   {
-    title: "Sell",
+    title: "Whitepaper",
     links: [
-      { title: "Making Sell Orders", href: "/docs/making-sell-orders", file: "/docs/3-making-sell-orders.md" },
-      { title: "Taking Sell Orders", href: "/docs/taking-sell-orders", file: "/docs/4-taking-sell-orders.md" }
-    ]
-  },
-  {
-    title: "Buy",
-    links: [
-      { title: "Making Buy Orders", href: "/docs/making-buy-orders", file: "/docs/5-making-buy-orders.md" },
-      { title: "Taking Buy Orders", href: "/docs/taking-buy-orders", file: "/docs/6-taking-buy-orders.md" }
+      { title: "Abstract", href: "/docs/abstract", file: "/docs/whitepaper/abstract.md" },
+      { title: "Introductions", href: "/docs/introductions", file: "/docs/whitepaper/introductions.md" },
+      { title: "Specifications", href: "/docs/specifications", file: "/docs/whitepaper/specifications.md" },
+      { title: "Making Sell Orders", href: "/docs/making-sell-orders", file: "/docs/whitepaper/making-sell-orders.md" },
+      { title: "Taking Sell Orders", href: "/docs/taking-sell-orders", file: "/docs/whitepaper/taking-sell-orders.md" },
+      { title: "Making Buy Orders", href: "/docs/making-buy-orders", file: "/docs/whitepaper/making-buy-orders.md" },
+      { title: "Taking Buy Orders", href: "/docs/taking-buy-orders", file: "/docs/whitepaper/taking-buy-orders.md" },
+      { title: "Extensions", href: "/docs/extensions", file: "/docs/whitepaper/extensions.md" },
+      { title: "Bidding", href: "/docs/bidding", file: "/docs/whitepaper/bidding.md" },
+      { title: "Discovery", href: "/docs/discovery", file: "/docs/whitepaper/discovery.md" },
+      { title: "Roadmap", href: "/docs/roadmap", file: "/docs/whitepaper/roadmap.md" }
     ]
   },
   {
     title: "SDK",
-    links: [{ title: "Lookup", href: "/docs/sdk-lookup", file: "/docs/7-lookup.md" }]
+    links: [{ title: "Lookup", href: "/docs/sdk-lookup", file: "/docs/sdk/lookup.md" }]
   }
 ];
