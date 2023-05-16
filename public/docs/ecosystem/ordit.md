@@ -5,8 +5,7 @@ description: A protocol for selling, buying and trading Ordinals on the bitcoin 
 ---
 
 
-Bitcoin Ordinal Web Wallet & Inscription
------
+## Bitcoin Ordinal Web Wallet & Inscription
 
 The Bitcoin Ordinal Web Wallet & Inscription component of Ordit is a serverless web application designed to communicate with your own private Ord server. Currently, it is intended for local, private use and lacks security measures. However, future versions of Ordit will focus on supporting secure online self-hosted web environments. Originally developed to support the SADO protocol, Ordit realized the need for an open-source, browser-based ordinal web wallet.
 
@@ -16,12 +15,11 @@ The Ordit JavaScript SDK provides convenient wrapper functions for the following
 - **Ord CLI** - Facilitates HTTP communication between the browser and the Ord server using the RPC protocol.
 - **IPFS** - Utilized by the SADO protocol for ordinal orderbooks.
 
-> To utilize the wallet and inscription functionality, the Ord server must contain the file you wish to inscribe. Ordit initiates the file upload function, transferring the file via Ord CLI to the Ord server where it becomes ready for use during the inscription process.
+{% callout title="You should know!" %}
+To utilize the wallet and inscription functionality, the Ord server must contain the file you wish to inscribe. Ordit initiates the file upload function, transferring the file via Ord CLI to the Ord server where it becomes ready for use during the inscription process.
+{% /callout %}
 
-<br/>
-
-Bitcoin UTXO Ordinal Aware Explorer
------
+## Bitcoin UTXO Ordinal Aware Explorer
 
 The Bitcoin UTXO Ordinal Aware Explorer component of Ordit serves as an indexed full-node provider for various network types, including mainnet, testnet3, and regtest. Its core responsibility is to manage the inputs and outputs of the Blockchain ledger. With the addition of an Ord server running alongside it, this component allows for the exploration of all satoshi ordinals and their rarity, as well as the inscriptions linked to the outputs of address transactions.
 
