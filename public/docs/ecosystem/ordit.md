@@ -18,6 +18,7 @@ The Ordit JavaScript SDK provides convenient wrapper functions for the following
 
 > To utilize the wallet and inscription functionality, the Ord server must contain the file you wish to inscribe. Ordit initiates the file upload function, transferring the file via Ord CLI to the Ord server where it becomes ready for use during the inscription process.
 
+<br/>
 
 Bitcoin UTXO Ordinal Aware Explorer
 -----
