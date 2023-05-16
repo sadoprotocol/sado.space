@@ -14,7 +14,7 @@
     "isolatedModules": true,
     "paths": {
       "@sadoprotocol/sdk": [
-        "./src/Libraries/SDK/*"
+        "./src/Libraries/SDK/index.ts"
       ],
       "~Components/*": [
         "./src/Components/*"

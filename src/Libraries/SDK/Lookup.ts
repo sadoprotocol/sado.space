@@ -1,13 +1,10 @@
 import type { IPFSOffer } from "./Entities/Offer";
 import type { IPFSOrder } from "./Entities/Order";
+import { api } from "./Fetch";
 import type { SADO } from "./SADO";
 
 export class Lookup {
   constructor(readonly sado: SADO) {}
-
-  get network() {
-    return this.sado.network;
-  }
 
   /**
    * Retrieve orderbook for given address.
@@ -18,7 +15,9 @@ export class Lookup {
    * @returns Orderbook for given address, otherwise `undefined`.
    */
   async orderbook(address: string): Promise<OrderbookResponse | undefined> {
-    return undefined;
+    return api.get(`/orderbook/${address}`, {
+      network: this.sado.network
+    });
   }
 
   /**
@@ -28,11 +27,9 @@ export class Lookup {
    * @param network - Network in which the address is located.
    */
   async address(address: string): Promise<AddressResponse> {
-    const response = makeLookupAddressResponse();
-
-    // TODO: Add logic to check for ordinals and inscriptions.
-
-    return response;
+    return api.get(`/address/${address}/unspents`, {
+      network: this.sado.network
+    });
   }
 
   /**
@@ -43,7 +40,7 @@ export class Lookup {
    * @returns Order if found, otherwise `undefined`.
    */
   async order(cid: string): Promise<IPFSOrder | undefined> {
-    return undefined;
+    return api.get(`/order/${cid}`);
   }
 
   /**
@@ -54,7 +51,7 @@ export class Lookup {
    * @returns Offer if found, otherwise `undefined`.
    */
   async offer(cid: string): Promise<IPFSOffer | undefined> {
-    return undefined;
+    return api.get(`/offer/${cid}`);
   }
 }
 
@@ -64,18 +61,18 @@ export class Lookup {
  |--------------------------------------------------------------------------------
  */
 
-function makeLookupAddressResponse(): AddressResponse {
-  return {
-    counts: {
-      satoshis: 0,
-      cardinals: 0,
-      ordinals: 0,
-      inscriptions: 0
-    },
-    ordinals: [],
-    inscriptions: []
-  };
-}
+// function makeLookupAddressResponse(): AddressResponse {
+//   return {
+//     counts: {
+//       satoshis: 0,
+//       cardinals: 0,
+//       ordinals: 0,
+//       inscriptions: 0
+//     },
+//     ordinals: [],
+//     inscriptions: []
+//   };
+// }
 
 /*
  |--------------------------------------------------------------------------------
