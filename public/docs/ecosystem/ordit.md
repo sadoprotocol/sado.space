@@ -4,7 +4,6 @@ pageTitle: SADO - Self-Authenticating Decentralized Orderbooks
 description: A protocol for selling, buying and trading Ordinals on the bitcoin network.
 ---
 
-
 ## Bitcoin Ordinal Web Wallet & Inscription
 
 The Bitcoin Ordinal Web Wallet & Inscription component of Ordit is a serverless web application designed to communicate with your own private Ord server. Currently, it is intended for local, private use and lacks security measures. However, future versions of Ordit will focus on supporting secure online self-hosted web environments. Originally developed to support the SADO protocol, Ordit realized the need for an open-source, browser-based ordinal web wallet.
@@ -32,4 +31,3 @@ The following Web API endpoints serve as gateways for the Ordinal Web Wallet to 
 - **Relay** - Broadcasts built transactions to the node's mempool.
 - **Fees** - Provides a historical summary of block fees.
 - **Inscription** - Returns information and media related to an outpoint's inscription.
-
