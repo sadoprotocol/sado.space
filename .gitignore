@@ -13,6 +13,7 @@ node_modules
 # Development
 
 .env.example
+index.html
 
 # dist & pack
 
