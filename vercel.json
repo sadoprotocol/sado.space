@@ -2,6 +2,12 @@
   "rewrites": [
     {
       "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "sado.space"
+        }
+      ],
       "destination": "/api/serverless.js"
     }
   ]

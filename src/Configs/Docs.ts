@@ -39,6 +39,6 @@ config.navigation = [
   },
   {
     title: "SDK",
-    links: [{ title: "Lookup", href: "/docs/sdk-lookup", file: "/docs/sdk/lookup.md" }]
+    links: [{ title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" }]
   }
 ];
