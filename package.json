@@ -5,8 +5,7 @@
   "description": "",
   "scripts": {
     "build": "vite build",
-    "start": "cp app.html index.html && vite --host",
-    "vercel": "vercel dev"
+    "start": "cp app/sado.html index.html && vite --host"
   },
   "author": "",
   "license": "MIT",

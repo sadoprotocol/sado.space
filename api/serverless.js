@@ -3,7 +3,7 @@ const { resolve } = require("node:path");
 
 const app = require("express")();
 
-const index = readFileSync(resolve(__dirname, "..", "dist", "app.html"), "utf-8");
+const index = readFileSync(resolve(__dirname, "..", "dist", "app", "sado.html"), "utf-8");
 
 app.use(require('prerender-node').set('prerenderToken', process.env.PRERENDER_TOKEN));
 

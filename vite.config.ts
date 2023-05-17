@@ -3,7 +3,7 @@ import { defineConfig } from "vite";
 import solid from "vite-plugin-solid";
 import paths from "vite-tsconfig-paths";
 
-const root = resolve(__dirname);
+const root = resolve(__dirname, "src");
 const outDir = resolve(__dirname, "dist");
 
 // https://vitejs.dev/config/
@@ -26,7 +26,7 @@ export default defineConfig({
     outDir,
     rollupOptions: {
       input: {
-        cmdo: resolve(root, "app.html")
+        sado: resolve(root, "..", "app", "sado.html")
       }
     }
   }
