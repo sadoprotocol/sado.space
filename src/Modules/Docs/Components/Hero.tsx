@@ -8,12 +8,19 @@ import { HeroBackground } from "./HeroBackground";
 import { HeroText } from "./HeroText";
 
 const codeLanguage = "typescript";
-const code = `const orders = await sado.lookup.address("1DLFiY...", {
-  network: "mainnet"
+const code = `export const sado = new SADO({
+  network: {
+    set(value: Network) {
+      localStorage.setItem("network", value);
+    },
+    get(): Network {
+      return localStorage.getItem("network");
+    }
+  }
 });`;
 
 const tabs = [
-  { name: "Orders.ts", isActive: true },
+  { name: "sado.ts", isActive: true },
   { name: "package.json", isActive: false }
 ];
 
