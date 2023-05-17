@@ -16,8 +16,14 @@
       "@sadoprotocol/sdk": [
         "./src/Libraries/SDK/index.ts"
       ],
-      "~Components/*": [
-        "./src/Components/*"
+      "~Atoms/*": [
+        "./src/Components/Atoms/*"
+      ],
+      "~Molecules/*": [
+        "./src/Components/Molecules/*"
+      ],
+      "~Organisms/*": [
+        "./src/Components/Organisms/*"
       ],
       "~Middleware/*": [
         "./src/Middleware/*"

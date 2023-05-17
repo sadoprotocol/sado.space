@@ -1,12 +1,21 @@
+import { SadoLogo } from "~Atoms/Icons/SadoLogo";
 import { config } from "~Modules/Docs/Config";
-
-import { SadoLogo } from "./SadoLogo";
 
 config.logo = [SadoLogo, { size: 36 }];
 
 config.hero.title = "SADO";
 config.hero.marqee = ["Self-Authenticating", "Decentralized", "Orderbooks"];
 config.hero.description = "Navigate the world of Ordinals with SADO space.";
+config.hero.code.text = `export const sado = new SADO({
+  network: {
+    set(value: Network) {
+      localStorage.setItem("network", value);
+    },
+    get(): Network {
+      return localStorage.getItem("network");
+    }
+  }
+});`;
 
 config.navigation = [
   {

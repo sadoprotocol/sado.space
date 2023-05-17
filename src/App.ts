@@ -1,13 +1,13 @@
 /* @refresh reload */
 
 import "./Modules";
-import "./Configs/Docs";
+import "./Docs";
 
 import { controllers } from "@valkyr/solid";
 import { createComponent } from "solid-js";
 import { render } from "solid-js/web";
 
-import { ControllerLoader } from "~Components/Molecules/ControllerLoader.Component";
+import { ControllerLoader } from "~Molecules/ControllerLoader.Component";
 import { router } from "~Services/Router";
 
 let currentComponent: () => void | undefined;

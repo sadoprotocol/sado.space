@@ -1,6 +1,6 @@
 import { Show } from "solid-js/web";
 
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { Prose } from "../Components/Prose";
 import { ContentController } from "./Content.Controller";

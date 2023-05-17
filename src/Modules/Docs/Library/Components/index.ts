@@ -1,4 +1,4 @@
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { Callout } from "./Callout";
 import { Fence } from "./Fence";

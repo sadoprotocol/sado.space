@@ -1,4 +1,4 @@
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { config } from "../Config";
 import { HeaderController } from "./Header.Controller";

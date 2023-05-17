@@ -1,7 +1,7 @@
 import { Dialog, DialogPanel } from "solid-headless";
 import { createSignal } from "solid-js";
 
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { config } from "../Config";
 import { Logo } from "./Logo";

@@ -1,38 +1,12 @@
 import { Show } from "solid-js";
 
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { CodeHighlighter } from "../Library/Components/Fence";
 import { HeroController } from "./Hero.Controller";
 import { HeroBackground } from "./HeroBackground";
 import { HeroText } from "./HeroText";
 
-const codeLanguage = "typescript";
-const code = `export const sado = new SADO({
-  network: {
-    set(value: Network) {
-      localStorage.setItem("network", value);
-    },
-    get(): Network {
-      return localStorage.getItem("network");
-    }
-  }
-});`;
-
-const tabs = [
-  { name: "sado.ts", isActive: true },
-  { name: "package.json", isActive: false }
-];
-
-function TrafficLightsIcon(props) {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
-      <circle cx="5" cy="5" r="4.5" />
-      <circle cx="21" cy="5" r="4.5" />
-      <circle cx="37" cy="5" r="4.5" />
-    </svg>
-  );
-}
 export const Hero = HeroController.view(({ state }) => {
   return (
     <Show when={state.show}>
@@ -80,7 +54,7 @@ export const Hero = HeroController.view(({ state }) => {
                   <div class="pl-4 pt-4">
                     <TrafficLightsIcon class="h-2.5 w-auto stroke-slate-500/30" />
                     <div class="mt-4 flex space-x-2 text-xs">
-                      {tabs.map((tab) => (
+                      {state.code.tabs.map((tab) => (
                         <div
                           classList={{
                             "flex h-6 rounded-full": true,
@@ -107,12 +81,12 @@ export const Hero = HeroController.view(({ state }) => {
                         style="padding-top:1.3rem"
                       >
                         {Array.from({
-                          length: code.split("\n").length
+                          length: state.code.text.split("\n").length
                         }).map((_, index) => (
                           <div style="line-height:1.51">{(index + 1).toString().padStart(2, "0")}</div>
                         ))}
                       </div>
-                      <CodeHighlighter code={code} language={codeLanguage} />
+                      <CodeHighlighter code={state.code.text} language={state.code.language} />
                     </div>
                   </div>
                 </div>
@@ -124,3 +98,13 @@ export const Hero = HeroController.view(({ state }) => {
     </Show>
   );
 });
+
+function TrafficLightsIcon(props) {
+  return (
+    <svg aria-hidden="true" viewBox="0 0 42 10" fill="none" {...props}>
+      <circle cx="5" cy="5" r="4.5" />
+      <circle cx="21" cy="5" r="4.5" />
+      <circle cx="37" cy="5" r="4.5" />
+    </svg>
+  );
+}

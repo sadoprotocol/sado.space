@@ -12,7 +12,12 @@ export const config: {
   hero: {
     title: "SADO",
     marqee: ["Self-Authenticating", "Decentralized", "Orderbooks"],
-    description: "Navigate the world of Ordinals with SADO space."
+    description: "Navigate the world of Ordinals with SADO space.",
+    code: {
+      language: "typescript",
+      text: "const hello = 'world';",
+      tabs: [{ name: "hello.ts", isActive: true }]
+    }
   },
   navigation: []
 };
@@ -21,6 +26,14 @@ export type HeroConfig = {
   title: string;
   marqee: string[];
   description: string;
+  code: {
+    language: string;
+    text: string;
+    tabs: {
+      name: string;
+      isActive: boolean;
+    }[];
+  };
 };
 
 export type Navigation = {

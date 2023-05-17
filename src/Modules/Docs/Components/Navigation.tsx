@@ -1,6 +1,6 @@
 import { For } from "solid-js";
 
-import { Link } from "~Components/Atoms/Link/Link.Component";
+import { Link } from "~Atoms/Link/Link.Component";
 
 import { NavigationController } from "./Navigation.Controller";
 
