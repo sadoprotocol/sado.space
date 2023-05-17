@@ -1,6 +1,6 @@
 ---
 title: Taking Sell Orders
-pageTitle: SADO - Self-Authenticating Decentralized Orderbooks
+pageTitle: Sado - Self-Authenticating Decentralized Orderbooks
 description: A protocol for selling, buying and trading Ordinals on the bitcoin network.
 ---
 

@@ -1,6 +1,6 @@
 ---
 title: Introductions
-pageTitle: SADO - Self-Authenticating Decentralized Orderbooks
+pageTitle: Sado - Self-Authenticating Decentralized Orderbooks
 description: A protocol for selling, buying and trading Ordinals on the bitcoin network.
 ---
 
@@ -23,6 +23,6 @@ When transferring a digital artifact, you are in fact only transferring an Ordin
 
 In the project roadmap, Rodarmor outlines this problem of provenance as one of two issues preventing this technology from going mainstream.
 
-The other problem he states that needs to be fixed is the ability to perform trustless trades with others on the same network. It is this problem that the SADO protocol is attempting to address, and it does so through the use of IPFS.
+The other problem he states that needs to be fixed is the ability to perform trustless trades with others on the same network. It is this problem that the Sado protocol is attempting to address, and it does so through the use of IPFS.
 
 The IPFS is a mesh network of addressable content that is by default transient and extremely useful in cases such as shared orderbooks for trading.

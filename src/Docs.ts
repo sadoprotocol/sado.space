@@ -3,10 +3,10 @@ import { config } from "~Modules/Docs/Config";
 
 config.logo = [SadoLogo, { size: 36 }];
 
-config.hero.title = "SADO";
+config.hero.title = "Sado";
 config.hero.marqee = ["Self-Authenticating", "Decentralized", "Orderbooks"];
-config.hero.description = "Navigate the world of Ordinals with SADO space.";
-config.hero.code.text = `export const sado = new SADO({
+config.hero.description = "Navigate the world of Ordinals with the Sado Protocol.";
+config.hero.code.text = `export const sado = new Sado({
   network: {
     set(value: Network) {
       localStorage.setItem("network", value);
