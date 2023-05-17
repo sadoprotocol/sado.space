@@ -6,6 +6,10 @@ config.logo = [SadoLogo, { size: 36 }];
 config.hero.title = "Sado";
 config.hero.marqee = ["Self-Authenticating", "Decentralized", "Orderbooks"];
 config.hero.description = "Navigate the world of Ordinals with the Sado Protocol.";
+config.hero.code.tabs = [
+  { name: "sado.ts", isActive: true },
+  { name: "package.json", isActive: false }
+];
 config.hero.code.text = `export const sado = new Sado({
   network: {
     set(value: Network) {

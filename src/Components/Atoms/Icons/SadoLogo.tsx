@@ -2,8 +2,6 @@ export function SadoLogo({ size = 50 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
       <g clip-path="url(#clip0_3533_4704)">
-        <rect width={size} height={size} fill="#E1E1E9" />
-        <rect width={size} height={size} fill="#111111" />
         <path
           d="M315.628 258.819C315.628 291.307 263.911 317.648 200.117 317.648V258.819C242.87 258.819 280.165 246.978 300.142 229.404C309.974 238.053 315.628 248.101 315.628 258.819Z"
           fill="white"
@@ -21,11 +19,6 @@ export function SadoLogo({ size = 50 }: { size?: number }) {
           fill="white"
         />
       </g>
-      <defs>
-        <clipPath id="clip0_3533_4704">
-          <rect width="400" height="400" fill="white" />
-        </clipPath>
-      </defs>
     </svg>
   );
 }
