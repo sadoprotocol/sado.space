@@ -7,12 +7,12 @@ export const config: {
   hero: HeroConfig;
   navigation: Navigation[];
 } = {
-  name: "SADO",
+  name: "Sado",
   landing: "/",
   hero: {
-    title: "SADO",
-    marqee: ["Self-Authenticating", "Decentralized", "Orderbooks"],
-    description: "Navigate the world of Ordinals with SADO space.",
+    title: "Sado",
+    marqee: ["Self-Authenticating", "Decentralized", "Ordinalbooks"],
+    description: "Navigate the world of Ordinals with Sado space.",
     code: {
       language: "typescript",
       text: "const hello = 'world';",

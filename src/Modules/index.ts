@@ -8,7 +8,7 @@ import { ContentView } from "~Modules/Docs/Views/Content.View";
 import { DocsView } from "~Modules/Docs/Views/Docs.View";
 import { router } from "~Services/Router";
 
-const APP_TITLE = "SADO";
+const APP_TITLE = "Sado";
 
 router.register([
   new Route({
