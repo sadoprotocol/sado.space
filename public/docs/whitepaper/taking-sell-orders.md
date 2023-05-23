@@ -10,21 +10,21 @@ Offer is represented in a JSON object that is submitted to IPFS which generates 
 
 In order to BUY an ordinal, the taker must:
 
- 1. Construct a partially signed bitcoin transaction (PSBT) as specified by order
- 2. Sign the PSBT and construct an offer object 
- 3. Add the offer object to IPFS in order to obtain an offer CID 
- 4. Relay the offer CID to the order maker
+1.  Construct a partially signed bitcoin transaction (PSBT) as specified by order
+2.  Sign the PSBT and construct an offer object
+3.  Add the offer object to IPFS in order to obtain an offer CID
+4.  Relay the offer CID to the order maker
 
 ### Data
 
 The offer should be constructed as follows:
 
-Key    | Type   | Description
--------|--------|--------------
-ts     | number | Timestamp to act as a nonce
-origin | string | CID of the original order
-offer  | string | Signed PSBT (*Partially Signed Bitcoin Transaction*)
-taker  | string | Address of the taker correlating to the key used in signature
+| Key    | Type   | Description                                                   |
+| ------ | ------ | ------------------------------------------------------------- |
+| ts     | number | Timestamp to act as a nonce                                   |
+| origin | string | CID of the original order                                     |
+| offer  | string | Signed PSBT (_Partially Signed Bitcoin Transaction_)          |
+| taker  | string | Address of the taker correlating to the key used in signature |
 
 ### Example
 
@@ -47,8 +47,12 @@ The OP_RETURN must follow the following format:
 sado=offer:<CID_FROM_IPFS_ORDER>
 ```
 
+{% callout type="warning" title="Note!" %}
+UTXO which the offer is made for must be placed in the first input on the offer PSBT.
+{% /callout %}
+
 ## Accepting
 
 In order to accept the BUY offer, the maker must:
 
-* Decrypt, authenticate, sign and relay PSBT
+- Decrypt, authenticate, sign and relay PSBT
