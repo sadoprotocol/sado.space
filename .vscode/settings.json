@@ -50,5 +50,11 @@
     "**/Thumbs.db": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": ["Sado"]
+  "cSpell.words": [
+    "ipfs",
+    "ordinalbooks",
+    "ordit",
+    "roadmap",
+    "Sado"
+  ]
 }

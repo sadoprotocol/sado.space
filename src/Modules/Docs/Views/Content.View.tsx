@@ -8,7 +8,7 @@ import { ContentController } from "./Content.Controller";
 export const ContentView = ContentController.view(({ state }) => {
   return (
     <Show when={state.content !== undefined}>
-      <div class="min-w-0 max-w-2xl flex-auto px-4 py-16 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
+      <div class="min-w-0 max-w-2xl flex-auto px-4 py-8 lg:max-w-none lg:pl-8 lg:pr-0 xl:px-16">
         <article>
           {(state.title || state.section) && (
             <header class="mb-9 space-y-1">
@@ -49,7 +49,7 @@ export const ContentView = ContentController.view(({ state }) => {
           )}
         </dl>
       </div>
-      <div class="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-16 xl:pr-6">
+      <div class="hidden xl:sticky xl:top-[4.5rem] xl:-mr-6 xl:block xl:h-[calc(100vh-4.5rem)] xl:flex-none xl:overflow-y-auto xl:py-8 xl:pr-6">
         <nav aria-labelledby="on-this-page-title" class="w-56">
           {state.tableOfContents.length > 0 && (
             <>
