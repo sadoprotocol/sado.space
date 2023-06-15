@@ -16,7 +16,7 @@ export class NavigationController extends Controller<
 > {
   async onInit() {
     this.setState("path", router.location.pathname);
-    this.setSubscriptions({
+    this.setSubscription({
       path: router.subscribe(() => {
         this.setState("path", router.location.pathname);
       })

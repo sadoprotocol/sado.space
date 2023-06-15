@@ -17,7 +17,7 @@ export class ContentController extends Controller<{
 }> {
   async onInit() {
     await this.#loadContent();
-    this.setSubscriptions({
+    this.setSubscription({
       hash: router.subscribeToLocation((location) => markdoc.scrollTo(location.hash))
     });
   }

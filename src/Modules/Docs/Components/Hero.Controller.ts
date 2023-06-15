@@ -13,7 +13,7 @@ export class HeroController extends Controller<{
       show: router.location.pathname === "/",
       description: config.hero.description
     });
-    this.setSubscriptions({
+    this.setSubscription({
       show: router.subscribe(() => {
         this.setState("show", router.location.pathname === "/");
       })

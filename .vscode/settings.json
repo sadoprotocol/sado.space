@@ -1,20 +1,16 @@
 {
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": false,
-  "editor.codeActionsOnSave": {
-    "source.fixAll": true
-  },
+  "prettier.prettierPath": "./node_modules/prettier",
+  "prettier.configPath": "./.prettierrc",
   "eslint.workingDirectories": [
     {
       "mode": "auto"
     }
   ],
-  "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
   },
-  "editor.tabSize": 2,
-  "editor.insertSpaces": true,
-  "editor.detectIndentation": false,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.formatOnSave": true,
   "material-icon-theme.files.associations": {
     "index.ts": "tree",
     "main.ts": "tree",
@@ -50,11 +46,8 @@
     "**/Thumbs.db": true
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "cSpell.words": [
-    "ipfs",
-    "ordinalbooks",
-    "ordit",
-    "roadmap",
-    "Sado"
-  ]
+  "cSpell.words": ["ipfs", "ordinalbooks", "ordit", "roadmap", "Sado"],
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }
