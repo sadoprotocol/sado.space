@@ -12,6 +12,22 @@ config.navigation = [
     links: [{ title: "Features", href: "/", file: "/docs/introduction/features.md" }]
   },
   {
+    title: "JS SDK",
+    links: [
+      { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
+      { title: "Orderbook", href: "/docs/sdk-orderbook", file: "/docs/sdk/orderbook.md" },
+      { title: "Order", href: "/docs/sdk-order", file: "/docs/sdk/order.md" }
+    ]
+  },
+  {
+    title: "Ecosystem",
+    links: [
+      { title: "API", href: "/docs/eco-api", file: "/docs/ecosystem/api.md" },
+      { title: "IPFS", href: "/docs/eco-ipfs", file: "/docs/ecosystem/ipfs.md" },
+      { title: "Ordit", href: "/docs/eco-ordit", file: "/docs/ecosystem/ordit.md" }
+    ]
+  },
+  {
     title: "Whitepaper",
     links: [
       { title: "Abstract", href: "/docs/abstract", file: "/docs/whitepaper/abstract.md" },
@@ -25,21 +41,6 @@ config.navigation = [
       { title: "Bidding", href: "/docs/bidding", file: "/docs/whitepaper/bidding.md" },
       { title: "Discovery", href: "/docs/discovery", file: "/docs/whitepaper/discovery.md" },
       { title: "Roadmap", href: "/docs/roadmap", file: "/docs/whitepaper/roadmap.md" }
-    ]
-  },
-  {
-    title: "Ecosystem",
-    links: [
-      { title: "API", href: "/docs/eco-api", file: "/docs/ecosystem/api.md" },
-      { title: "IPFS", href: "/docs/eco-ipfs", file: "/docs/ecosystem/ipfs.md" },
-      { title: "Ordit", href: "/docs/eco-ordit", file: "/docs/ecosystem/ordit.md" }
-    ]
-  },
-  {
-    title: "JS SDK",
-    links: [
-      { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
-      { title: "Orderbooks", href: "/docs/sdk-orderbooks", file: "/docs/sdk/orderbooks.md" }
     ]
   }
 ];

@@ -53,13 +53,9 @@ type AnalyticsItem = {
   value: PriceList;
   total: PriceList;
 };
-
-type PriceList = {
-  sat: number;
-  btc: number;
-  usd: number;
-};
 ```
+
+- See [Price List](#price-list) for more details on PriceList type.
 
 ---
 
@@ -85,7 +81,71 @@ type Listing = {
   orders: Order[];
   offers: Offer[];
 };
+```
 
+- See [Analytics](#analytics) for more details on Analytics type.
+- See [Order](#order) for more details on Order type.
+- See [Offer](#offer) for more details on Offer type.
+
+---
+
+## Orders
+
+Retrieve a list of orders for a given address. A filter object can also be provided to narrow down the search results returned by the API.
+
+```ts
+const orders = await sado.orderbook.orders("address", filter);
+```
+
+```ts
+type Filter = {
+  status?: "pending" | "rejected" | "completed";
+  "order.type"?: "sell" | "buy";
+};
+```
+
+Response:
+
+```ts
+type Orders = Order[];
+```
+
+- See [Order](#order) type for more details on order type.
+
+---
+
+## Offers
+
+Retrieve a list of offers for a given address. A filter object can also be provided to narrow down the search results returned by the API.
+
+```ts
+const offers = await sado.orderbook.offers("address", filter);
+```
+
+```ts
+type Filter = {
+  status?: "pending" | "rejected" | "completed";
+  "order.type"?: "sell" | "buy";
+};
+```
+
+Response:
+
+```ts
+type Offers = Offer[];
+```
+
+- See [Offer](#offer) type for more details on offer type.
+
+---
+
+## Types
+
+The following is a list of common types returned by orderbook service methods.
+
+### Order
+
+```ts
 type Order = {
   cid: string;
   ts: number;
@@ -120,7 +180,11 @@ type Order = {
   signature_format?: string;
   desc?: string;
 };
+```
 
+### Offer
+
+```ts
 type Offer = {
   cid: string; // ipfs cid of the offer
   ts: number;
@@ -137,14 +201,14 @@ type Offer = {
   fee: PriceList;
   proof?: string; // txid proof of completion
 };
+```
 
+### Price List
+
+```ts
 type PriceList = {
   sat: number;
   btc: number;
   usd: number;
 };
 ```
-
-{% callout title="Analytics" %}
-See [analytics](#orderbook-analytics) section for more details on orderbook analytics type.
-{% /callout %}

@@ -13,6 +13,35 @@ export const tags: Config["tags"] = {
     },
     render: "Callout"
   },
+  preview: {
+    render: "Preview",
+    attributes: {
+      tabs: { type: Array }
+    }
+  },
+  "preview-section": {
+    render: "PreviewSection"
+  },
+  "preview-parameters": {
+    render: "PreviewParameters"
+  },
+  "preview-parameter": {
+    render: "PreviewParameter",
+    attributes: {
+      name: { type: String },
+      type: { type: String },
+      required: { type: Boolean },
+      description: { type: String }
+    }
+  },
+  "preview-value": {
+    render: "PreviewValue",
+    selfClosing: true,
+    attributes: {
+      name: { type: String },
+      description: { type: String }
+    }
+  },
   "quick-links": {
     render: "QuickLinks"
   },

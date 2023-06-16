@@ -1,19 +1,20 @@
 /* eslint-disable simple-import-sort/imports */
 
 import Prism from "prismjs";
-import { createComponent, createEffect, createSignal } from "solid-js";
+import { For, createEffect, createSignal, children as useChildren } from "solid-js";
 
 import "prismjs/components/prism-javascript";
 import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
+import "prismjs/plugins/line-numbers/prism-line-numbers";
 
-export function Fence({ children, language }) {
-  return children.map((code) => {
-    return () =>
-      createComponent(CodeHighlighter, {
-        language,
-        code
-      });
-  });
+export function Fence({ language, preview = false, children }) {
+  return (
+    <For each={useChildren(() => children).toArray()}>
+      {(code: string) => <CodeHighlighter language={language} preview={preview} code={code} />}
+    </For>
+  );
 }
 
 export function CodeHighlighter(props: CodeHighlighterProps) {
@@ -26,7 +27,7 @@ export function CodeHighlighter(props: CodeHighlighterProps) {
   });
 
   return (
-    <pre class={`prism-code language-${props.language}`}>
+    <pre class={`prism-code line-numbers language-${props.language}${props.preview === true ? " preview" : ""}`}>
       <code ref={setCodeRef} class={`language-${props.language}`}>
         {props.code.trim()}
       </code>
@@ -35,6 +36,7 @@ export function CodeHighlighter(props: CodeHighlighterProps) {
 }
 
 type CodeHighlighterProps = {
-  code: string;
   language: string;
+  code: string;
+  preview: boolean;
 };

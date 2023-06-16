@@ -6,9 +6,8 @@ import { JSXElement } from "solid-js";
 import { router } from "~Services/Router";
 
 import { config, Navigation, NavigationLink } from "../Config";
-import { components } from "./Components";
 import { nodes } from "./Nodes";
-import render from "./Render";
+import { render } from "./Render";
 import { tags } from "./Tags";
 
 export const markdoc = {
@@ -31,7 +30,9 @@ export const markdoc = {
  * @returns The parsed document.
  */
 function getParsedDocument(doc: string): MarkdownDocument {
-  const ast = Markdoc.parse(doc);
+  const tokenizer = new Markdoc.Tokenizer({ allowIndentation: true });
+  const tokens = tokenizer.tokenize(doc);
+  const ast = Markdoc.parse(tokens);
   const content = Markdoc.transform(ast, { tags, nodes });
   const frontmatter = getFrontmatter(ast);
   const [previousPage, nextPage] = getPageLinks();
@@ -43,7 +44,7 @@ function getParsedDocument(doc: string): MarkdownDocument {
     nextPage,
     section: config.navigation.find((section) => section.links.find((link) => link.href === router.location.pathname)),
     tableOfContents: collectHeadings((content as Tag).children),
-    content: render(content, { components })
+    content: () => render(content)
   };
 }
 

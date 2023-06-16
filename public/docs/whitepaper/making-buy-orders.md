@@ -12,28 +12,29 @@ Buy orders is represented in a JSON object that is submitted to IPFS which gener
 
 Required JSON In order to make a sell order:
 
-Key       | Type   | Description
-----------|--------|--------------
-type      | "buy"  | 
-ts        | number | Timestamp to act as a nonce
-location  | string | Location of the ordinal seeking to buy (*txid:vout*) format
-cardinals | number | Lowest denomination offered to purchase the ordinal
-maker     | string | Address of the maker correlating to the key used in signature
+| Key       | Type   | Description                                                   |
+| --------- | ------ | ------------------------------------------------------------- |
+| type      | "buy"  |
+| ts        | number | Timestamp to act as a nonce                                   |
+| location  | string | Location of the ordinal seeking to buy (_txid:vout_) format   |
+| cardinals | number | Lowest denomination offered to purchase the ordinal           |
+| maker     | string | Address of the maker correlating to the key used in signature |
 
 Optional JSON parameters for making sell orders:
 
-Key       | Type   | Description
-----------|--------|--------------
-expiry    | number | Block height at which the offer should no longer be valid
-satoshi   | number | Can be used to replace cardinals to indicate specific ordinal location required
-meta      | string | JSON string containing additional meta pertaining to buyer
+| Key        | Type     | Description                                                                     |
+| ---------- | -------- | ------------------------------------------------------------------------------- |
+| expiry     | number   | Block height at which the offer should no longer be valid                       |
+| satoshi    | number   | Can be used to replace cardinals to indicate specific ordinal location required |
+| meta       | string   | JSON string containing additional meta pertaining to buyer                      |
+| orderbooks | string[] | Orderbooks to list the order with                                               |
 
 Messages must then be signed and signature added to JSON as follows:
 
-Key       | Type   | Description
-----------|--------|--------------
-signature | string | Signature of signing the JSON string with the buyers private key
-desc      | string | Additional field required for BECH32 signature standard
+| Key       | Type   | Description                                                      |
+| --------- | ------ | ---------------------------------------------------------------- |
+| signature | string | Signature of signing the JSON string with the buyers private key |
+| desc      | string | Additional field required for BECH32 signature standard          |
 
 ### Example
 

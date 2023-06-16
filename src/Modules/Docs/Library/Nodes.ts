@@ -6,6 +6,9 @@ export const nodes: Config["nodes"] = {
     attributes: {
       language: {
         type: String
+      },
+      preview: {
+        type: Boolean
       }
     }
   },
