@@ -2,7 +2,8 @@ import { Link } from "~Atoms/Link/Link.Component";
 
 import { Callout } from "./Callout";
 import { Fence } from "./Fence";
-import { Preview, PreviewParameter, PreviewParameters, PreviewSection, PreviewValue } from "./Preview";
+import { Preview, PreviewSection } from "./Preview";
+import { PreviewModel, PreviewObject, PreviewObjectItem, PreviewObjectValue } from "./PreviewObject";
 import { QuickLink, QuickLinks } from "./QuickLinks";
 
 export const components = {
@@ -10,9 +11,10 @@ export const components = {
   Fence,
   Preview,
   PreviewSection,
-  PreviewParameters,
-  PreviewParameter,
-  PreviewValue,
+  PreviewModel,
+  PreviewObject,
+  PreviewObjectItem,
+  PreviewObjectValue,
   Link,
   QuickLinks,
   QuickLink

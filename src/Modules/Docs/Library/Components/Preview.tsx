@@ -1,4 +1,4 @@
-import { children, For, Match, Show, Switch } from "solid-js";
+import { children, For, Show } from "solid-js";
 
 import { PreviewController } from "./Preview.Controller";
 
@@ -42,48 +42,4 @@ export const Preview = PreviewController.view(({ props, state, actions: { setTab
 
 export function PreviewSection(props: any) {
   return <section>{props.children}</section>;
-}
-
-export function PreviewParameters(props: any) {
-  return (
-    <div class="mt-2 px-6 pb-8">
-      <div class="font-semibold text-white">Parameters</div>
-      {props.children}
-    </div>
-  );
-}
-
-export function PreviewParameter(props: any) {
-  return (
-    <div class="mt-4 border-t border-gray-600 pt-4 text-sm">
-      <div>
-        <span class="mr-1 inline-block font-semibold text-white">{props.name}</span>
-        <Switch>
-          <Match when={props.required === true}>
-            <span class="mr-1 inline-block text-xs uppercase text-red-400/[.9]">required</span>
-          </Match>
-          <Match when={props.required === false}>
-            <span class="mr-1 inline-block text-gray-300/[0.7]">optional</span>
-          </Match>
-        </Switch>
-        <span>{props.type}</span>
-      </div>
-      <p class="m-0">{props.description}</p>
-      <Show when={props.children().length > 0}>
-        <div class="my-2 rounded-md border border-gray-600">
-          <div class="text-md border-b border-gray-600 px-2 py-1">Possible values</div>
-          {props.children}
-        </div>
-      </Show>
-    </div>
-  );
-}
-
-export function PreviewValue(props: any) {
-  return (
-    <div class="border-b border-gray-600 p-2 text-xs">
-      <div class="mb-1 font-semibold text-white">{props.name}</div>
-      <div>{props.description}</div>
-    </div>
-  );
 }

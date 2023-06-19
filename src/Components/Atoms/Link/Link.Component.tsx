@@ -54,9 +54,8 @@ export function Link({
  */
 function handleClick(href: string, onClicked?: () => void) {
   return (event: MouseEvent): void => {
-    event.stopPropagation();
-    event.preventDefault();
     if (isRelative(href) === true) {
+      event.stopPropagation();
       event.preventDefault();
       router.goto(href);
       onClicked?.();

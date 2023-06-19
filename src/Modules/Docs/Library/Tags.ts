@@ -22,20 +22,27 @@ export const tags: Config["tags"] = {
   "preview-section": {
     render: "PreviewSection"
   },
-  "preview-parameters": {
-    render: "PreviewParameters"
+  "preview-model": {
+    render: "PreviewModel"
   },
-  "preview-parameter": {
-    render: "PreviewParameter",
+  "preview-object": {
+    render: "PreviewObject",
+    attributes: {
+      title: { type: String, required: true }
+    }
+  },
+  "preview-object-item": {
+    render: "PreviewObjectItem",
     attributes: {
       name: { type: String },
       type: { type: String },
+      "type-link": { type: String },
       required: { type: Boolean },
       description: { type: String }
     }
   },
-  "preview-value": {
-    render: "PreviewValue",
+  "preview-object-value": {
+    render: "PreviewObjectValue",
     selfClosing: true,
     attributes: {
       name: { type: String },

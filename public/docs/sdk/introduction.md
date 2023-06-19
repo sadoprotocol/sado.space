@@ -22,25 +22,43 @@ To get started with the JavaScript SDK you can install with [NPM](https://www.np
 $ npm i --save @sadoprotocol/sdk
 ```
 
+If you want to use the SDK in a terminal environment you can also install our command line interface package.
+
+```sh
+$ npm i -g @sadoprotocol/cli
+```
+
 ---
 
 ## Quick Start
 
 Once installed you can create a new Sado SDK client instance.
 
-```ts
-import { SadoClient } from "@sadoprotocol/sdk";
+{% preview tabs=["JavaScript"] %}
 
-const sado = new SadoClient("https://api.sado.space", options);
-```
+  {% preview-section %}
 
-### Options
+    ```ts {% preview=true %}
+    import { SadoClient } from "@sadoprotocol/sdk";
 
-- **network** _(Optional)_ Override the default network provider enabling platform specific handling of accessing and persisting network settings when executing commands via the sado client sdk. This aims to hoise the network handling so that it doesn't have to be defined with every request.
-  - [Github Example](https://github.com/sadoprotocol/sado-js/blob/main/packages/sado-sdk/src/Network/Providers/MemoryProvider.ts)
-  - Default: **NetworkMemoryProvider**
-- **Services** _(Optional)_ Override the default services allowing for custom implementations of the services that the sado client sdk uses to execute commands. Useful for testing and mocking.
-  - [Github Reference](https://github.com/sadoprotocol/sado-js/blob/main/packages/sado-sdk/src/SadoClient.ts#L65-L69)
+    const sado = new SadoClient("https://api.sado.space", {
+      network: new NetworkMemoryProvider()
+    });
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="url" type="string" required=true description="URL pointing to a sado protocol compliant JSON-RPC 2.0 API." /%}
+      {% preview-object-item name="options.network" type="NetworkProvider" type-link="https://github.com/sadoprotocol/sado-js/blob/main/packages/sado-sdk/src/Network/Providers/MemoryProvider.ts" required=false description="Provide a custom network provider, by default a in memory provider is used and will be reset between session. To persist the provider a platform specific provider has to be registered with the client instance." /%}
+      {% preview-object-item name="options.services" type="object" type-link="https://github.com/sadoprotocol/sado-js/blob/main/packages/sado-sdk/src/SadoClient.ts#L65-L69" required=false description="Override the default services allowing for custom implementations of the services that the sado client sdk uses to execute commands. Useful for testing and mocking." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="client" type="SadoClient" type-link="https://github.com/sadoprotocol/sado-js/blob/main/packages/sado-sdk/src/SadoClient.ts" description="Sado protocol SDK instance." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+{% /preview %}
 
 ---
 
