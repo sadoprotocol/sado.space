@@ -10,16 +10,22 @@ If you are running in a `node` or `browser` environment you can use our JavaScri
 
 ---
 
-## Create
+## Methods
 
-Create a new order instance which can be validated, signed and submitted.
+List of methods currently available on the order service.
+
+---
+
+### .init
+
+Initialize a new order instance which can be validated, signed and submitted.
 
 {% preview tabs=["JavaScript", "CLI"] %}
 
   {% preview-section %}
 
     ```ts {% preview=true %}
-    const order = await sado.order.create({
+    const order = await sado.order.init({
       type: "sell",
       ts: Date.now(),
       location: "txid:vout",
@@ -55,7 +61,7 @@ Create a new order instance which can be validated, signed and submitted.
   {% preview-section %}
 
     ```bash {% preview=true %}
-    sado order create [order]
+    sado order init [order]
     ```
 
     {% preview-object title="Parameters" %}
@@ -68,9 +74,9 @@ Create a new order instance which can be validated, signed and submitted.
 
 ---
 
-## Load
+### .load
 
-Load a new order instance from a payload and signature. This is useful for generating an order instance from a payload and signature that has been constructed outside of the SDK.
+Load a pre-signed order instance. This is useful for generating an order instance from a payload and signature that has been constructed outside of the SDK.
 
 {% preview tabs=["JavaScript"] %}
 
@@ -118,16 +124,16 @@ Load a new order instance from a payload and signature. This is useful for gener
 
 ---
 
-## Get
+### .get
 
-Retrieve an order by its CID _(Content Identifier)_.
+Get order data as stored on IPFS.
 
 {% preview tabs=["JavaScript", "CLI", "API"] %}
 
   {% preview-section %}
 
     ```ts {% preview=true %}
-    const order = await sado.order.get("ipfs-content-identifier");
+    const order = await sado.order.get("cid");
     ```
 
     {% preview-object title="Parameters" %}
@@ -172,7 +178,7 @@ Retrieve an order by its CID _(Content Identifier)_.
 
 ---
 
-## PSBT Signing
+### .psbt
 
 Generate a signable PSBT for given maker and location. This can be used to create a signature for wallets that does not support message signing.
 
@@ -232,16 +238,18 @@ Generate a signable PSBT for given maker and location. This can be used to creat
 
 {% /preview %}
 
-## Submit
+---
 
-Submit a order to the API to generate a CID _(Content Identifier)_ and Order.
+### .create
+
+Once a order is verified and fully signed you can submit it via the create method. This will verify the order details and create a new IPFS order record and a PSBT can be finalized and relayed to the blockchain to register with decentralized orderbooks.
 
 {% preview tabs=["JavaScript", "API"] %}
 
   {% preview-section %}
 
     ```ts {% preview=true %}
-    const cid = await sado.order.submit(order, 1000, 15);
+    const cid = await sado.order.create(order, 1000, 15);
     ```
 
     {% preview-object title="Parameters" %}

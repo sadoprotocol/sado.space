@@ -39,9 +39,9 @@ Once installed you can create a new Sado SDK client instance.
   {% preview-section %}
 
     ```ts {% preview=true %}
-    import { SadoClient } from "@sadoprotocol/sdk";
+    import { Sado } from "@sadoprotocol/sdk";
 
-    const sado = new SadoClient("https://api.sado.space", {
+    const sado = new Sado("https://api.sado.space", {
       network: new NetworkMemoryProvider()
     });
     ```

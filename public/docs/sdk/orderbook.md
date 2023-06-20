@@ -12,7 +12,11 @@ If you are running in a `node` or `browser` environment you can use our JavaScri
 
 ## Methods
 
-### Analytics
+List of methods currently available on the orderbook service.
+
+---
+
+### .analytics
 
 Analytics provide provides analytics details for a given orderbook.
 
@@ -26,6 +30,10 @@ Analytics provide provides analytics details for a given orderbook.
 
     {% preview-object title="Parameters" %}
       {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook analytics for." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -46,7 +54,7 @@ Analytics provide provides analytics details for a given orderbook.
 
 ---
 
-### Get
+### .get
 
 You can retrieve the entierty of a orderbook by using the `.get` method which provides a means of retrieving the current sado compliant collections, orders and offers residing under a bitcoin address as well as an analytics overview.
 
@@ -72,7 +80,7 @@ You can retrieve the entierty of a orderbook by using the `.get` method which pr
 
 ---
 
-### Orders
+### .orders
 
 Retrieve a list of orders for a given address. A filter object can also be provided to narrow down the search results returned by the API.
 
@@ -114,7 +122,7 @@ Retrieve a list of orders for a given address. A filter object can also be provi
 
 ---
 
-### Offers
+### .offers
 
 Retrieve a list of offers for a given address. A filter object can also be provided to narrow down the search results returned by the API.
 
@@ -181,40 +189,51 @@ Orderbook model is a collection of analytics, pending, rejected and completed li
 
 ### Analytics
 
-```ts
-type Analytics = {
-  orders: {
-    count: number;
-    collections: {
-      [name: string]: {
-        floor: PriceList;
-        total: PriceList;
-      };
-    };
-    pending: AnalyticsItem;
-    completed: AnalyticsItem;
-    value: PriceList;
-    total: PriceList;
-  };
-  offers: {
-    count: number;
-    pending: AnalyticsItem;
-    completed: AnalyticsItem;
-    value: PriceList;
-    total: PriceList;
-  };
-  total: {
-    value: PriceList;
-    price: PriceList;
-  };
-};
+Analytics model consists of extracted metric values from collection, order and offer data.
 
-type AnalyticsItem = {
-  count: number;
-  value: PriceList;
-  total: PriceList;
-};
-```
+{% preview-model %}
+  {% preview-object-item name="orders" type="object" description="Analytics data for orders." /%}
+  {% preview-object-item name="orders.count" type="number" description="Total count of orders." /%}
+
+  {% preview-object-item name="orders.collections" type="object" description="Analytics data for orders grouped by collection." /%}
+  {% preview-object-item name="orders.collections.[name]" type="string" description="Name of the collection" /%}
+  {% preview-object-item name="orders.collections.[name].floor" type="PriceList" type-link="#pricelist" description="Floor price of all ordinals being sold in the collection." /%}
+  {% preview-object-item name="orders.collections.[name].total" type="PriceList" type-link="#pricelist" description="Combined value of all ordinals being sold in the collection." /%}
+
+  {% preview-object-item name="orders.pending" type="object" description="Analytics data for pending orders." /%}
+  {% preview-object-item name="orders.pending.count" type="number" description="Total number of pending orders." /%}
+  {% preview-object-item name="orders.pending.value" type="PriceList" type-link="#price-list" description="Total value of listing fees for all pending orders." /%}
+  {% preview-object-item name="orders.pending.total" type="PriceList" type-link="#price-list" description="Total asking price of all pending orders." /%}
+
+  {% preview-object-item name="orders.completed" type="object" description="Analytics data for completed orders." /%}
+  {% preview-object-item name="orders.completed.count" type="number" description="Total number of completed orders." /%}
+  {% preview-object-item name="orders.completed.value" type="PriceList" type-link="#price-list" description="Total value of listing fees for all completed orders." /%}
+  {% preview-object-item name="orders.completed.total" type="PriceList" type-link="#price-list" description="Total asking price of all completed orders." /%}
+
+
+  {% preview-object-item name="orders.value" type="PriceList" type-link="#pricelist" description="Total value of listing fees for all orders." /%}
+  {% preview-object-item name="orders.total" type="PriceList" type-link="#pricelist" description="Total asking price of all orders." /%}
+
+  {% preview-object-item name="offers" type="object" description="Analytics data for offers." /%}
+  {% preview-object-item name="offers.count" type="number" description="Total count of offers." /%}
+
+  {% preview-object-item name="offers.pending" type="AnalyticsItem" type-link="#analyticsitem" description="Analytics data for pending offers." /%}
+  {% preview-object-item name="offers.pending.count" type="number" description="Total number of pending offers." /%}
+  {% preview-object-item name="offers.pending.value" type="PriceList" type-link="#price-list" description="Total value of listing fees for all pending offers." /%}
+  {% preview-object-item name="orders.pending.total" type="PriceList" type-link="#price-list" description="Total asking price of all pending orders." /%}
+
+  {% preview-object-item name="offers.completed" type="AnalyticsItem" type-link="#analyticsitem" description="Analytics data for completed offers." /%}
+  {% preview-object-item name="offers.completed.count" type="number" description="Total number of completed offers." /%}
+  {% preview-object-item name="offers.completed.value" type="PriceList" type-link="#price-list" description="Total value of listing fees for all completed offers." /%}
+  {% preview-object-item name="offers.completed.total" type="PriceList" type-link="#price-list" description="Total asking price of all completed offers." /%}
+
+  {% preview-object-item name="offers.value" type="PriceList" type-link="#pricelist" description="Total value of listing fees for all offers." /%}
+  {% preview-object-item name="offers.total" type="PriceList" type-link="#pricelist" description="Total offer price of all offers." /%}
+
+  {% preview-object-item name="total" type="object" description="Analytics data for the total value and price of orders and offers." /%}
+  {% preview-object-item name="total.value" type="PriceList" type-link="#pricelist" description="Total value of listing fees for all orders and offers." /%}
+  {% preview-object-item name="total.price" type="PriceList" type-link="#pricelist" description="Total potential transaction value of all orders and offers." /%}
+{% /preview-model %}
 
 ---
 
