@@ -156,8 +156,9 @@ Get order data as stored on IPFS.
 
   {% preview-section %}
 
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
+
     ```json {% preview=true %}
-    POST https://api.sado.space/rpc
     {
       "jsonrpc": "2.0",
       "method": "order.getOrder",
@@ -203,8 +204,9 @@ Generate a signable PSBT for given maker and location. This can be used to creat
 
   {% preview-section %}
 
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
+
     ```json {% preview=true %}
-    POST https://api.sado.space/rpc
     {
       "jsonrpc": "2.0",
       "method": "order.getPsbtSignature",
@@ -262,8 +264,9 @@ Once a order is verified and fully signed you can submit it via the create metho
 
   {% preview-section %}
 
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
+
     ```json {% preview=true %}
-    POST https://api.sado.space/rpc
     {
       "jsonrpc": "2.0",
       "method": "order.createOrder",

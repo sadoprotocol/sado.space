@@ -58,8 +58,9 @@ Analytics provide provides analytics details for a given orderbook.
 
   {% preview-section %}
 
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
+
     ```json {% preview=true %}
-    POST https://api.sado.space/rpc
     {
       "jsonrpc": "2.0",
       "method": "orderbook.getAnalytics",
@@ -131,6 +132,8 @@ You can retrieve the entierty of a orderbook by using the `.get` method which pr
   {% /preview-section %}
 
   {% preview-section %}
+
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -230,6 +233,8 @@ Retrieve a list of orders for a given address. A filter object can also be provi
   {% /preview-section %}
 
   {% preview-section %}
+
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -338,6 +343,8 @@ Retrieve a list of offers for a given address. A filter object can also be provi
   {% /preview-section %}
 
   {% preview-section %}
+
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
 
     ```json {% preview=true %}
     {

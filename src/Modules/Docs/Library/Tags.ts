@@ -13,6 +13,13 @@ export const tags: Config["tags"] = {
     },
     render: "Callout"
   },
+  endpoint: {
+    render: "Endpoint",
+    attributes: {
+      type: { type: String, required: true },
+      url: { type: String, required: true }
+    }
+  },
   preview: {
     render: "Preview",
     attributes: {
