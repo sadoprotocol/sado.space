@@ -38,6 +38,24 @@
   padding-left: 3.4em !important;
 }
 
+.prose :where(code):not(:where([class~="prism-code"] *)) {
+  background: hsl(220, 13%, 20%);
+  color: hsl(220, 75%, 93%);
+  display: inline-block;
+  padding: 0 5px;
+  line-height: 19px;
+  border: 1px solid #363636;
+  border-radius: 4px;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::before {
+  content: "" !important;
+}
+
+.prose :where(code):not(:where([class~="not-prose"] *))::after {
+  content: "" !important;
+}
+
 code[class*="language-"],
 pre[class*="language-"] {
   color: hsl(220, 14%, 71%);

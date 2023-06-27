@@ -6,9 +6,9 @@ import { PreviewObjectController } from "./PreviewObject.Controller";
 
 export const PreviewObject = PreviewObjectController.view(({ props, state, actions }) => {
   return (
-    <div class="divide-y divide-gray-200 border-t border-gray-200 dark:divide-gray-700 dark:border-gray-700">
+    <div class="divide-y divide-slate-200 border-t border-slate-200 dark:divide-slate-700 dark:border-slate-700">
       <button
-        class="flex w-full items-center justify-between px-4 py-2 text-left font-medium text-gray-500 first:rounded-t-lg last:rounded-b-lg dark:text-gray-400"
+        class="flex w-full items-center justify-between px-4 py-2 text-left font-medium text-slate-500 first:rounded-t-lg last:rounded-b-lg dark:text-slate-400"
         onClick={actions.toggle}
       >
         {props.title}
@@ -21,7 +21,7 @@ export const PreviewObject = PreviewObjectController.view(({ props, state, actio
         />
       </button>
       <Show when={state.show}>
-        <div class="bg-gray-800/[0.7] p-5">{props.children}</div>
+        <div class="bg-slate-800/[0.7] p-5">{props.children}</div>
       </Show>
     </div>
   );
@@ -29,7 +29,7 @@ export const PreviewObject = PreviewObjectController.view(({ props, state, actio
 
 export function PreviewModel(props: any) {
   return (
-    <div class="rounded-md bg-gray-800 px-4 py-6">
+    <div class="rounded-md bg-slate-800 px-4 py-6">
       <div>{props.children}</div>
     </div>
   );
@@ -48,7 +48,7 @@ export function PreviewObjectItem(props: any) {
   const typeLink: string | undefined = props["type-link"];
   return (
     <div
-      class="border-gray-600 pt-4 text-sm first:mt-0 first:border-none first:pt-0"
+      class="border-slate-300/10 pt-4 text-sm first:mt-0 first:border-none first:pt-0"
       classList={{
         ["mt-4 border-t"]: depth.length === 0,
         [indents[depth.length]]: true
@@ -61,7 +61,7 @@ export function PreviewObjectItem(props: any) {
             <span class="mr-1 inline-block text-xs uppercase text-red-400/[.9]">required</span>
           </Match>
           <Match when={props.required === false}>
-            <span class="mr-1 inline-block text-gray-300/[0.7]">optional</span>
+            <span class="mr-1 inline-block text-slate-300/[0.7]">optional</span>
           </Match>
         </Switch>
         <Switch>
@@ -77,8 +77,8 @@ export function PreviewObjectItem(props: any) {
       </div>
       <p class="m-0">{props.description}</p>
       <Show when={props.children().length > 0}>
-        <div class="my-2 rounded-md border border-gray-600">
-          <div class="text-md border-b border-gray-600 px-2 py-1">Possible values</div>
+        <div class="my-2 rounded-md border border-slate-300/10">
+          <div class="text-md border-b border-slate-300/10 px-2 py-1">Possible values</div>
           {props.children}
         </div>
       </Show>
@@ -88,7 +88,7 @@ export function PreviewObjectItem(props: any) {
 
 export function PreviewObjectValue(props: any) {
   return (
-    <div class="border-b border-gray-600 p-2 text-xs">
+    <div class="border-b border-slate-600 p-2 text-xs">
       <div class="mb-1 font-semibold text-white">{props.name}</div>
       <div>{props.description}</div>
     </div>

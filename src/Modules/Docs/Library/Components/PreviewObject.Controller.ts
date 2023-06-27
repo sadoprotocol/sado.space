@@ -10,7 +10,7 @@ export class PreviewObjectController extends Controller<
   }
 > {
   async onInit() {
-    this.setState({ show: false });
+    this.setState({ show: true });
   }
 
   toggle() {
