@@ -21,7 +21,9 @@ config.navigation = [
   },
   {
     title: "IPFS API",
-    links: [{ title: "Introduction", href: "/docs/ipfs-introduction", file: "/docs/ipfs/introduction.md" }]
+    links: [
+      { title: "API Documentation", href: "/docs/ipfs-api-documentation", file: "/docs/ipfs/api-documentation.md" }
+    ]
   },
   {
     title: "Ecosystem",
