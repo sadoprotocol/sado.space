@@ -62,12 +62,10 @@ The following media types are allowed to be stored on the Sado IPFS node:
 ### /upload
 
 API to upload content in base64 format to IPFS network. The content can also be pinned to the dedicated node such that it's accessible long-term. 
-{% preview tabs=["Request body"] %}
+{% preview tabs=["Request"] %}
   {% preview-section %}
-
+    {% endpoint type="POST" url="https://ipfs.sado.space/upload" /%}
     ```json {% preview=true %}
-    // HTTP method: POST
-
     {
       "content": "data:image/jpeg;base64,/9j/4AAQSkZJRgABA….", // Base64 string should always be prefixed with the metadata
       "pin": false
@@ -91,13 +89,11 @@ API to upload content in base64 format to IPFS network. The content can also be 
 ### /upload-file
 
 API to upload content as file to IPFS network. The content can also be pinned to the dedicated node such that it's accessible long-term. 
-{% preview tabs=["Request body"] %}
+{% preview tabs=["Request"] %}
   {% preview-section %}
-
+    {% endpoint type="POST" url="https://ipfs.sado.space/upload-file" /%}
     ```json {% preview=true %}
     // Note: the request should be formatted as multipart/form-data
-    // HTTP method: POST
-
     {
       "content": "<file>",
       "pin": false
@@ -121,12 +117,11 @@ API to upload content as file to IPFS network. The content can also be pinned to
 ### /pin
 
 API to pin already uploaded or any existing IPFS content by CID to the dedicated node. Pinning a content prevents it from being garbage collected and keeps it accessible long-term. Also, the content gateway hosted by the same node would serve the content fairly fast.
-{% preview tabs=["Request body"] %}
+{% preview tabs=["Request"] %}
   {% preview-section %}
+    {% endpoint type="PUT" url="https://ipfs.sado.space/pin" /%}
 
     ```json {% preview=true %}
-    // HTTP method: PUT
-
     {
       "id": "<cid>" // or ["cid-1", "cid-2", "cid-N"]
     }
@@ -150,12 +145,11 @@ API to pin already uploaded or any existing IPFS content by CID to the dedicated
 
 ### /unpin
 API to remove an already pinned CID from the IPFS node. A CID is usually unpinned when the underlying content is no longer needed.
-{% preview tabs=["Request body"] %}
+{% preview tabs=["Request"] %}
   {% preview-section %}
+  {% endpoint type="PUT" url="https://ipfs.sado.space/unpin" /%}
 
     ```json {% preview=true %}
-    // HTTP method: PUT
-
     {
       "id": "<cid>" // or ["cid-1", "cid-2", "cid-N"]
     }
