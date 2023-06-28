@@ -16,45 +16,11 @@ List of methods currently available on the orderbook service.
 
 ---
 
-### .analytics
+### Analytics
 
 Analytics provide provides analytics details for a given orderbook.
 
-{% preview tabs=["JavaScript", "CLI", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const analytics = await sado.orderbook.analytics(
-      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5"
-    );
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook analytics for." /%}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
-
-  {% preview-section %}
-
-    ```bash {% preview=true %}
-    sado orderbook analytics [address]
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook analytics for." /%}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API", "CLI", "SDK"] %}
 
   {% preview-section %}
 
@@ -78,7 +44,41 @@ Analytics provide provides analytics details for a given orderbook.
         {% preview-object-value name="testnet" description="Transactions on testnet are used for testing and development purposes and are not recorded on the blockchain permanently." /%}
         {% preview-object-value name="regtest" description="Transactions on regtest are used for testing and development purposes and are hosted independently of the two other networks. Regtest can be customized to behave more favorably for these purposes and transactions are not recorded on the blockchain permanently." /%}
       {% /preview-object-item %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook analytics for." /%}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transaction analytics from." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```bash {% preview=true %}
+    sado orderbook analytics <address>
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transaction analytics from." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const analytics = await sado.orderbook.analytics(
+      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5"
+    );
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transaction analytics from." /%}
     {% /preview-object %}
 
     {% preview-object title="Response" %}
@@ -91,45 +91,11 @@ Analytics provide provides analytics details for a given orderbook.
 
 ---
 
-### .get
+### Get
 
 You can retrieve the entierty of a orderbook by using the `.get` method which provides a means of retrieving the current sado compliant collections, orders and offers residing under a bitcoin address as well as an analytics overview.
 
-{% preview tabs=["JavaScript", "CLI", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const orderbook = await sado.orderbook.get(
-      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5"
-    );
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook for." /%}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook model." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
-
-  {% preview-section %}
-
-    ```bash {% preview=true %}
-    $ sado orderbook get [address]
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook for." /%}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook model." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API", "CLI", "SDK"] %}
 
   {% preview-section %}
 
@@ -153,11 +119,45 @@ You can retrieve the entierty of a orderbook by using the `.get` method which pr
         {% preview-object-value name="testnet" description="Transactions on testnet are used for testing and development purposes and are not recorded on the blockchain permanently." /%}
         {% preview-object-value name="regtest" description="Transactions on regtest are used for testing and development purposes and are hosted independently of the two other networks. Regtest can be customized to behave more favorably for these purposes and transactions are not recorded on the blockchain permanently." /%}
       {% /preview-object-item %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orderbook for." /%}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transactions from." /%}
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook model." /%}
+      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook is a collection of analytics, offers and orders in various states. See the linked Orderbook model for more details." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```bash {% preview=true %}
+    $ sado orderbook get <address>
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transactions from." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook is a collection of analytics, offers and orders in various states. See the linked Orderbook model for more details." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const orderbook = await sado.orderbook.get(
+      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5"
+    );
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Bitcoin address to retrieve Sado transactions from." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="orderbook" type="Orderbook" type-link="#orderbook" description="Orderbook is a collection of analytics, offers and orders in various states. See the linked Orderbook model for more details." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -166,71 +166,11 @@ You can retrieve the entierty of a orderbook by using the `.get` method which pr
 
 ---
 
-### .orders
+### Orders
 
 Retrieve a list of orders for a given address. A filter object can also be provided to narrow down the search results returned by the API.
 
-{% preview tabs=["JavaScript", "CLI", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const orders = await sado.orderbook.orders(
-      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5", 
-      {
-        status: "pending",
-        order: {
-          type: "sell"
-        }
-      }
-    );
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orders for." /%}
-      {% preview-object-item name="filter" type="object" description="Filter object to narrow down the search results." /%}
-      {% preview-object-item name="filter.status" type="string" required=false description="Filter result based on the status of the order." %}
-        {% preview-object-value name="pending" description="Orders which is still awaiting resolution through rejection or completion." /%}
-        {% preview-object-value name="rejected" description="Oders which was rejected by the sado protocol." /%}
-        {% preview-object-value name="completed" description="Orders which has been successfully completed." /%}
-      {% /preview-object-item %}
-      {% preview-object-item name="filter.order" type="object" required=false description="Filters specific to the order as listed on IPFS." /%}
-      {% preview-object-item name="filter.order.type" type="string" required=false description="Filter by the order type." %}
-        {% preview-object-value name="sell" description="Filter by orders in the sell category." /%}
-        {% preview-object-value name="buy" description="Filter by orders in the buy category." /%}
-      {% /preview-object-item %}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="orders" type="Orders[]" type-link="#orders" description="List of orders." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
-
-  {% preview-section %}
-
-    ```bash {% preview=true %}
-    $ sado orderbook orders [address] --status="pending" --type="sell"
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orders for." /%}
-      {% preview-object-item name="--status" type="string" required=false description="Filter result based on the status of the order." %}
-        {% preview-object-value name="pending" description="Orders which is still awaiting resolution through rejection or completion." /%}
-        {% preview-object-value name="rejected" description="Oders which was rejected by the sado protocol." /%}
-        {% preview-object-value name="completed" description="Orders which has been successfully completed." /%}
-      {% /preview-object-item %}
-      {% preview-object-item name="--type" type="string" required=false description="Filter by the order type." %}
-        {% preview-object-value name="sell" description="Filter by orders in the sell category." /%}
-        {% preview-object-value name="buy" description="Filter by orders in the buy category." /%}
-      {% /preview-object-item %}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="orders" type="Orders[]" type-link="#orders" description="List of orders." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API", "CLI", "SDK"] %}
 
   {% preview-section %}
 
@@ -270,7 +210,67 @@ Retrieve a list of orders for a given address. A filter object can also be provi
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="orders" type="Orders[]" type-link="#orders" description="List of orders." /%}
+      {% preview-object-item name="orders" type="Order[]" type-link="#order" description="List of orders." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```bash {% preview=true %}
+    $ sado orderbook orders <address>
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orders for." /%}
+      {% preview-object-item name="--status" type="string" required=false description="Filter result based on the status of the order." %}
+        {% preview-object-value name="pending" description="Orders which is still awaiting resolution through rejection or completion." /%}
+        {% preview-object-value name="rejected" description="Oders which was rejected by the sado protocol." /%}
+        {% preview-object-value name="completed" description="Orders which has been successfully completed." /%}
+      {% /preview-object-item %}
+      {% preview-object-item name="--type" type="string" required=false description="Filter by the order type." %}
+        {% preview-object-value name="sell" description="Filter by orders in the sell category." /%}
+        {% preview-object-value name="buy" description="Filter by orders in the buy category." /%}
+      {% /preview-object-item %}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="orders" type="Order[]" type-link="#order" description="List of orders." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const orders = await sado.orderbook.orders(
+      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5", 
+      {
+        status: "pending",
+        order: {
+          type: "sell"
+        }
+      }
+    );
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Address to retrieve orders for." /%}
+      {% preview-object-item name="filter" type="object" description="Filter object to narrow down the search results." /%}
+      {% preview-object-item name="filter.status" type="string" required=false description="Filter result based on the status of the order." %}
+        {% preview-object-value name="pending" description="Orders which is still awaiting resolution through rejection or completion." /%}
+        {% preview-object-value name="rejected" description="Oders which was rejected by the sado protocol." /%}
+        {% preview-object-value name="completed" description="Orders which has been successfully completed." /%}
+      {% /preview-object-item %}
+      {% preview-object-item name="filter.order" type="object" required=false description="Filters specific to the order as listed on IPFS." /%}
+      {% preview-object-item name="filter.order.type" type="string" required=false description="Filter by the order type." %}
+        {% preview-object-value name="sell" description="Filter by orders in the sell category." /%}
+        {% preview-object-value name="buy" description="Filter by orders in the buy category." /%}
+      {% /preview-object-item %}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="orders" type="Order[]" type-link="#order" description="List of orders." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -279,68 +279,11 @@ Retrieve a list of orders for a given address. A filter object can also be provi
 
 ---
 
-### .offers
+### Offers
 
 Retrieve a list of offers for a given address. A filter object can also be provided to narrow down the search results returned by the API.
 
-{% preview tabs=["JavaScript", "CLI", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const offers = await sado.orderbook.offers("address", {
-      status: "pending",
-      order: {
-        type: "sell"
-      }
-    });
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve offers for." /%}
-      {% preview-object-item name="filter" type="object" description="Filter object to narrow down the search results." /%}
-      {% preview-object-item name="filter.status" type="string" required=false description="Filter result based on the status of the offer." %}
-        {% preview-object-value name="pending" description="Offers which is still awaiting resolution through rejection or completion." /%}
-        {% preview-object-value name="rejected" description="Offers which was rejected by the sado protocol." /%}
-        {% preview-object-value name="completed" description="Offers which has been successfully completed." /%}
-      {% /preview-object-item %}
-      {% preview-object-item name="filter.order" type="object" required=false description="Filters specific to the order as listed on IPFS." /%}
-      {% preview-object-item name="filter.order.type" type="string" required=false description="Filter by the order type." %}
-        {% preview-object-value name="sell" description="Filter by offers in the sell category." /%}
-        {% preview-object-value name="buy" description="Filter by offers in the buy category." /%}
-      {% /preview-object-item %}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="offers" type="Offers[]" type-link="#offers" description="List of offers." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
-
-  {% preview-section %}
-
-    ```bash {% preview=true %}
-    $ sado orderbook offers [address] --status="pending" --type="sell"
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="address" type="string" required=true description="Address to retrieve offers for." /%}
-      {% preview-object-item name="--status" type="string" required=false description="Filter result based on the status of the offer." %}
-        {% preview-object-value name="pending" description="Offers which is still awaiting resolution through rejection or completion." /%}
-        {% preview-object-value name="rejected" description="Offers which was rejected by the sado protocol." /%}
-        {% preview-object-value name="completed" description="Offers which has been successfully completed." /%}
-      {% /preview-object-item %}
-      {% preview-object-item name="--type" type="string" required=false description="Filter by the order type the offer is connected to." %}
-        {% preview-object-value name="sell" description="Filter by offers in the sell category." /%}
-        {% preview-object-value name="buy" description="Filter by offers in the buy category." /%}
-      {% /preview-object-item %}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="offers" type="Offers[]" type-link="#offers" description="List of offers." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API", "CLI", "SDK"] %}
 
   {% preview-section %}
 
@@ -380,7 +323,67 @@ Retrieve a list of offers for a given address. A filter object can also be provi
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="offers" type="Offers[]" type-link="#offers" description="List of offers." /%}
+      {% preview-object-item name="offers" type="Offer[]" type-link="#offer" description="List of offers." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```bash {% preview=true %}
+    $ sado orderbook offers <address>
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Address to retrieve offers for." /%}
+      {% preview-object-item name="--status" type="string" required=false description="Filter result based on the status of the offer." %}
+        {% preview-object-value name="pending" description="Offers which is still awaiting resolution through rejection or completion." /%}
+        {% preview-object-value name="rejected" description="Offers which was rejected by the sado protocol." /%}
+        {% preview-object-value name="completed" description="Offers which has been successfully completed." /%}
+      {% /preview-object-item %}
+      {% preview-object-item name="--type" type="string" required=false description="Filter by the order type the offer is connected to." %}
+        {% preview-object-value name="sell" description="Filter by offers in the sell category." /%}
+        {% preview-object-value name="buy" description="Filter by offers in the buy category." /%}
+      {% /preview-object-item %}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="offers" type="Offer[]" type-link="#offer" description="List of offers." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const offers = await sado.orderbook.offers(
+      "bcrt1q2ys7qws8g072dqe3psp92pqz93ac6wmztexkh5", 
+      {
+        status: "pending",
+        order: {
+          type: "sell"
+        }
+      }
+    );
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Address to retrieve offers for." /%}
+      {% preview-object-item name="filter" type="object" description="Filter object to narrow down the search results." /%}
+      {% preview-object-item name="filter.status" type="string" required=false description="Filter result based on the status of the offer." %}
+        {% preview-object-value name="pending" description="Offers which is still awaiting resolution through rejection or completion." /%}
+        {% preview-object-value name="rejected" description="Offers which was rejected by the sado protocol." /%}
+        {% preview-object-value name="completed" description="Offers which has been successfully completed." /%}
+      {% /preview-object-item %}
+      {% preview-object-item name="filter.order" type="object" required=false description="Filters specific to the order as listed on IPFS." /%}
+      {% preview-object-item name="filter.order.type" type="string" required=false description="Filter by the order type." %}
+        {% preview-object-value name="sell" description="Filter by offers in the sell category." /%}
+        {% preview-object-value name="buy" description="Filter by offers in the buy category." /%}
+      {% /preview-object-item %}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="offers" type="Offer[]" type-link="#offer" description="List of offers." /%}
     {% /preview-object %}
 
   {% /preview-section %}

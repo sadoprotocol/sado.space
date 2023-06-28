@@ -12,7 +12,7 @@ config.navigation = [
     links: [{ title: "Features", href: "/", file: "/docs/introduction/features.md" }]
   },
   {
-    title: "API & SDK",
+    title: "Sado API",
     links: [
       { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
       { title: "Orderbook", href: "/docs/sdk-orderbook", file: "/docs/sdk/orderbook.md" },
@@ -22,7 +22,9 @@ config.navigation = [
   {
     title: "IPFS API",
     links: [
-      { title: "API Documentation", href: "/docs/ipfs-api-documentation", file: "/docs/ipfs/api-documentation.md" }
+      { title: "Introduction", href: "/docs/ipfs-introduction", file: "/docs/ipfs/introduction.md" },
+      { title: "Content", href: "/docs/ipfs-content", file: "/docs/ipfs/content.md" },
+      { title: "Files", href: "/docs/ipfs-files", file: "/docs/ipfs/files.md" }
     ]
   },
   {

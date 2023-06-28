@@ -16,11 +16,23 @@ List of methods currently available on the order service.
 
 ---
 
-### .init
+### Init
 
 Initialize a new order instance which can be validated, signed and submitted.
 
-{% preview tabs=["JavaScript", "CLI"] %}
+{% preview tabs=["CLI","SDK"] %}
+
+  {% preview-section %}
+
+    ```bash {% preview=true %}
+    sado order init <order>
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="order" type="string" required=true description="Base64 encoded order object" /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
 
   {% preview-section %}
 
@@ -28,9 +40,9 @@ Initialize a new order instance which can be validated, signed and submitted.
     const order = await sado.order.init({
       type: "sell",
       ts: Date.now(),
-      location: "txid:vout",
+      location: "<txid:vout>",
       cardinals: 100_000,
-      maker: "address"
+      maker: "<address>"
     });
     ```
 
@@ -58,27 +70,15 @@ Initialize a new order instance which can be validated, signed and submitted.
 
   {% /preview-section %}
 
-  {% preview-section %}
-
-    ```bash {% preview=true %}
-    sado order init [order]
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="order" type="string" required=true description="Base64 encoded order object" /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
-
 {% /preview %}
 
 ---
 
-### .load
+### Load
 
 Load a pre-signed order instance. This is useful for generating an order instance from a payload and signature that has been constructed outside of the SDK.
 
-{% preview tabs=["JavaScript"] %}
+{% preview tabs=["SDK"] %}
 
   {% preview-section %}
 
@@ -86,10 +86,10 @@ Load a pre-signed order instance. This is useful for generating an order instanc
     const order = await sado.order.load({
       type: "sell",
       ts: Date.now(),
-      location: "txid:vout",
+      location: "<txid:vout>",
       cardinals: 100_000,
-      maker: "address",
-      signature: "signed-message"
+      maker: "<address>",
+      signature: "<signature>"
     });
     ```
 
@@ -124,16 +124,25 @@ Load a pre-signed order instance. This is useful for generating an order instanc
 
 ---
 
-### .get
+### Get
 
 Get order data as stored on IPFS.
 
-{% preview tabs=["JavaScript", "CLI", "API"] %}
+{% preview tabs=["API","CLI","SDK"] %}
 
   {% preview-section %}
 
-    ```ts {% preview=true %}
-    const order = await sado.order.get("cid");
+    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
+
+    ```json {% preview=true %}
+    {
+      "jsonrpc": "2.0",
+      "method": "order.getOrder",
+      "params": {
+        "cid": "<cid>"
+      },
+      "id": 0
+    }
     ```
 
     {% preview-object title="Parameters" %}
@@ -145,7 +154,7 @@ Get order data as stored on IPFS.
   {% preview-section %}
 
     ```bash {% preview=true %}
-    sado order get [cid]
+    sado order get <cid>
     ```
 
     {% preview-object title="Parameters" %}
@@ -156,17 +165,8 @@ Get order data as stored on IPFS.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://api.sado.space/rpc" /%}
-
-    ```json {% preview=true %}
-    {
-      "jsonrpc": "2.0",
-      "method": "order.getOrder",
-      "params": {
-        "cid": "ipfs-content-identifier"
-      },
-      "id": 0
-    }
+    ```ts {% preview=true %}
+    const order = await sado.order.get("<cid>");
     ```
 
     {% preview-object title="Parameters" %}
@@ -179,28 +179,11 @@ Get order data as stored on IPFS.
 
 ---
 
-### .psbt
+### PSBT
 
 Generate a signable PSBT for given maker and location. This can be used to create a signature for wallets that does not support message signing.
 
-{% preview tabs=["JavaScript", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const psbt = await sado.order.psbt("txid:vout", "address");
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="location" type="string" required=true description="Location of the ordinal being sold in the (txid:vout) format. When signing with a PSBT we do address verification and ownership check against the location provided." /%}
-      {% preview-object-item name="maker" type="string" required=true description="Address of the order maker used to verify ownership of the location provided." /%}
-    {% /preview-object %}
-
-    {% preview-object title="Response" %}
-      {% preview-object-item name="string" description="A partially signed bitcoin transaction (PSBT) in base64 format. This needs to be signed by makers wallet and applied to the order instance via the .sign method." /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API","SDK"] %}
 
   {% preview-section %}
 
@@ -212,8 +195,8 @@ Generate a signable PSBT for given maker and location. This can be used to creat
       "method": "order.getPsbtSignature",
       "params": {
         "network": "regtest",
-        "location": "txid:vout",
-        "maker": "address"
+        "location": "<txid:vout>",
+        "maker": "<address>"
       },
       "id": 0
     }
@@ -238,29 +221,32 @@ Generate a signable PSBT for given maker and location. This can be used to creat
 
   {% /preview-section %}
 
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const psbt = await sado.order.psbt("<txid:vout>", "<address>");
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="location" type="string" required=true description="Location of the ordinal being sold in the (txid:vout) format. When signing with a PSBT we do address verification and ownership check against the location provided." /%}
+      {% preview-object-item name="maker" type="string" required=true description="Address of the order maker used to verify ownership of the location provided." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="string" description="A partially signed bitcoin transaction (PSBT) in base64 format. This needs to be signed by makers wallet and applied to the order instance via the .sign method." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
 {% /preview %}
 
 ---
 
-### .create
+### Create
 
 Once a order is verified and fully signed you can submit it via the create method. This will verify the order details and create a new IPFS order record and a PSBT can be finalized and relayed to the blockchain to register with decentralized orderbooks.
 
-{% preview tabs=["JavaScript", "API"] %}
-
-  {% preview-section %}
-
-    ```ts {% preview=true %}
-    const cid = await sado.order.create(order, 1000, 15);
-    ```
-
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="order" type="" required=true description="Fully prepared order instance to submit" /%}
-      {% preview-object-item name="networkFee" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
-      {% preview-object-item name="feeRate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
-    {% /preview-object %}
-
-  {% /preview-section %}
+{% preview tabs=["API","SDK"] %}
 
   {% preview-section %}
 
@@ -271,20 +257,20 @@ Once a order is verified and fully signed you can submit it via the create metho
       "jsonrpc": "2.0",
       "method": "order.createOrder",
       "params": {
-        "network": "mainnet" | "testnet" | "regtest",
+        "network": "regtest",
         "order": {
           "type": "sell",
           "ts": 0,
-          "location": "txid:vout",
+          "location": "<txid:vout>",
           "cardinals": 0,
-          "maker": "address",
+          "maker": "<address>",
           "orderbooks": [
-            "address"
+            "<address>"
           ]
         },
         "signature": {
-          "value": "signed-psbt" | "signed-message",
-          "format": "psbt" | "message"
+          "value": "<signature>",
+          "format": "psbt"
         },
         "fees": {
           "network": 1000,
@@ -326,6 +312,20 @@ Once a order is verified and fully signed you can submit it via the create metho
       {% preview-object-item name="fees.network" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
       {% preview-object-item name="fees.rate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
 
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+  {% preview-section %}
+
+    ```ts {% preview=true %}
+    const cid = await sado.order.create(order, 1000, 15);
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="order" type="" required=true description="Fully prepared order instance to submit" /%}
+      {% preview-object-item name="networkFee" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
+      {% preview-object-item name="feeRate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
     {% /preview-object %}
 
   {% /preview-section %}
