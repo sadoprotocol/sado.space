@@ -16,7 +16,8 @@ config.navigation = [
     links: [
       { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
       { title: "Orderbook", href: "/docs/sdk-orderbook", file: "/docs/sdk/orderbook.md" },
-      { title: "Order", href: "/docs/sdk-order", file: "/docs/sdk/order.md" }
+      { title: "Order", href: "/docs/sdk-order", file: "/docs/sdk/order.md" },
+      { title: "Offer", href: "/docs/sdk-offer", file: "/docs/sdk/offer.md" }
     ]
   },
   {
