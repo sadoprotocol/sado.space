@@ -28,6 +28,10 @@ If you want to use the SDK in a terminal environment you can also install our co
 $ npm i -g @sadoprotocol/sado-cli
 ```
 
+We also provide a bundler target via unpkg.com for applications that does not go through bundler processes.
+
+Download or copy [sado-sdk.umd.js](https://unpkg.com/@sadoprotocol/sado-sdk@0.0.6/dist/sado-sdk.umd.js) and add it to your project.
+
 ---
 
 ## Quick Start
