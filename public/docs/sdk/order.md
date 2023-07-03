@@ -88,18 +88,30 @@ Once a order is verified and fully signed you can submit it via the create metho
 
     {% /preview-object %}
 
+    {% preview-object title="Response" %}
+      {% preview-object-item name="cid" description="Location where the order is stored on IPFS." /%}
+      {% preview-object-item name="psbt" description="Order transaction ready to sign, finalize and relay to the blockchain." /%}
+    {% /preview-object %}
+
   {% /preview-section %}
 
   {% preview-section %}
 
     ```ts {% preview=true %}
-    const cid = await sado.order.create(order, 1000, 15);
+    const order = new Order({ ... });
+    // fill and sign order ...
+    const { cid, psbt } = await sado.order.create(order);
     ```
 
     {% preview-object title="Parameters" %}
       {% preview-object-item name="order" type="" required=true description="Fully prepared order instance to submit" /%}
       {% preview-object-item name="networkFee" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
       {% preview-object-item name="feeRate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="cid" description="Location where the order is stored on IPFS." /%}
+      {% preview-object-item name="psbt" description="Order transaction ready to sign, finalize and relay to the blockchain." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -330,7 +342,11 @@ If the wallet does not support message signing you can request a signable PSBT f
 See [create signable psbt](#create-signable-psbt) for more details.
 
 ```ts
-const psbt = await sado.order.createSignablePsbt("<txid:vout>", "<maker>", "<pubkey>");
+const psbt = await sado.order.createSignablePsbt(
+  "<txid:vout>", 
+  "<maker>", 
+  "<pubkey>"
+);
 ```
 
 Once you have a signed `message` or `psbt` we can add it to our order instance.
