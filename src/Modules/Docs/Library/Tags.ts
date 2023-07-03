@@ -13,6 +13,35 @@ export const tags: Config["tags"] = {
     },
     render: "Callout"
   },
+  data: {
+    render: "Data",
+    attributes: {
+      title: { type: String, required: true },
+      show: { type: Boolean, default: true }
+    }
+  },
+  "data-model": {
+    render: "DataModel"
+  },
+  "data-item": {
+    render: "DataItem",
+    attributes: {
+      name: { type: String },
+      type: { type: String },
+      "type-link": { type: String },
+      required: { type: Boolean },
+      default: { type: String },
+      description: { type: String }
+    }
+  },
+  "data-value": {
+    render: "DataValue",
+    selfClosing: true,
+    attributes: {
+      name: { type: String },
+      description: { type: String }
+    }
+  },
   endpoint: {
     render: "Endpoint",
     attributes: {
@@ -35,7 +64,8 @@ export const tags: Config["tags"] = {
   "preview-object": {
     render: "PreviewObject",
     attributes: {
-      title: { type: String, required: true }
+      title: { type: String, required: true },
+      show: { type: Boolean, default: false }
     }
   },
   "preview-object-item": {

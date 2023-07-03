@@ -1,6 +1,7 @@
 import { Link } from "~Atoms/Link/Link.Component";
 
 import { Callout } from "./Callout";
+import { Data, DataItem, DataModel, DataValue } from "./Data";
 import { Endpoint } from "./Endpoint";
 import { Fence } from "./Fence";
 import { Preview, PreviewSection } from "./Preview";
@@ -9,6 +10,10 @@ import { QuickLink, QuickLinks } from "./QuickLinks";
 
 export const components = {
   Callout,
+  Data,
+  DataItem,
+  DataModel,
+  DataValue,
   Endpoint,
   Fence,
   Preview,

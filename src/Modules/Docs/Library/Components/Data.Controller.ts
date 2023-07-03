@@ -1,7 +1,7 @@
 import { Controller } from "@valkyr/solid";
 import { ComponentProps } from "solid-js";
 
-export class PreviewObjectController extends Controller<
+export class DataController extends Controller<
   {
     show: boolean;
   },

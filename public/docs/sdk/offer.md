@@ -29,7 +29,7 @@ Creates a new offer PSBT _(Partially Signed Bitcoin Transaction)_ which consists
     ```json {% preview=true %}
     {
       "jsonrpc": "2.0",
-      "method": "order.createOfferPSBT",
+      "method": "CreateOfferPsbt",
       "params": {
         "network": "regtest",
         "origin": "<cid>",
@@ -119,7 +119,7 @@ Once you have a signed offer PSBT we can create a new sado order that can be rel
     ```json {% preview=true %}
     {
       "jsonrpc": "2.0",
-      "method": "order.createOffer",
+      "method": "CreateOffer",
       "params": {
         "network": "regtest",
         "ts": 1687933550447,
