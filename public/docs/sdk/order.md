@@ -103,10 +103,8 @@ Once a order is verified and fully signed you can submit it via the create metho
     const { cid, psbt } = await sado.order.create(order);
     ```
 
-    {% preview-object title="Parameters" %}
-      {% preview-object-item name="order" type="" required=true description="Fully prepared order instance to submit" /%}
-      {% preview-object-item name="networkFee" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
-      {% preview-object-item name="feeRate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
+    {% preview-object title="Parameters" show=true %}
+      {% preview-object-item name="order" type="Order" required=true description="Fully prepared order instance to submit." /%}
     {% /preview-object %}
 
     {% preview-object title="Response" %}
@@ -174,7 +172,7 @@ Generate a signable PSBT for given maker and location. This can be used to creat
     );
     ```
 
-    {% preview-object title="Parameters" %}
+    {% preview-object title="Parameters" show=true %}
       {% preview-object-item name="location" type="string" required=true description="Location of the ordinal being sold in the (txid:vout) format. When signing with a PSBT we do address verification and ownership check against the location provided." /%}
       {% preview-object-item name="maker" type="string" required=true description="Address of the order maker used to verify ownership of the location provided." /%}
       {% preview-object-item name="pubkey" type="string" required=false description="Public key of wallet used to sign the PSBT." /%}
@@ -223,7 +221,7 @@ Get order data as stored on IPFS.
     const order = await sado.order.get("<cid>");
     ```
 
-    {% preview-object title="Parameters" %}
+    {% preview-object title="Parameters" show=true %}
       {% preview-object-item name="cid" type="string" required=true description="IPFS Content Identifier" /%}
     {% /preview-object %}
 
