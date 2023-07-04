@@ -16,7 +16,7 @@ Sado SDK is currently in ALPHA stage development and is NOT production ready. Us
 
 ## Installation
 
-To get started with the JavaScript SDK you can install with [NPM](https://www.npmjs.com/) or use [Browserify](https://browserify.org/) if you are running in a non bundled JavaScript ecosystem.
+To get started with the JavaScript SDK you can install with [NPM](https://www.npmjs.com/) or use [sado-sdk.umd.js](https://unpkg.com/@sadoprotocol/sado-sdk@latest/dist/sado-sdk.umd.js) if you are running in a non bundled JavaScript ecosystem.
 
 ```sh
 $ npm i --save @sadoprotocol/sado-sdk
@@ -27,10 +27,6 @@ If you want to use the SDK in a terminal environment you can also install our co
 ```sh
 $ npm i -g @sadoprotocol/sado-cli
 ```
-
-We also provide a bundler target via unpkg.com for applications that does not go through bundler processes.
-
-Download or copy [sado-sdk.umd.js](https://unpkg.com/@sadoprotocol/sado-sdk@0.0.6/dist/sado-sdk.umd.js) and add it to your project.
 
 ---
 
