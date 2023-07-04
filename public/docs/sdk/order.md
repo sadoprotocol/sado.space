@@ -351,7 +351,8 @@ Once you have a signed `message` or `psbt` we can add it to our order instance.
 
 ```ts
 order.addSignature("<signature>", {
-  format: "psbt" | "message"
+  format: "psbt",
+  pubkey: "<pubkey>"
 });
 ```
 
@@ -363,6 +364,7 @@ order.addSignature("<signature>", {
     {% data-value name="psbt" description="Defines the provided signature as signed PSBT." /%}
   {% /data-item %}
   {% data-item name="options.desc" type="string" required=false description="Required if the order is signed by a Bech32(m) address." /%}
+  {% data-item name="options.pubkey" type="string" required=false description="Required if the PSBT was constructed with a pubkey." /%}
 {% /data %}
 
 {% callout title="You should know" %}
