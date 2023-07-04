@@ -37,14 +37,6 @@ config.navigation = [
     ]
   },
   {
-    title: "Ecosystem",
-    links: [
-      { title: "API", href: "/docs/eco-api", file: "/docs/ecosystem/api.md" },
-      { title: "IPFS", href: "/docs/eco-ipfs", file: "/docs/ecosystem/ipfs.md" },
-      { title: "Ordit", href: "/docs/eco-ordit", file: "/docs/ecosystem/ordit.md" }
-    ]
-  },
-  {
     title: "Whitepaper",
     links: [
       { title: "Abstract", href: "/docs/abstract", file: "/docs/whitepaper/abstract.md" },
