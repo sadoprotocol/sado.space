@@ -29,6 +29,14 @@ config.navigation = [
     ]
   },
   {
+    title: "Ordit SDK",
+    links: [
+      { title: "Introduction", href: "/docs/ordit-introduction", file: "/docs/ordit/introduction.md" },
+      { title: "Wallet", href: "/docs/ordit-wallet", file: "/docs/ordit/wallet.md" },
+      { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" }
+    ]
+  },
+  {
     title: "Ecosystem",
     links: [
       { title: "API", href: "/docs/eco-api", file: "/docs/ecosystem/api.md" },
