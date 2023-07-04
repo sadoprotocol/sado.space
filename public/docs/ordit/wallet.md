@@ -23,8 +23,8 @@ const wallet = new Ordit({
   {% data-item name="bip39" type="string" required=false description="BIP39 12/24 Mnemonic words of your HD wallet to create wallet instance." /%}
   {% data-item name="seed" type="string" required=false description="Seed of your HD wallet to create wallet instance." /%}
   {% data-item name="privateKey" type="string" required=false description="Private Key of your account to create wallet instance. Make sure you use Taproot account Private Key if you're planning to use this wallet for inscriptions." /%}
-  {% data-item name="WIF" type="number" required=false description="WIF of your account to create wallet instance. Make sure you use Taproot account WIF if you're planning to use this wallet for inscriptions." /%}
-  {% data-item name="network" type="string" required=false description="Choose from `mainnet` | `testnet` | `regtest` networks to configure your wallet's network. Default is `testnet`." %}
+  {% data-item name="WIF" type="string" required=false description="WIF of your account to create wallet instance. Make sure you use Taproot account WIF if you're planning to use this wallet for inscriptions." /%}
+  {% data-item name="network" type="string" required=false default="testnet" %}
     {% data-value name="mainnet" description="Initializes wallet with mainnet as network" /%}
     {% data-value name="testnet" description="Initializes wallet with testnet as network" /%}
     {% data-value name="regtest" description="Initializes wallet with regtest as network" /%}
@@ -128,7 +128,7 @@ const signedPsbt = wallet.signPsbt(null, base64);
 {% /data %}
 {% data title="Response" %}
     {% data-item name="object"  /%}
-    {% data-item name="object.hex" type="string" description="Signed PSBT hex" required=true  /%}
+    {% data-item name="object.hex" type="string" description="Signed PSBT hex" /%}
     {% data-item name="object.base64" type="string" description="Signed PSBT Base64" required=false  /%}
 {% /data %}
 
@@ -143,7 +143,7 @@ const submittedTransaction = wallet.relayTx(hex, network);
 ```
 {% data title="Parameters" %}
     {% data-item name="string" description="Raw Transaction hex" required=true  /%}
-    {% data-item name="network" type="string" required=false description="Choose from `mainnet` | `testnet` | `regtest` networks to broadcast this transaction. Default is `testnet`." %}
+    {% data-item name="network" type="string" required=false default="testnet" %}
     {% data-value name="mainnet" description="Broadcast transaction with mainnet as network" /%}
     {% data-value name="testnet" description="Broadcast transaction with testnet as network" /%}
     {% data-value name="regtest" description="Broadcast transaction with regtest as network" /%}
@@ -151,7 +151,7 @@ const submittedTransaction = wallet.relayTx(hex, network);
 {% /data %}
 {% data title="Response" %}
     {% data-item name="object"  /%}
-    {% data-item name="object.hex" type="string" description="Signed PSBT hex" required=true  /%}
+    {% data-item name="object.hex" type="string" description="Signed PSBT hex"  /%}
     {% data-item name="object.base64" type="string" description="Signed PSBT Base64" required=false  /%}
 {% /data %}
 
@@ -186,7 +186,7 @@ const inscription = await Ordit.inscription.getInscriptionDetails(
 ```
 {% data title="Parameters" %}
     {% data-item name="string" description="Outpoint value of inscription" required=true  /%}
-    {% data-item name="network" type="string" required=false description="Choose from `mainnet` | `testnet` | `regtest` networks to read the inscription from. Default is `testnet`." %}
+    {% data-item name="network" type="string" required=false default="testnet" %}
     {% data-value name="mainnet" description="Read the inscription from mainnet network" /%}
     {% data-value name="testnet" description="Read the inscription from testnet network" /%}
     {% data-value name="regtest" description="Read the inscription from regtest network" /%}

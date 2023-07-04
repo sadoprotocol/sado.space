@@ -41,12 +41,14 @@ const transaction = Ordit.inscription.new(options);
     {% data-item name="options.meta" type="object" required=false description="OIP-1 metadata support. You can pass arbitary metadata to be included in the inscription."  /%}
     {% data-item name="options.feeRate" type="number" required=false description="Fee rate of the transaction in v/B. Default value is 10 v/B."  /%}
     {% data-item name="options.postage" type="number" required=false description="Postage amount for the inscription."  /%}
-     {% data-item name="options.network" type="string" required=false description="Choose from `mainnet` | `testnet` | `regtest` networks to configure your transaction's network. Default is `testnet`." %}
+     {% data-item name="options.network" type="string" default="testnet" required=false %}
     {% data-value name="mainnet" description="Initializes transaction with mainnet as network" /%}
     {% data-value name="testnet" description="Initializes transaction with testnet as network" /%}
     {% data-value name="regtest" description="Initializes transaction with regtest as network" /%}
   {% /data-item %}
 {% /data %}
+
+---
 
 ### OrdTransaction class
 
@@ -66,7 +68,7 @@ const transaction = new OrdTransaction(options)
     {% data-item name="options.meta" type="object" required=false description="OIP-1 metadata support. You can pass arbitary metadata to be included in the inscription."  /%}
     {% data-item name="options.feeRate" type="number" required=false description="Fee rate of the transaction in v/B. Default value is 10 v/B."  /%}
     {% data-item name="options.postage" type="number" required=false description="Postage amount for the inscription."  /%}
-     {% data-item name="options.network" type="string" required=false description="Choose from `mainnet` | `testnet` | `regtest` networks to configure your transaction's network. Default is `testnet`." %}
+     {% data-item name="options.network" type="string" required=false default="testnet" %}
     {% data-value name="mainnet" description="Initializes transaction with mainnet as network" /%}
     {% data-value name="testnet" description="Initializes transaction with testnet as network" /%}
     {% data-value name="regtest" description="Initializes transaction with regtest as network" /%}
@@ -90,9 +92,11 @@ const commitDetails = transaction.generateCommit();
 ```
 {% data title="Response" %}
     {% data-item name="commitDetails" type="object"/%}
-    {% data-item name="commitDetails.address" type="tring" description="This is the deposit address you need to fund for revealing your inscription on blockchain." /%}
+    {% data-item name="commitDetails.address" type="string" description="This is the deposit address you need to fund for revealing your inscription on blockchain." /%}
     {% data-item name="commitDetails.revealFee" type="number" description="This is the amount you need to fund the deposit address with for revealing your inscription on blockchain." /%}
 {% /data %}
+
+---
 
 ### Transaction Readiness
 
@@ -105,6 +109,8 @@ const ready = await transaction.isReady();
     {% data-item name="boolean"/%}
 {% /data %}
 
+---
+
 ### Build PSBT
 
 Once your transaction is ready (`transaction.ready // true`), you can move forward with building the PSBT fully, ready to be signed by a wallet. See the implementation below:
@@ -112,6 +118,8 @@ Once your transaction is ready (`transaction.ready // true`), you can move forwa
 ```ts
 const ready = transaction.build();
 ```
+
+---
 
 ### Get Ordinals Transaction Hex
 
@@ -123,6 +131,8 @@ const hex = transaction.toHex();
 {% data title="Response" %}
     {% data-item name="string" description="Hex encoded string of the transaction." /%}
 {% /data %}
+
+---
 
 ### Get Ordinals Transaction Base64
 
