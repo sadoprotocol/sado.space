@@ -103,33 +103,15 @@ Sign a Partially signed bitcoin transaction. You must provide PSBT in hex or bas
 To sign a PSBT from PSBT hex, below is the implementation:
 
 ```ts
-const signedPsbt = wallet.signPsbt(hex);
+const signedPsbtHex = wallet.signPsbt(value);
 ```
 {% data title="Parameters" %}
-    {% data-item name="string" description="PSBT hex" required=false  /%}
-    {% data-item name="string" description="PSBT Base64" required=false  /%}
+    {% data-item name="string" description="PSBT encoded in hex or base64" required=true  /%}
+    {% data-item name="options" required=true  /%}
+    {% data-item name="options.finalized" type="boolean" default="true" description="Finalize all inputs and returns raw TX in hex format."  /%}
 {% /data %}
 {% data title="Response" %}
-    {% data-item name="object"  /%}
-    {% data-item name="object.hex" type="string" description="Signed PSBT hex" required=true  /%}
-    {% data-item name="object.base64" type="string" description="Signed PSBT Base64" required=false  /%}
-{% /data %}
-
-
-To sign a PSBT from PSBT base64, below is the implementation:
-
-```ts
-const signedPsbt = wallet.signPsbt(null, base64);
-```
-
-{% data title="Parameters" %}
-    {% data-item name="string" description="PSBT hex" required=false  /%}
-    {% data-item name="string" description="PSBT Base64" required=false  /%}
-{% /data %}
-{% data title="Response" %}
-    {% data-item name="object"  /%}
-    {% data-item name="object.hex" type="string" description="Signed PSBT hex" /%}
-    {% data-item name="object.base64" type="string" description="Signed PSBT Base64" required=false  /%}
+    {% data-item name="string" description="Signed PSBT encoded in hex" /%}
 {% /data %}
 
 ---
