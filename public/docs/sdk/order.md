@@ -44,7 +44,9 @@ Once a order is verified and fully signed you can submit it via the create metho
         },
         "signature": {
           "value": "<signature>",
-          "format": "psbt"
+          "format": "psbt",
+          "desc": "<desc>",
+          "pubkey": "<pubkey>"
         },
         "fees": {
           "network": 1000,
@@ -57,30 +59,31 @@ Once a order is verified and fully signed you can submit it via the create metho
 
     {% preview-object title="Parameters" %}
 
-      {% preview-object-item name="network" type="string" required=true description="Which network to create the order on" %}
+      {% preview-object-item name="network" type="string" required=true description="Which network to create the order on." %}
         {% preview-object-value name="mainnet" description="Transactions on a mainnet are recorded on the blockchain permanently and are visible to the public. Transactions are irreversible so take all possble precautions when relaying your transactions." /%}
         {% preview-object-value name="testnet" description="Transactions on testnet are used for testing and development purposes and are not recorded on the blockchain permanently." /%}
         {% preview-object-value name="regtest" description="Transactions on regtest are used for testing and development purposes and are hosted independently of the two other networks. Regtest can be customized to behave more favorably for these purposes and transactions are not recorded on the blockchain permanently." /%}
       {% /preview-object-item %}
 
-      {% preview-object-item name="order" type="object" required=true description="Order object which is stored and reference in IPFS." /%}
-      {% preview-object-item name="order.type" type="string" required=true description="Type of order to create" %}
-        {% preview-object-value name="sell" description="Create a sell order in which buyers can make offers for a ordinal" /%}
-        {% preview-object-value name="buy" description="Create a buy order in which you wish to purchase a ordinal" /%}
+      {% preview-object-item name="order" type="object" required=true description="Order object which is stored and referenced on IPFS." /%}
+      {% preview-object-item name="order.type" type="string" required=true description="Type of order to create." %}
+        {% preview-object-value name="sell" description="Create a sell order in which buyers can make offers for a ordinal." /%}
+        {% preview-object-value name="buy" description="Create a buy order in which you wish to purchase a ordinal." /%}
       {% /preview-object-item %}
-      {% preview-object-item name="order.ts" type="number" required=true description="Timestamp to act as a ipfs cid nonce" /%}
-      {% preview-object-item name="order.location" type="string" required=true description="Location of the ordinal seeking to buy (txid:vout) format" /%}
-      {% preview-object-item name="order.cardinals" type="number" required=true description="Lowest denomination required to purchase the ordinal" /%}
-      {% preview-object-item name="order.maker" type="string" required=true description="Address of the maker correlating to the key used in signature" /%}
-      {% preview-object-item name="order.expiry" type="number" required=false description="Block height at which the offer should expire" /%}
-      {% preview-object-item name="order.satoshi" type="number" required=false description="Point to a specific ordinal location to use for trade requests" /%}
-      {% preview-object-item name="order.meta" type="object" required=false description="JSON string containing additional meta pertaining to order" /%}
-      {% preview-object-item name="order.orderbooks" type="string[]" required=false description="Orderbooks to list the order with" /%}
+      {% preview-object-item name="order.ts" type="number" required=true description="Timestamp to act as nonce when generating a content identifier for the ipfs entry." /%}
+      {% preview-object-item name="order.location" type="string" required=true description="Location of the ordinal being offered or requested in (txid:vout) format." /%}
+      {% preview-object-item name="order.cardinals" type="number" required=true description="Lowest denomination required to purchase the ordinal." /%}
+      {% preview-object-item name="order.maker" type="string" required=true description="Address of the order creator correlating to the key used in signature." /%}
+      {% preview-object-item name="order.expiry" type="number" required=false description="Block height at which the order should expire." note="Order expiry is a soft check that may, or may not be enforced by client listing services. Sado protocol is also not enable to enforce expiry on the blockchain, and cannot prevent trades from occuring outside of the protocol." /%}
+      {% preview-object-item name="order.satoshi" type="number" required=false description="Point to a specific ordinal location to use for trade requests." /%}
+      {% preview-object-item name="order.meta" type="object" required=false description="Object containing meta data to add to the order." /%}
+      {% preview-object-item name="order.orderbooks" type="string[]" required=false description="List of orderbook addresses to list the order with in the (address:fee) or (address) format." /%}
 
       {% preview-object-item name="signature" type="object" required=true description="Object containing the signature details of the order." /%}
-      {% preview-object-item name="signature.value" type="string" required=true description="A signed message or psbt used to verify the validity of the order" /%}
-      {% preview-object-item name="signature.format" type="string" required=false description="Describes the format of the signature" /%}
-      {% preview-object-item name="signature.desc" type="string" required=false description="Signature description is required when signing with bech32 or bech32m addresses" /%}
+      {% preview-object-item name="signature.value" type="string" required=true description="A signed message or psbt used to verify the validity of the order." /%}
+      {% preview-object-item name="signature.format" type="string" required=false description="Describes the format of the signature." /%}
+      {% preview-object-item name="signature.desc" type="string" required=false description="Signature description is required when signing with bech32 or bech32m address." /%}
+      {% preview-object-item name="signature.pubkey" type="string" required=false description="Sliced public key is required when signing with a bech32m (taproot) address." /%}
 
       {% preview-object-item name="fees" type="object" required=true description="Adjustment settings for the fees to construct the order transaction with. Allows for tuning the mempool incentives to pick up and process the order." /%}
       {% preview-object-item name="fees.network" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
@@ -152,7 +155,7 @@ Generate a signable PSBT for given maker and location. This can be used to creat
 
       {% preview-object-item name="location" type="string" required=true description="Location of the ordinal being sold in the (txid:vout) format. When signing with a PSBT we do address verification and ownership check against the location provided." /%}
       {% preview-object-item name="maker" type="string" required=true description="Address of the order maker used to verify ownership of the location provided." /%}
-      {% preview-object-item name="pubkey" type="string" required=false description="Public key of wallet used to sign the PSBT." /%}
+      {% preview-object-item name="pubkey" type="string" required=false description="When creating a signable PSBT for a taproot address a sliced public key must be provided." /%}
 
     {% /preview-object %}
 

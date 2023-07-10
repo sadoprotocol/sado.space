@@ -82,6 +82,11 @@ export function PreviewObjectItem(props: any) {
           {props.children}
         </div>
       </Show>
+      <Show when={props.note}>
+        <div class="my-2 rounded-md border border-amber-900/25 p-2 text-xs text-amber-900/75 dark:border-amber-500/25 dark:text-amber-500/75">
+          <strong class="text-amber-900/75 dark:text-amber-500/75">NOTE!</strong> {props.note}
+        </div>
+      </Show>
     </div>
   );
 }
