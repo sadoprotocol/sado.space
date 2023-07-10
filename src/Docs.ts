@@ -33,7 +33,8 @@ config.navigation = [
     links: [
       { title: "Introduction", href: "/docs/ordit-introduction", file: "/docs/ordit/introduction.md" },
       { title: "Wallet", href: "/docs/ordit-wallet", file: "/docs/ordit/wallet.md" },
-      { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" }
+      { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" },
+      { title: "Instant Buy", href: "/docs/ordit-instantbuy", file: "/docs/ordit/instantbuy.md" }
     ]
   },
   {
