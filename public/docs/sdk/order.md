@@ -99,11 +99,12 @@ Once a order is verified and fully signed you can submit it via the create metho
     ```ts {% preview=true %}
     const order = new Order({ ... });
     // fill and sign order ...
-    const { cid, psbt } = await sado.order.create(order);
+    const { cid, psbt } = await sado.order.create(order, 30);
     ```
 
     {% preview-object title="Parameters" show=true %}
       {% preview-object-item name="order" type="Order" required=true description="Fully prepared order instance to submit." /%}
+      {% preview-object-item name="satsPerByte" type="number" required=true description="Amount of sats to pay per byte for the order transaction." /%}
     {% /preview-object %}
 
     {% preview-object title="Response" %}
@@ -372,20 +373,6 @@ Make sure to fill out all the optional values before creating a `message` signat
 
 ---
 
-### Set Sats Per Byte
-
-To incentivice miners to pick up our `order` we need to set the `satsPerByte` value used when creating the order transaction we want to relay to the blockchain.
-
-```ts
-order.setSatsPerByte(30);
-```
-
-{% data title="Parameters" %}
-  {% data-item name="value" type="number" required=true description="How many sats to pay per byte of the order transaction." /%}
-{% /data %}
-
----
-
 ### Create Order
 
 Once we have our order built we can submit it to the sado api for processing. The order will now be validated before being submitted to IPFS creating a static reference before crafting a Sado protocol order PSBT. Once all steps are resolved successfully you will be provided with a `cid` and `psbt`.
@@ -393,7 +380,7 @@ Once we have our order built we can submit it to the sado api for processing. Th
 See [create order](##create-order) for more details.
 
 ```ts
-const { cid, psbt } = await sado.order.create(order);
+const { cid, psbt } = await sado.order.create(order, 30);
 ```
 
 You now have to verify, sign, finalize and relay the psbt to the blockchain.
