@@ -20,6 +20,11 @@ export class ContentController extends Controller<{
     this.setSubscription({
       hash: router.subscribeToLocation((location) => markdoc.scrollTo(location.hash))
     });
+    setTimeout(() => {
+      if (router.location.hash) {
+        markdoc.scrollTo(router.location.hash);
+      }
+    }, 200);
   }
 
   async #loadContent() {
