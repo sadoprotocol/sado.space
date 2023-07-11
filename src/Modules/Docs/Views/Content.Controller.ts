@@ -24,7 +24,7 @@ export class ContentController extends Controller<{
       if (router.location.hash) {
         markdoc.scrollTo(router.location.hash);
       }
-    }, 200);
+    }, 500);
   }
 
   async #loadContent() {
