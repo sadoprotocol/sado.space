@@ -35,10 +35,7 @@ Creates a new offer PSBT _(Partially Signed Bitcoin Transaction)_ which consists
         "origin": "<cid>",
         "taker": "<address>",
         "cardinals": 100000,
-        "fees": {
-          "network": 1000,
-          "rate": 15
-        }
+        "satsPerByte": 30
       },
       "id": 0
     }
@@ -56,9 +53,7 @@ Creates a new offer PSBT _(Partially Signed Bitcoin Transaction)_ which consists
       {% preview-object-item name="taker" type="string" required=true description="Address where the output being sold should be transfered." /%}
       {% preview-object-item name="cardinals" type="number" required=true description="Amount of cardinals being offered to buy the output." /%}
 
-      {% preview-object-item name="fees" type="object" required=true description="Adjustment settings for the fees to construct the order transaction with. Allows for tuning the mempool incentives to pick up and process the order." /%}
-      {% preview-object-item name="fees.network" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
-      {% preview-object-item name="fees.rate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
+      {% preview-object-item name="satsPerByte" type="number" required=true description="Set the amount of sats to pay per byte for the offer transaction." /%}
 
     {% /preview-object %}
 

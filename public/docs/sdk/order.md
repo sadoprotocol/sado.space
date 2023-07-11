@@ -39,7 +39,8 @@ Once a order is verified and fully signed you can submit it via the create metho
           "cardinals": 0,
           "maker": "<address>",
           "orderbooks": [
-            "<address>"
+            "<address>",
+            "<address:fee>"
           ]
         },
         "signature": {
@@ -48,10 +49,7 @@ Once a order is verified and fully signed you can submit it via the create metho
           "desc": "<desc>",
           "pubkey": "<pubkey>"
         },
-        "fees": {
-          "network": 1000,
-          "rate": 15
-        }
+        "satsPerByte": 30
       },
       "id": 0
     }
@@ -85,9 +83,7 @@ Once a order is verified and fully signed you can submit it via the create metho
       {% preview-object-item name="signature.desc" type="string" required=false description="Signature description is required when signing with bech32 or bech32m address." /%}
       {% preview-object-item name="signature.pubkey" type="string" required=false description="Sliced public key is required when signing with a bech32m (taproot) address." /%}
 
-      {% preview-object-item name="fees" type="object" required=true description="Adjustment settings for the fees to construct the order transaction with. Allows for tuning the mempool incentives to pick up and process the order." /%}
-      {% preview-object-item name="fees.network" type="number" required=true description="Additional fee to add to the order to elevate mempool priority" /%}
-      {% preview-object-item name="fees.rate" type="number" required=true description="The fee rate to use for the order to elevate mempool priority" /%}
+      {% preview-object-item name="satsPerByte" type="number" required=true description="Set the amount of sats to pay per byte for the order transaction." /%}
 
     {% /preview-object %}
 
@@ -376,19 +372,16 @@ Make sure to fill out all the optional values before creating a `message` signat
 
 ---
 
-### Add Fees
+### Set Sats Per Byte
 
-To incentivice miners to pick up our `order` we can adjust the network fee and fee rate used when creating the order transaction we want to relay to the blockchain. If it wasn't added as part of the order instantiation we provide two methods to adjust the fee.
-
-If custom fees is not added the default values used is `1000` sats for the flat `network` fee and `10` for the fee rate.
+To incentivice miners to pick up our `order` we need to set the `satsPerByte` value used when creating the order transaction we want to relay to the blockchain.
 
 ```ts
-order.addFees(1000, 10);
+order.setSatsPerByte(30);
 ```
 
 {% data title="Parameters" %}
-  {% data-item name="networkFee" type="number" required=true description="Flat network fee to add to the order transaction." /%}
-  {% data-item name="feeRate" type="number" required=true description="Mempool fee rate to boost miner incentive to pick up the order transaction." /%}
+  {% data-item name="value" type="number" required=true description="How many sats to pay per byte of the order transaction." /%}
 {% /data %}
 
 ---
