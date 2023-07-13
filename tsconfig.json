@@ -7,37 +7,15 @@
     "esModuleInterop": true,
     "jsx": "preserve",
     "jsxImportSource": "solid-js",
-    "types": [
-      "vite/client"
-    ],
+    "types": ["vite/client"],
     "noEmit": true,
     "isolatedModules": true,
     "paths": {
-      "@sadoprotocol/sdk": [
-        "./src/Libraries/SDK/index.ts"
-      ],
-      "~Atoms/*": [
-        "./src/Components/Atoms/*"
-      ],
-      "~Molecules/*": [
-        "./src/Components/Molecules/*"
-      ],
-      "~Organisms/*": [
-        "./src/Components/Organisms/*"
-      ],
-      "~Middleware/*": [
-        "./src/Middleware/*"
-      ],
-      "~Modules/*": [
-        "./src/Modules/*"
-      ],
-      "~Services/*": [
-        "./src/Services/*"
-      ]
+      "~Components/*": ["./src/Components/*"],
+      "~Library/*": ["./src/Library/*"],
+      "~Middleware/*": ["./src/Middleware/*"],
+      "~Services/*": ["./src/Services/*"]
     }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx"
-  ]
+  "include": ["**/*.ts", "**/*.tsx"]
 }

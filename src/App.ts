@@ -1,13 +1,12 @@
 /* @refresh reload */
 
-import "./Modules";
-import "./Docs";
+import "./Routes";
 
 import { controllers } from "@valkyr/solid";
 import { createComponent } from "solid-js";
 import { render } from "solid-js/web";
 
-import { ControllerLoader } from "~Molecules/ControllerLoader.Component";
+import { ControllerLoader } from "~Components/Loader";
 import { router } from "~Services/Router";
 
 let currentComponent: () => void | undefined;
@@ -19,11 +18,11 @@ let currentComponent: () => void | undefined;
  */
 
 router
-  .render((component, props = {}) => {
+  .onRender((component, props = {}) => {
     currentComponent?.();
     currentComponent = render(() => createComponent(component, props), document.body);
   })
-  .error((error) => {
+  .onError((error) => {
     console.error(error);
   })
   .listen();

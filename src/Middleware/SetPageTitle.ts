@@ -1,9 +1,11 @@
 import { Action, Route } from "@valkyr/router";
 
+import { router } from "~Services/Router";
+
 export const setPageTitle = (appTitle: string, getPageTitle = getDefaultPageTitle): Action =>
-  async function ({ route }) {
-    document.title = `${appTitle} | ${getPageTitle(route)}`;
-    return this.accept();
+  async function (res) {
+    document.title = `${appTitle} | ${getPageTitle(router.route)}`;
+    return res.accept();
   };
 
 function getDefaultPageTitle(route: Route) {
