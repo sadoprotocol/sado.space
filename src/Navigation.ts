@@ -8,7 +8,7 @@ export const navigation: Navigation = {
     },
     {
       title: "Articles",
-      links: [{ title: "OIP3", href: "/blog/oip3", file: "/blog/oip3.md" }]
+      links: [{ title: "Tapping-into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" }]
     }
   ],
   docs: [
