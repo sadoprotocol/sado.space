@@ -11,16 +11,6 @@ export const navigation: Navigation = {
       links: [{ title: "Tapping-into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" }]
     }
   ],
-  lab: [
-    {
-      title: "Sado Space",
-      links: [{ title: "Introduction", href: "/", file: "/blog/welcome.md" }]
-    },
-    {
-      title: "Articles",
-      links: [{ title: "Tapping-into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" }]
-    }
-  ],
   docs: [
     {
       title: "Introduction",
