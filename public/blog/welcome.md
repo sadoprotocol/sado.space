@@ -5,8 +5,7 @@ description: Latest posts, news, insights, and docs from the Sado Protocol Team.
 ---
 
 Welcome to Sado Space - the research lab sponsored by [Ordzaar](https://ordzaar.com). 
-
-We provide open-source tools, protocols and services supporting [Ordinals](https://docs.ordinals.com/).
+Open-source tools, protocols and services supporting [Ordinals](https://docs.ordinals.com/).
 
 --------
 ## About
