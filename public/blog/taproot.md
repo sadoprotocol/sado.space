@@ -48,7 +48,9 @@ var inscription = bitcoin.payments.p2tr({
 var commit_and_reveal_address = inscription.address;
 ```
 
-Inscriptions are created by spending from what is known as the `commit` address, but the total fees required to `reveal` the witness script, which ultimately contains up-to 380KB of media content; must be  covered by a single UTXO. Any other funds sent to that address that are less than the required amount can rarely be recovered and are often lost forever.
+Inscriptions are created by spending from what is known as the `commit` address, but the total fees required to `reveal` the witness script, which ultimately contains up-to 380KB of media content; must be  covered by a single UTXO.
+
+__Any other funds sent to that address__ that are less than the required amount can rarely be recovered and __are often lost forever__.
 
 ## OIP-03 Proposal
 
