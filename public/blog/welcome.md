@@ -15,4 +15,4 @@ What started as an open protocol designed to facilitate decentralized marketplac
 -----------
 ## Contacts
 
-Please reach out on Twitter if you have any questions - @[sadoprotocol](https://twitter.com/sadoprotocol).
+Reach out on Twitter if you have any questions - @[sadoprotocol](https://twitter.com/sadoprotocol).
