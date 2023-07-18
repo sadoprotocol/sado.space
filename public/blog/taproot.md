@@ -1,5 +1,5 @@
 ---
-title: Tapping-into the magic of taproot!
+title: Tapping into the magic of taproot!
 pageTitle: Sado Space - Exploring Taprot with OIP-03
 description: Introducing OIP-03 and the Sado Space Tech Lead - Mark Smalley
 ---
