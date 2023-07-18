@@ -14,7 +14,7 @@ Although inscription media content and type can be painstakingly extracted from 
 
 When building bitcoin applications, developers are required to gather information regarding the available `unspents` on a specific address, which are used to construct valid transactions. Examples of popular APIs used by many within the Bitcoin ecosystem for traditional applications includes [BlockCypher](https://www.blockcypher.com/) and [SoChain](https://sochain.com/). However, neither of these UTXO APIs are ordinal-aware. Using these services to build upon the ordinal and inscription ecosystem would be extremely dangerous and somewhat similar to picking your toenails with a samurai sword whilst blindfolded. Loss of rare sats or accidentally sending inscriptions to miners are common problems when using tools and services that are not ordinal aware.
 
-## Ordinal-Aware APIs
+## Ordit API
 
 This is why we created our own UTXO [parser](https://github.com/sadoprotocol/utxo-parser) and [API](https://github.com/sadoprotocol/utxo-parser) for handling ordinals. Searching for `unspents` using this service would result in data such as:
 
