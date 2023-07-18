@@ -1,5 +1,5 @@
 ---
-title: Why worry about being ordinal-aware?
+title: Be aware of what is ordinal-aware!
 pageTitle: Sado Space - Defining What Ordinal-Aware Means
 description: Introducing The Benefits of Sado Space
 ---
