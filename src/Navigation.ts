@@ -9,7 +9,11 @@ export const navigation: Navigation = {
     {
       title: "Blog Articles",
       links: [
-        { title: "Tapping into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" },
+        {
+          title: "Tapping into the magic of taproot!",
+          href: "/blog/taproot-recoverable-commits",
+          file: "/blog/taproot.md"
+        },
         { title: "Be aware of what is ordinal-aware", href: "/blog/ordinal-aware", file: "/blog/aware.md" }
       ]
     }
@@ -17,7 +21,7 @@ export const navigation: Navigation = {
   docs: [
     {
       title: "Introduction",
-      links: [{ title: "Welcome", href: "/docs", file: "/docs/introduction/welcome.md" }]
+      links: [{ title: "Documentation", href: "/docs", file: "/docs/introduction/welcome.md" }]
     },
     {
       title: "Sado API",

@@ -1,14 +1,22 @@
-import { Action, Route } from "@valkyr/router";
+import { Action } from "@valkyr/router";
 
 import { router } from "~Services/Router";
 
-export const setPageMeta = (appTitle: string, getPageTitle = getDefaultPageTitle): Action =>
-  async function (res) {
-    document.title = `${appTitle} | ${getPageTitle(router.route)}`;
-    document.querySelector("meta[property='og:url']")?.setAttribute("content", window.location.href);
-    return res.accept();
-  };
+import { getNavigationByLocation } from "../Navigation";
 
-function getDefaultPageTitle(route: Route) {
-  return route.name;
+export const setPageMeta: Action = async function (res) {
+  document.title = `${getTitleByHref(router.history.location.pathname, router.route.name)}`;
+  document.querySelector("meta[property='og:url']")?.setAttribute("content", window.location.href);
+  return res.accept();
+};
+
+function getTitleByHref(href: string, fallback = ""): string {
+  for (const nav of getNavigationByLocation()) {
+    for (const link of nav.links) {
+      if (link.href === href) {
+        return `${link.title} | ${nav.title}`;
+      }
+    }
+  }
+  return fallback;
 }
