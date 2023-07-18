@@ -37,6 +37,15 @@ function getParsedDocument(doc: string): MarkdownDocument {
   const frontmatter = getFrontmatter(ast);
   const [previousPage, nextPage] = getPageLinks();
   const path = router.history.location.pathname;
+
+  document.head
+    .querySelector("meta[name='description']")
+    .setAttribute("content", frontmatter.description ?? "Open-Source Ordinal-Aware Tools & Services");
+
+  document.head
+    .querySelector("meta[property='og:image']")
+    .setAttribute("content", frontmatter.image ?? "http://sado.space/img/fb.jpg?v=0.0.1");
+
   return {
     title: frontmatter.title,
     pageTitle: frontmatter.pageTitle || `${frontmatter.title} - Docs`,
