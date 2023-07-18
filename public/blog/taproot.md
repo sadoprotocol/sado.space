@@ -14,9 +14,11 @@ When I left the world of UTXOs behind there was really only one type of address 
 
 Six months ago, back before I had gray hair, I was introduced to [Bitcoin Ordinals](https://docs.ordinals.com/), which provide a way of inscribing up-to 380KB of arbitrary data into a single transaction, which was previously limited to just 80 bytes only. In order to bypass the 80 byte limit of using the `OP_RETURN` method, ordinals attach data to taproot witness scripts, which can technically take-up an entire block (4MB), but are often capped at 400KB by most miners and transaction relaying services.
 
-Bitcoin Ordinal Inscriptions are created using taproot addresses. Not a standard taproot address, but rather a segregated witness (script) based taproot address. Unlike the traditional legacy based addresses, which can only be spent with the corresponding “private” key, SegWit addresses allow you to create non-key based accounts that can be unlocked using scripts. Both native and nested SegWit accounts in both legacy and Bech32 formats can only be linked to a single script. However, the most exciting thing about taproot addresses is that they utilize a ScriptTree, which enables you to have multiple TapLeafs!
+Bitcoin Ordinal Inscriptions are created using taproot addresses. Not a standard taproot address, but rather a segregated witness (script) based taproot address. Unlike the traditional legacy based addresses, which can only be spent with the corresponding “private” key, SegWit addresses allow you to create non-key based accounts that can be unlocked using scripts. Both native and nested SegWit accounts in both legacy and Bech32 formats can only be linked to a single script.
 
-__Each leaf can be linked to a different script, enabling for an array of redemption methods to be applied to a single address.__ Unfortunately, despite utilizing ScriptTrees, the original implementation of bitcoin inscriptions only uses a single TapLeaf, with a single method of redemption.
+However, the most exciting thing about taproot addresses is that they utilize a ScriptTree, which enables you to have multiple TapLeafs! __Each leaf can be linked to a different script, enabling for an array of redemption methods to be applied to a single address.__ 
+
+Unfortunately, despite utilizing ScriptTrees, the original implementation of bitcoin inscriptions only uses a single TapLeaf, with a single method of redemption.
 
 ## Current Implementation
 
