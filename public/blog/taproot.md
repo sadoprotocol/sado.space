@@ -24,7 +24,7 @@ Unfortunately, despite utilizing ScriptTrees, the original implementation of bit
 
 ## Current Implementation
 
-The simplified example below uses `BitcoinJS` to demonstrate how things work behind the scenes:
+The simplified example below uses `BitcoinJS` to demonstrate how things work behind the scenes when generating addresses for inscriptions:
 
 ```
 var witness_script = bitcoin.script.compile([
