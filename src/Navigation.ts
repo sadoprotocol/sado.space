@@ -8,7 +8,10 @@ export const navigation: Navigation = {
     },
     {
       title: "Blog Articles",
-      links: [{ title: "Tapping into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" }]
+      links: [
+        { title: "Tapping into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" },
+        { title: "Why worry about being ordinal-aware?", href: "/blog/ordinal-aware", file: "/blog/aware.md" }
+      ]
     }
   ],
   docs: [
