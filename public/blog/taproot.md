@@ -37,8 +37,10 @@ var witness_script = bitcoin.script.compile([
 	OP_PUSH("Hello World"), // media content
 	bitcoin.opcodes.OP_ENDIF // end of ENVELOPE
 ]);
+
 var script_tree = [{output: witness_script}];
 var redeem_script = {output: witness_script, redeemVersion: 192};
+
 var inscription = bitcoin.payments.p2tr({
 	internalPubkey: sliced_public_key,
 	scriptTree: script_tree,
@@ -56,7 +58,7 @@ __Any other funds sent to that address__ that are less than the required amount 
 
 As such - we would like to propose [OIP-03](https://www.oips.io/oip-03-recoverable-commits) for recoverable commits.
 
-By introducing a second TapLeaf with a simplified `recover` script that does not include the content that is trying to be inscribed, the fees can - when needed; be reduced and have the potential to then enable unsuitable UTXOs to be recovered. Since redeem scripts do not affect the address - when it comes to spending from the address at the reveal phase, it is possible to use either of the redeem scripts that match those found in the initial commit ScriptTree.
+By introducing a second TapLeaf with a simplified `recover` script that does not include the content that is trying to be inscribed, the fees can - when needed; be reduced and have the potential to then enable unsuitable UTXOs to be recovered. Since redeem scripts do not affect the address - when it comes to spending from the address at the reveal phase, it is possible to use either of the redeem scripts that match those found in the initial commit ScriptTree - as seen below:
 
 ```
 var inscribe_script = bitcoin.script.compile([
@@ -73,9 +75,11 @@ var recover_script = bitcoin.script.compile([
 	tweaked_public_key,
 	bitcoin.opcodes.OP_CHECKSIG
 ]);
+
 var script_tree = [{output: inscribe_script}, {output: recover_script}];
 var inscribe = {output: inscribe_script, redeemVersion: 192};
 var recover = {output: recover_script, redeemVersion: 192};
+
 var inscription = bitcoin.payments.p2tr({
 	internalPubkey: slicedPubKey,
 	scriptTree: script_tree,
