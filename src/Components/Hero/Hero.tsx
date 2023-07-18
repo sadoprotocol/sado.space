@@ -14,7 +14,7 @@ export const Hero = HeroController.view(({ state }) => {
                   Sado Space
                 </p>
                 <p class="mt-3 text-2xl leading-9 tracking-tight text-slate-400 sm:leading-normal">
-                  Self-Authenticating Decentralized Ordinalbooks
+                  Open-Source Ordinal-Aware Tools &amp; Services
                 </p>
               </div>
             </div>
