@@ -107,6 +107,6 @@ function goToExplorer(event: any) {
   event.preventDefault();
   const input = event.target.querySelector("input") as HTMLInputElement;
   if (input.value) {
-    location.href = `https://explore.sado.space/search?query=${input.value}&network=regtest`;
+    location.href = `https://explore.sado.space/search?query=${input.value}&network=${network.current()}`;
   }
 }
