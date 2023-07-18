@@ -6,7 +6,7 @@ description: Introducing OIP-03 and the Sado Labs Tech Lead - Mark Smalley
 
 ## Introductions
 
-My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Labs, where we provide open-source tools to support [Ordzaar](https://ordzaar.com). Having been in this industry for such a long time, I had no choice but to start my journey in the land of [UTXOs](https://en.wikipedia.org/wiki/Unspent_transaction_output) (unspent transaction outputs). 
+My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Labs, where we provide open-source tools that are used by marketplaces such as [Ordzaar](https://ordzaar.com). Having been in this industry for such a long time, I had no choice but to start my journey in the land of [UTXOs](https://en.wikipedia.org/wiki/Unspent_transaction_output) (unspent transaction outputs). 
 
 Like many developers, I was eventually lured away by Vitalik’s shiny new toy and the exciting things that could be done within the [EVM](https://en.wikipedia.org/wiki/Ethereum#Virtual_machine) (ethereum virtual machine) space with Solidity smart contracts. 
 
@@ -81,7 +81,7 @@ var recoverable_commit_and_reveal_address = inscription.address;
 
 ## Conclusions
 
-In my opinion, this provides an excellent example of the power taproot ScriptTrees bring. Combining multiple redemption methods allows for a whole host of exciting use-cases - speaking of whiuch, We are working on several open-source tools at Sado Labs to help support [Ordzaar](https://ordzaar.com), and other decentralized marketplaces.
+In my opinion, this provides an excellent example of the power taproot ScriptTrees bring. Combining multiple redemption methods allows for a whole host of exciting use-cases - speaking of whiuch, We are working on several open-source tools at Sado Space to help support decentralized marketplaces such as [Ordzaar](https://ordzaar.com).
 
 These tools include:
 
