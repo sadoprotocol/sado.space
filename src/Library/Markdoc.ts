@@ -43,12 +43,8 @@ function getParsedDocument(doc: string): MarkdownDocument {
     .setAttribute("content", frontmatter.description ?? "Open-Source Ordinal-Aware Tools & Services");
 
   document.head
-    .querySelector("meta[property='og:description']")
-    .setAttribute("content", frontmatter.description ?? "Open-Source Ordinal-Aware Tools & Services");
-
-  document.head
     .querySelector("meta[property='og:image']")
-    .setAttribute("content", frontmatter.image ?? "http://sado.space/img/fb.jpg?v=0.0.1");
+    .setAttribute("content", frontmatter.image ?? "http://sado.space/fb.jpg?v=0.0.2");
 
   return {
     title: frontmatter.title,
