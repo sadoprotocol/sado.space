@@ -16,7 +16,9 @@ Six months ago, back before I had gray hair, I was introduced to [Bitcoin Ordina
 
 Bitcoin Ordinal Inscriptions are created using taproot addresses. Not a standard taproot address, but rather a segregated witness (script) based taproot address. Unlike the traditional legacy based addresses, which can only be spent with the corresponding “private” key, SegWit addresses allow you to create non-key based accounts that can be unlocked using scripts. Both native and nested SegWit accounts in both legacy and Bech32 formats can only be linked to a single script.
 
-However, the most exciting thing about taproot addresses is that they utilize a ScriptTree, which enables you to have multiple TapLeafs! __Each leaf can be linked to a different script, enabling for an array of redemption methods to be applied to a single address.__ 
+However, the most exciting thing about taproot addresses is that they utilize a ScriptTree, which enables you to have multiple TapLeafs! 
+
+__Each leaf can be linked to a different script, enabling for an array of redemption methods to be applied to a single address.__ 
 
 Unfortunately, despite utilizing ScriptTrees, the original implementation of bitcoin inscriptions only uses a single TapLeaf, with a single method of redemption.
 
