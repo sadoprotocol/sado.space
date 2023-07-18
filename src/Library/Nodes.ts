@@ -17,10 +17,6 @@ export const nodes: Config["nodes"] = {
     attributes: {
       href: {
         type: String
-      },
-      target: {
-        type: String,
-        default: "_blank"
       }
     }
   }

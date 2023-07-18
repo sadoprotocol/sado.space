@@ -16,9 +16,9 @@ We have also developed the ORDIT SDK, which not only acts as middleware to ensur
 
 Please visit the links below for more detailed information about our tools:
 
-* [SADO](https://sado.space/docs/sdk-introduction) API and SDK - self-authenticating decentralized orderbooks
-* [IPFS](https://sado.space/docs/ipfs-introduction) API and SDK - interplanetary file-system pinning service
-* [ORDIT](https://sado.space/docs/ordit-introduction) API and SDK - ordinal aware UTXO builder
+* [SADO](/docs/sdk-introduction) API and SDK - self-authenticating decentralized orderbooks
+* [IPFS](/docs/ipfs-introduction) API and SDK - interplanetary file-system pinning service
+* [ORDIT](/docs/ordit-introduction) API and SDK - ordinal aware UTXO builder
 
 ## Contacts
 

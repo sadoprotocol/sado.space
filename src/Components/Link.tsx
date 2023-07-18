@@ -21,24 +21,17 @@ export function Link({
   href,
   class: className = "",
   classList,
-  target = "_self",
+  target = "_blank",
   onClicked,
   ...other
 }: Props): JSX.Element {
-  if (target !== "_self") {
-    return (
-      <a class={className} href={href} target={target} classList={classList?.()} {...other}>
-        {children}
-      </a>
-    );
-  }
   return (
     <a
       class={className}
       href={href}
       onClick={handleClick(href, onClicked)}
       classList={classList?.()}
-      target={target}
+      target={isRelative(href) === true ? "_self" : target}
       {...other}
     >
       {children}

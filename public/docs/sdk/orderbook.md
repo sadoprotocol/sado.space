@@ -48,7 +48,7 @@ Analytics provide provides analytics details for a given orderbook.
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics" description="Analytics data for the orderbook." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -66,7 +66,7 @@ Analytics provide provides analytics details for a given orderbook.
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics" description="Analytics data for the orderbook." /%}
     {% /preview-object %}
 
   {% /preview-section %}
@@ -82,7 +82,7 @@ Analytics provide provides analytics details for a given orderbook.
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics-2" description="Analytics data for the orderbook." /%}
+      {% preview-object-item name="analytics" type="Analytics" type-link="#analytics" description="Analytics data for the orderbook." /%}
     {% /preview-object %}
 
   {% /preview-section %}
