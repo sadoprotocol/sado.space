@@ -6,7 +6,7 @@ description: Latest posts, news, insights, and docs from the Sado Protocol Team.
 
 Welcome to Sado Space - the independent research lab sponsored by [Ordzaar](https://ordzaar.com). 
 
-We provide a collection of open-source tools, protocols and services to help support [ordinals](https://docs.ordinals.com/).
+We provide open-source tools, protocols and services to help support [Ordinals](https://docs.ordinals.com/).
 
 What started as an open protocol designed to facilitate decentralized marketplaces has evolved into a full-stack of ordinal-aware blockchain infrastructure. From the [IPFS](https://sado.space/docs/ipfs-introduction) pining services we have developed for handling the [SADO](https://sado.space/docs/sdk-introduction) global order-books, through to our UTXO [parser](https://github.com/sadoprotocol/utxo-parser) and [API](https://github.com/sadoprotocol/utxo-api), which communicate with our forked [ORD](https://github.com/sadoprotocol/ord) servers. We have also developed the [ORDIT](https://sado.space/docs/ordit-introduction) SDK, which not only act as middleware to ensure that all browser extension wallets behave in the same way, but it also has its own wallet-class to enable trustless inscriptions and more.
 
