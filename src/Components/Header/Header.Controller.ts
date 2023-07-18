@@ -3,7 +3,7 @@ import { Controller } from "@valkyr/solid";
 import { router } from "~Services/Router";
 
 export class HeaderController extends Controller<{
-  path: string;
+  active: "blog" | "docs";
 }> {
   async onInit() {
     this.#setState();
@@ -14,6 +14,11 @@ export class HeaderController extends Controller<{
 
   #setState = () => {
     const path = router.history.location.pathname;
-    this.setState({ path });
+    if (path === "/" || path.includes("/blog")) {
+      this.setState("active", "blog");
+    }
+    if (path.includes("/docs")) {
+      this.setState("active", "docs");
+    }
   };
 }

@@ -33,9 +33,10 @@ export const Header = HeaderController.view(({ state }) => {
         </Link>
         <Link
           href="/"
-          class="ml-5 dark:text-white"
+          class="ml-5"
           classList={() => ({
-            ["dark:text-sky-500"]: state.path === "/" || state.path.includes("/blog")
+            ["dark:text-sky-500"]: state.active === "blog",
+            ["dark:text-white"]: state.active !== "blog"
           })}
           aria-label="blog"
         >
@@ -43,9 +44,10 @@ export const Header = HeaderController.view(({ state }) => {
         </Link>
         <Link
           href="/docs"
-          class="ml-5 dark:text-white"
+          class="ml-5"
           classList={() => ({
-            ["dark:text-sky-500"]: state.path.includes("/docs")
+            ["dark:text-sky-500"]: state.active === "docs",
+            ["dark:text-white"]: state.active !== "docs"
           })}
           aria-label="docs"
         >
