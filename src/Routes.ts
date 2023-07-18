@@ -1,7 +1,7 @@
 import { Route } from "@valkyr/router";
 
 import { render, renderTemplate } from "~Middleware/Render";
-import { setPageTitle } from "~Middleware/SetPageTitle";
+import { setPageMeta } from "~Middleware/SetPageMeta";
 import { router } from "~Services/Router";
 import { getTitleByHref } from "~Services/Utils";
 
@@ -21,37 +21,37 @@ router.register([
         id: "blog-welcome",
         name: "Welcome",
         path: "/",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       }),
       new Route({
         id: "blog-content",
         name: "Article",
         path: "/blog/:page",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       }),
       new Route({
         id: "docs-introduction",
         name: "Introduction",
         path: "/docs",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       }),
       new Route({
         id: "docs-content",
         name: "Page",
         path: "/docs/:page",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       }),
       new Route({
         id: "whitepaper-introduction",
         name: "Page",
         path: "/whitepaper",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       }),
       new Route({
         id: "whitepaper-content",
         name: "Page",
         path: "/whitepaper/:page",
-        actions: [setPageTitle(APP_TITLE, getDocTitle), render(ContentView)]
+        actions: [setPageMeta(APP_TITLE, getDocTitle), render(ContentView)]
       })
     ]
   })
