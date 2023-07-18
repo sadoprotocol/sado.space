@@ -1,12 +1,12 @@
 ---
 title: Tapping-into the magic of taproot!
-pageTitle: Sado Labs - Exploring Taprot with OIP-03
-description: Introducing OIP-03 and the Sado Labs Tech Lead - Mark Smalley
+pageTitle: Sado Space - Exploring Taprot with OIP-03
+description: Introducing OIP-03 and the Sado Space Tech Lead - Mark Smalley
 ---
 
 ## Introductions
 
-My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Labs, where we provide open-source tools that are used by marketplaces such as [Ordzaar](https://ordzaar.com). 
+My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Space, where we provide open-source tools that are used by marketplaces such as [Ordzaar](https://ordzaar.com). 
 
 Having been in this industry for such a long time, I had no choice but to start my journey in the land of [UTXOs](https://en.wikipedia.org/wiki/Unspent_transaction_output) (unspent transaction outputs). Like many developers, I was eventually lured away by Vitalik’s shiny new toy and the exciting things that could be done within the [EVM](https://en.wikipedia.org/wiki/Ethereum#Virtual_machine) (ethereum virtual machine) using smart contracts. 
 
