@@ -47,6 +47,7 @@ var inscription = bitcoin.payments.p2tr({
 	redeem: redeem_script,
 	network: network
 });
+
 var commit_and_reveal_address = inscription.address;
 ```
 
@@ -71,6 +72,7 @@ var inscribe_script = bitcoin.script.compile([
 	OP_PUSH(“Hello Blockchain Developers of Malaysia”), // media content
 	bitcoin.opcodes.OP_ENDIF // end of ENVELOPE
 ]);
+
 var recover_script = bitcoin.script.compile([
 	tweaked_public_key,
 	bitcoin.opcodes.OP_CHECKSIG
@@ -86,6 +88,7 @@ var inscription = bitcoin.payments.p2tr({
 	redeem: inscribe, // this can be inscribe or recover
 	network: network
 });
+
 var recoverable_commit_and_reveal_address = inscription.address;
 ```
 
