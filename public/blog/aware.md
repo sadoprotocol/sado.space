@@ -8,7 +8,7 @@ description: Introducing The Benefits of Sado Space
 
 Ordinal Theory has been around since 1883. It is a form of mathematical notation used to describe infinite sets of numbers. However, it was only in 2023 that it was applied to Bitcoin as a way of tracking individual satoshis, the lowest denomination of Bitcoin. Ordinal Theory gives satoshis individual identities and allows them to be tracked by linking them to `inscription` data that is permanently stored on the blockchain within segregated-witness scripts.
 
-Although inscription media content and type can be painstakingly extracted from raw blockchain data, tracking the onwership of those inscriptions or obtaining information such as the rarity of the underlying ordinals that those inscriptions are attached to can only be gathered by communicating with your own ORD server or by using an ordinal-aware API.
+Although inscription media content and type can be painstakingly extracted from raw blockchain data, tracking the onwership of those inscriptions or obtaining information such as the rarity of the underlying ordinals that those inscriptions are attached to can only be gathered by communicating with your own [ORD](https://github.com/ordinals/ord) server or by using an ordinal-aware API.
 
 ## UTXO APIs
 
