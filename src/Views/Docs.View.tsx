@@ -52,6 +52,9 @@ function Header() {
         <Link href="/docs" class="ml-5 dark:text-white" aria-label="docs">
           Docs
         </Link>
+        <Link href="httpsL//explore.sado.space/" class="ml-5 dark:text-white" aria-label="explore">
+          Explore
+        </Link>
       </div>
       <div class="relative flex basis-0 items-center justify-end gap-6 sm:gap-8 md:flex-grow">
         <Link href="/whitepaper" class="text-sm dark:text-white/75" aria-label="blog">
