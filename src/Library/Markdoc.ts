@@ -43,7 +43,7 @@ function getParsedDocument(doc: string): MarkdownDocument {
     .setAttribute("content", frontmatter.description ?? "Open-Source Ordinal-Aware Tools & Services");
 
   document.head
-    .querySelector("meta[name='og:description']")
+    .querySelector("meta[property='og:description']")
     .setAttribute("content", frontmatter.description ?? "Open-Source Ordinal-Aware Tools & Services");
 
   document.head
