@@ -94,7 +94,7 @@ var recoverable_commit_and_reveal_address = inscription.address;
 
 ## Conclusions
 
-In my opinion, this provides an excellent example of the power taproot ScriptTrees bring. Combining multiple redemption methods allows for a whole host of exciting use-cases - speaking of whiuch, We are working on several open-source tools at Sado Space to help support decentralized marketplaces such as [Ordzaar](https://ordzaar.com).
+In my opinion, this provides an excellent example of the power taproot ScriptTrees bring. Combining multiple redemption methods allows for a whole host of exciting use-cases - speaking of which, We are working on several open-source tools at Sado Space to help support decentralized marketplaces such as [Ordzaar](https://ordzaar.com).
 
 These tools include:
 
