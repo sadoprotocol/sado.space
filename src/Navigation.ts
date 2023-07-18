@@ -7,7 +7,7 @@ export const navigation: Navigation = {
       links: [{ title: "Introduction", href: "/", file: "/blog/welcome.md" }]
     },
     {
-      title: "Articles",
+      title: "Blog Articles",
       links: [{ title: "Tapping-into the magic of taproot!", href: "/blog/taproot-recoverable-commits", file: "/blog/taproot.md" }]
     }
   ],
