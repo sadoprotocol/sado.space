@@ -6,9 +6,9 @@ description: Introducing OIP-03 and the Sado Labs Tech Lead - Mark Smalley
 
 ## Introductions
 
-My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Labs, where we provide open-source tools that are used by marketplaces such as [Ordzaar](https://ordzaar.com). Having been in this industry for such a long time, I had no choice but to start my journey in the land of [UTXOs](https://en.wikipedia.org/wiki/Unspent_transaction_output) (unspent transaction outputs). 
+My name’s [Mark](http://smalley.my/) and I’ve been building blockchain applications for just over ten years now. I’m currently the tech-lead at Sado Labs, where we provide open-source tools that are used by marketplaces such as [Ordzaar](https://ordzaar.com). 
 
-Like many developers, I was eventually lured away by Vitalik’s shiny new toy and the exciting things that could be done within the [EVM](https://en.wikipedia.org/wiki/Ethereum#Virtual_machine) (ethereum virtual machine) space with Solidity smart contracts. 
+Having been in this industry for such a long time, I had no choice but to start my journey in the land of [UTXOs](https://en.wikipedia.org/wiki/Unspent_transaction_output) (unspent transaction outputs). Like many developers, I was eventually lured away by Vitalik’s shiny new toy and the exciting things that could be done within the [EVM](https://en.wikipedia.org/wiki/Ethereum#Virtual_machine) (ethereum virtual machine) space with Solidity smart contracts. 
 
 When I left the world of UTXOs behind there was really only one type of address format available and anything exciting was constrained to an `OP_RETURN`. That original address format is now known as the legacy address format and makes those gray hairs of mine really start to stand out. I spent five years working with smart contracts, but am now back again where I started and when I got here, I found myself both lost, surprised and excited all at once …
 
