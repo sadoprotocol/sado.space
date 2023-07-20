@@ -21,7 +21,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
         <div class="mt-3">
           <Link
             href="/"
-            class="hidden py-2 md:block"
+            class="block py-2 dark:text-white"
             classList={() => ({
               ["dark:text-sky-500"]: state.active === "blog",
               ["dark:text-white"]: state.active !== "blog"
@@ -33,7 +33,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
           </Link>
           <Link
             href="/docs"
-            class="hidden py-2 md:block"
+            class="block py-2 dark:text-white"
             classList={() => ({
               ["dark:text-sky-500"]: state.active === "docs",
               ["dark:text-white"]: state.active !== "docs"
@@ -46,7 +46,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
           <Link
             href="https://explore.sado.space/"
             target="_self"
-            class="hidden py-2 dark:text-white md:block"
+            class="block py-2 dark:text-white"
             aria-label="explore"
             onClicked={closeNavigation}
           >
