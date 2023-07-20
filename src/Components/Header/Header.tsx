@@ -33,7 +33,7 @@ export const Header = HeaderController.view(({ state }) => {
         </Link>
         <Link
           href="/"
-          class="ml-5"
+          class="ml-5 hidden lg:block"
           classList={() => ({
             ["dark:text-sky-500"]: state.active === "blog",
             ["dark:text-white"]: state.active !== "blog"
@@ -44,7 +44,7 @@ export const Header = HeaderController.view(({ state }) => {
         </Link>
         <Link
           href="/docs"
-          class="ml-5"
+          class="ml-5 hidden lg:block"
           classList={() => ({
             ["dark:text-sky-500"]: state.active === "docs",
             ["dark:text-white"]: state.active !== "docs"
@@ -53,11 +53,16 @@ export const Header = HeaderController.view(({ state }) => {
         >
           Docs
         </Link>
-        <Link href="https://explore.sado.space/" target="_self" class="ml-5 dark:text-white" aria-label="explore">
+        <Link
+          href="https://explore.sado.space/"
+          target="_self"
+          class="ml-5 hidden dark:text-white lg:block"
+          aria-label="explore"
+        >
           Explore
         </Link>
       </div>
-      <div class="-my-5 mr-6 sm:mr-8 md:mr-0">
+      <div class="-my-5 mr-6 hidden sm:mr-8 md:mr-0 lg:block">
         <div class="flex">
           <select
             class="mr-2 rounded-lg border-slate-700/50 bg-slate-800 text-sm dark:text-slate-400"
@@ -87,7 +92,7 @@ export const Header = HeaderController.view(({ state }) => {
         </div>
       </div>
       <div class="relative flex basis-0 items-center justify-end gap-6 rounded-md sm:gap-8 md:flex-grow">
-        <Link href="/whitepaper" class="text-sm dark:text-white/75" aria-label="blog">
+        <Link href="/whitepaper" class="hidden text-sm dark:text-white/75 lg:block" aria-label="blog">
           Whitepaper
         </Link>
         <Link href="https://github.com/cmdo/valkyr" target="_blank" class="group" aria-label="GitHub">
