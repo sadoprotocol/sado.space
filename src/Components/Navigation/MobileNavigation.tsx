@@ -21,7 +21,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
         <div class="mt-3">
           <Link
             href="/"
-            class="block py-2 dark:text-white"
+            class="block py-2"
             classList={() => ({
               ["dark:text-sky-500"]: state.active === "blog",
               ["dark:text-white"]: state.active !== "blog"
@@ -33,7 +33,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
           </Link>
           <Link
             href="/docs"
-            class="block py-2 dark:text-white"
+            class="block py-2"
             classList={() => ({
               ["dark:text-sky-500"]: state.active === "docs",
               ["dark:text-white"]: state.active !== "docs"
