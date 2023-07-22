@@ -104,7 +104,7 @@ These tools include:
 
 Other engineers from our team will introduce themselves and these projects over the coming weeks, so stay tuned and definitely reach out if you have any questions about this or any of the work we are doing in the bitcoin ordinal and inscription space.
 
-{% callout title="Need Help or Have an Idea for Improvements?" type="lightbulb" %}
+{% callout title="Need Help or Have an Idea for Improvements?" type="note" %}
 Please reach out to us on Twitter @[sadoprotocol](https://twitter.com/sadoprotocol) any time!
 {% /callout %}
 
