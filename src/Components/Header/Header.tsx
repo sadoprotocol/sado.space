@@ -2,6 +2,7 @@ import { Icon } from "solid-heroicons";
 import { bars_3, xMark } from "solid-heroicons/outline";
 import { Match, Switch } from "solid-js";
 
+import { DiscordIcon } from "~Components/Icons/DiscordIcon";
 import { GitHubIcon } from "~Components/Icons/GitHubIcon";
 import { Link } from "~Components/Link";
 import { Logo } from "~Components/Logo";
@@ -92,8 +93,8 @@ export const Header = HeaderController.view(({ state }) => {
         </div>
       </div>
       <div class="relative flex basis-0 items-center justify-end gap-6 rounded-md sm:gap-8 md:flex-grow">
-        <Link href="/whitepaper" class="hidden text-sm dark:text-white/75 lg:block" aria-label="blog">
-          Whitepaper
+        <Link href="https://discord.gg/gf25RV5N" target="_blank" class="group flex" aria-label="Discord">
+          <DiscordIcon class="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
         <Link href="https://github.com/cmdo/valkyr" target="_blank" class="group" aria-label="GitHub">
           <GitHubIcon class="h-5 w-5 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />

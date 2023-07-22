@@ -22,4 +22,4 @@ Please visit the links below for more detailed information about our tools:
 
 ## Contacts
 
-Reach out on Twitter if you have any questions - @[sadoprotocol](https://twitter.com/sadoprotocol).
+Join us on [Discord](https://discord.gg/gf25RV5N) or reach out on Twitter if you have any questions - [@sadoprotocol](https://twitter.com/sadoprotocol).
