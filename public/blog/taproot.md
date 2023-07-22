@@ -104,5 +104,9 @@ These tools include:
 
 Other engineers from our team will introduce themselves and these projects over the coming weeks, so stay tuned and definitely reach out if you have any questions about this or any of the work we are doing in the bitcoin ordinal and inscription space.
 
+{% callout type="check" %}
+Contact us on Twitter @[sadoprotocol](https://twitter.com/sadoprotocol) any time!
+{% /callout %}
+
 This feature is already supported by the [ORDIT SDK](https://sado.space/docs/ordit-introduction) - but do reach out if you know of any other tools or services that implement this standard whilst we wait for changes to ORD itself. Alternatively, you could use JavaScript to create your inscriptions instead and you might then be able to avoid sprouting gray hairs as I did 🙂
 
