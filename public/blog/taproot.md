@@ -61,7 +61,7 @@ As such - we would like to propose [OIP-03](https://www.oips.io/oip-03-recoverab
 
 By introducing a second TapLeaf with a simplified `recover` script that does not include the content that is trying to be inscribed, the fees can - when needed; be reduced and have the potential to then enable unsuitable UTXOs to be recovered. Since redeem scripts do not affect the address - when it comes to spending from the address at the reveal phase, it is possible to use either of the redeem scripts that match those found in the initial commit ScriptTree - as seen below:
 
-```
+```js
 var inscribe_script = bitcoin.script.compile([
 	tweaked_public_key,
 	bitcoin.opcodes.OP_CHECKSIG,
