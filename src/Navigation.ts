@@ -24,6 +24,22 @@ export const navigation: Navigation = {
       links: [{ title: "Documentation", href: "/docs", file: "/docs/introduction/welcome.md" }]
     },
     {
+      title: "Ordit API",
+      links: [
+        { title: "Address", href: "/docs/ordit-api-address", file: "/docs/ordit/api/address.md" },
+        { title: "Blockchain", href: "/docs/ordit-api-blockchain", file: "/docs/ordit/api/blockchain.md" }
+      ]
+    },
+    {
+      title: "Ordit SDK",
+      links: [
+        { title: "Introduction", href: "/docs/ordit-introduction", file: "/docs/ordit/introduction.md" },
+        { title: "Wallet", href: "/docs/ordit-wallet", file: "/docs/ordit/wallet.md" },
+        { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" },
+        { title: "Instant Buy", href: "/docs/ordit-instantbuy", file: "/docs/ordit/instantbuy.md" }
+      ]
+    },
+    {
       title: "Sado API",
       links: [
         { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
@@ -38,15 +54,6 @@ export const navigation: Navigation = {
         { title: "Introduction", href: "/docs/ipfs-introduction", file: "/docs/ipfs/introduction.md" },
         { title: "Content", href: "/docs/ipfs-content", file: "/docs/ipfs/content.md" },
         { title: "Files", href: "/docs/ipfs-files", file: "/docs/ipfs/files.md" }
-      ]
-    },
-    {
-      title: "Ordit SDK",
-      links: [
-        { title: "Introduction", href: "/docs/ordit-introduction", file: "/docs/ordit/introduction.md" },
-        { title: "Wallet", href: "/docs/ordit-wallet", file: "/docs/ordit/wallet.md" },
-        { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" },
-        { title: "Instant Buy", href: "/docs/ordit-instantbuy", file: "/docs/ordit/instantbuy.md" }
       ]
     }
   ],

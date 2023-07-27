@@ -74,6 +74,9 @@ export function PreviewObjectItem(props: any) {
             </a>
           </Match>
         </Switch>
+        <Show when={props.default}>
+          <span class="ml-1 text-xs italic text-gray-300/[0.6]">[ Default: {props.default} ]</span>
+        </Show>
       </div>
       <p class="m-0">{props.description}</p>
       <Show when={props.children().length > 0}>

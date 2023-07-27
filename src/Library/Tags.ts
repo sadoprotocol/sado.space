@@ -75,6 +75,7 @@ export const tags: Config["tags"] = {
       type: { type: String },
       "type-link": { type: String },
       required: { type: Boolean },
+      default: { type: String },
       description: { type: String },
       note: { type: String }
     }
