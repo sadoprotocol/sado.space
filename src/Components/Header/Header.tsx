@@ -96,7 +96,12 @@ export const Header = HeaderController.view(({ state }) => {
         <Link href="https://discord.gg/gf25RV5N" target="_blank" class="group flex" aria-label="Discord">
           <DiscordIcon class="h-6 w-6 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
-        <Link href="https://github.com/cmdo/valkyr" target="_blank" class="group" aria-label="GitHub">
+        <Link
+          href="https://github.com/orgs/sadoprotocol/repositories"
+          target="_blank"
+          class="group"
+          aria-label="GitHub"
+        >
           <GitHubIcon class="h-5 w-5 fill-slate-400 group-hover:fill-slate-500 dark:group-hover:fill-slate-300" />
         </Link>
       </div>
