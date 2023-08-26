@@ -27,7 +27,8 @@ export const navigation: Navigation = {
       title: "Ordit API",
       links: [
         { title: "Address", href: "/docs/ordit-api-address", file: "/docs/ordit/api/address.md" },
-        { title: "Blockchain", href: "/docs/ordit-api-blockchain", file: "/docs/ordit/api/blockchain.md" }
+        { title: "Blockchain", href: "/docs/ordit-api-blockchain", file: "/docs/ordit/api/blockchain.md" },
+        { title: "Ordinals", href: "/docs/ordit-api-ordinals", file: "/docs/ordit/api/ordinals.md" }
       ]
     },
     {

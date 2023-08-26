@@ -16,7 +16,7 @@ Get a list of all unspent utxos under the given address.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://<network>.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://proto.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {

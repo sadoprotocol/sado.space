@@ -16,7 +16,7 @@ Get block by height, or hash as presented in the network.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://<network>.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://proto.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
