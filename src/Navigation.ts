@@ -24,33 +24,24 @@ export const navigation: Navigation = {
       links: [{ title: "Documentation", href: "/docs", file: "/docs/introduction/welcome.md" }]
     },
     {
-      title: "Ordit API",
+      title: "API",
       links: [
-        { title: "Address", href: "/docs/ordit-api-address", file: "/docs/ordit/api/address.md" },
-        { title: "Blockchain", href: "/docs/ordit-api-blockchain", file: "/docs/ordit/api/blockchain.md" },
-        { title: "Ordinals", href: "/docs/ordit-api-ordinals", file: "/docs/ordit/api/ordinals.md" }
+        { title: "Address", href: "/docs/api-address", file: "/docs/api/address.md" },
+        { title: "Blockchain", href: "/docs/api-blockchain", file: "/docs/api/blockchain.md" },
+        { title: "Ordinals", href: "/docs/api-ordinals", file: "/docs/api/ordinals.md" }
       ]
     },
     {
-      title: "Ordit SDK",
-      links: [
-        { title: "Introduction", href: "/docs/ordit-introduction", file: "/docs/ordit/introduction.md" },
-        { title: "Wallet", href: "/docs/ordit-wallet", file: "/docs/ordit/wallet.md" },
-        { title: "Inscription", href: "/docs/ordit-inscription", file: "/docs/ordit/inscription.md" },
-        { title: "Instant Buy", href: "/docs/ordit-instantbuy", file: "/docs/ordit/instantbuy.md" }
-      ]
-    },
-    {
-      title: "Sado API",
+      title: "SDK",
       links: [
         { title: "Introduction", href: "/docs/sdk-introduction", file: "/docs/sdk/introduction.md" },
-        { title: "Orderbook", href: "/docs/sdk-orderbook", file: "/docs/sdk/orderbook.md" },
-        { title: "Order", href: "/docs/sdk-order", file: "/docs/sdk/order.md" },
-        { title: "Offer", href: "/docs/sdk-offer", file: "/docs/sdk/offer.md" }
+        { title: "Wallet", href: "/docs/sdk-wallet", file: "/docs/sdk/wallet.md" },
+        { title: "Inscription", href: "/docs/sdk-inscription", file: "/docs/sdk/inscription.md" },
+        { title: "Instant Buy", href: "/docs/sdk-instantbuy", file: "/docs/sdk/instantbuy.md" }
       ]
     },
     {
-      title: "IPFS API",
+      title: "IPFS",
       links: [
         { title: "Introduction", href: "/docs/ipfs-introduction", file: "/docs/ipfs/introduction.md" },
         { title: "Content", href: "/docs/ipfs-content", file: "/docs/ipfs/content.md" },
