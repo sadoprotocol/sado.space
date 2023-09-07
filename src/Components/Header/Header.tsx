@@ -55,7 +55,7 @@ export const Header = HeaderController.view(({ state }) => {
           Docs
         </Link>
         <Link
-          href="https://explore.sado.space/"
+          href="https://explorer.sado.space/"
           target="_self"
           class="ml-5 hidden dark:text-white lg:block"
           aria-label="explore"
@@ -118,6 +118,6 @@ function goToExplorer(event: any) {
   event.preventDefault();
   const input = event.target.querySelector("input") as HTMLInputElement;
   if (input.value) {
-    location.href = `https://explore.sado.space/search?query=${input.value}&network=${network.current()}`;
+    location.href = `https://explorer.sado.space/search?query=${input.value}&network=${network.current()}`;
   }
 }

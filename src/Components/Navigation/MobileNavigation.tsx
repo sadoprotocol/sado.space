@@ -44,7 +44,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
             Docs
           </Link>
           <Link
-            href="https://explore.sado.space/"
+            href="https://explorer.sado.space/"
             target="_self"
             class="block py-2 dark:text-white"
             aria-label="explore"
