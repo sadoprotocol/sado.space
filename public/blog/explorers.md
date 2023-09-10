@@ -12,8 +12,6 @@ Since what is currently the only client implementation of the ordinal protocol c
 
 When we first started working in the space, we found ourselves switching between the two kinds of explorers, as there was no one explorer that provided UTXO blockchain data that was also ordinal aware, which was the primary reason for starting to work on our own. We wanted to build a tool that could be used to produce multiple explorers from a since repo, not to mention support both public and testnet environments, as well as our own private network, which features generous faucets and instant blocks when transacting via our APIs.
 
-[![INSCRIPTIONS](https://sado.space/images/EXPLORER-01.png)](https://sado.space/images/EXPLORER-01.png)
-
 
 ## Current Implementation
 
@@ -22,6 +20,7 @@ You can see the mono-explorer in action by visiting either the [Ordzaar Explorer
 If you take a closer look at [either](https://testnet.explorer.sado.space/address/tb1pwemxdz4rr4d6cj6lz8rtuumev5eyxha4htnnftr0m2yy776d9udqnkhkrj) of these two [example](https://testnet.explorer.sado.space/address/tb1pudqjep9ae6zv7u8puw3zha3hvj5srndcgd8vr980ejqvm88lnarshcv32x) wallet address, you will see that we provide four different tabs:
 
 * __Inscriptions__ - with support for HTML, video, audio and images
+* [![INSCRIPTIONS](https://sado.space/images/EXPLORER-01.png)](https://sado.space/images/EXPLORER-01.png)
 * __Ordinals__ - allowing you to validate names, numbers and rarity
 * __Orders__ - detailed information regarding sado [orderbook](https://marketplace.sado.space/) updates
 * __Inputs & Outputs__ - the regular data found at traditional UTXO explorers
