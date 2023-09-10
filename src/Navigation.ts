@@ -10,6 +10,11 @@ export const navigation: Navigation = {
       title: "Blog Articles",
       links: [
         {
+          title: "Introducing the Sado Mono Explorers",
+          href: "/blog/introducing-sado-mono-explorer",
+          file: "/blog/explorers.md"
+        },
+        {
           title: "Tapping into the magic of taproot!",
           href: "/blog/taproot-recoverable-commits",
           file: "/blog/taproot.md"
