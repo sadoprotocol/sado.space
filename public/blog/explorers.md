@@ -15,7 +15,9 @@ When we first started working in the space, we found ourselves switching between
 
 ## Current Implementation
 
-You can see the mono-explorer in action by visiting either the [Ordzaar Explorer](https://explorer.ordzaar.com/) or [Sado Explorer](https://explorer.sado.space/), both of which are powered from the same source and if you take a closer look at this [example](https://testnet.explorer.sado.space/address/tb1pudqjep9ae6zv7u8puw3zha3hvj5srndcgd8vr980ejqvm88lnarshcv32x) wallet address, you will see that we provide four different tabs:
+You can see the mono-explorer in action by visiting either the [Ordzaar Explorer](https://explorer.ordzaar.com/) or [Sado Explorer](https://explorer.sado.space/), both of which are powered from the same source.
+
+If you take a closer look at this [example](https://testnet.explorer.sado.space/address/tb1pudqjep9ae6zv7u8puw3zha3hvj5srndcgd8vr980ejqvm88lnarshcv32x) wallet address, you will see that we provide four different tabs:
 
 * __Inscriptions__ - with support for HTML, video, audio and images
 * __Ordinals__ - allowing you to validate names, numbers and rarity
