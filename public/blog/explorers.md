@@ -12,6 +12,8 @@ Since what is currently the only client implementation of the ordinal protocol c
 
 When we first started working in the space, we found ourselves switching between the two kinds of explorers, as there was no one explorer that provided UTXO blockchain data that was also ordinal aware, which was the primary reason for starting to work on our own. We wanted to build a tool that could be used to produce multiple explorers from a since repo, not to mention support both public and testnet environments, as well as our own private network, which features generous faucets and instant blocks when transacting via our APIs.
 
+| ![INSCRIPTIONS](https://sado.space/images/EXPLORER-01.png) | ![ORDINALS](https://sado.space/images/EXPLORER-02.png) |
+
 
 ## Current Implementation
 
