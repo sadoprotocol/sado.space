@@ -10,9 +10,7 @@ There are plenty of Bitcoin explorers out there to help users track the relevant
 
 Since what is currently the only client implementation of the ordinal protocol comes fully equipped with its own rust-based HTML explorer, there are countless inscription and ordinal explorers out there that are easily accessible by all. From the classic [Ordinals.com](https://ordinals.com/) to the super slick filterable [Ord.io](https://www.ord.io/) - without these, developers working with the ordinal protocol would be lost. However, very few support the testnet needed by developers when debugging prototypes.
 
-However, when we first started working in the space, we found ourselves switching between the two kinds of explorers, as there was no one explorer that provided UTXO blockchain data that was also ordinal aware, which was the primary reason for starting to work on our own.
-
-We wanted to build a tool that could be used to produce multiple explorers from a since repo, not to mention support both public and testnet environments, as well as our own private network, which features generous faucets and instant blocks when transacting via our APIs.
+However, when we first started working in the space, we found ourselves switching between the two kinds of explorers, as there was no one explorer that provided UTXO blockchain data that was also ordinal aware, which was the primary reason for starting to work on our own. We wanted to build a tool that could be used to produce multiple explorers from a since repo, not to mention support both public and testnet environments, as well as our own private network, which features generous faucets and instant blocks when transacting via our APIs.
 
 
 ## Current Implementation
