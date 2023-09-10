@@ -27,7 +27,7 @@ If you take a closer look at this [example](https://testnet.explorer.sado.space/
 
 ## Conclusions
 
-You will notice that like everything across our stack that is ordinal aware, we not only display the total balance (Satoshis) for an address, but also show the Safe to Spend (Cardinals) too. Our [mono-explorer](https://github.com/sadoprotocol/mono-explorer) also acts as a good example of what is possible using our newly released [Trinity](https://github.com/sadoprotocol/ordit) API stack, which not only acts as a full UTXO parser, but also features native inscription indexing that does not rely upon ord for anything other than current sat positions.
+You will notice that like everything across our stack that is ordinal aware, we not only display the total balance (Satoshis) for an address, but also show the Safe to Spend (Cardinals) too. Our [mono-explorer](https://github.com/sadoprotocol/mono-explorer) acts as a good example of what is possible using our newly released [Trinity](https://github.com/sadoprotocol/ordit) API stack, which not only provides a full UTXO parser, but also features native inscription indexing that does not rely upon ord for anything other than current sat positions.
 
 {% callout title="Need Help with the Sado Stack?" type="note" %}
 Please reach out to us on Twitter @[sadoprotocol](https://twitter.com/sadoprotocol) any time!
