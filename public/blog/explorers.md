@@ -24,7 +24,7 @@ If you take a closer look at [either](https://testnet.explorer.sado.space/addres
 * __Orders__ - detailed information regarding sado [orderbook](https://marketplace.sado.space/) updates
 * __Inputs & Outputs__ - the regular data found at traditional UTXO explorers
 
-Due to supporting HTML recursive, we also have full support for chunking large files via OIP-04, which can be seen in this four minute audio clip with poster image - [https://testnet.explorer.ordzaar.com/inscription/a68c9acd693df046e92b767a1c418e92e174269e313ca86da33866a617dbfda3i0](https://testnet.explorer.ordzaar.com/inscription/a68c9acd693df046e92b767a1c418e92e174269e313ca86da33866a617dbfda3i0)
+Due to supporting HTML recursive, we also have full support for chunking large files via OIP-04, which can be seen in this four minute audio clip with poster image - [https://testnet.explorer.sado.space/inscription/a68c9acd693df046e92b767a1c418e92e174269e313ca86da33866a617dbfda3i0](https://testnet.explorer.sado.space/inscription/a68c9acd693df046e92b767a1c418e92e174269e313ca86da33866a617dbfda3i0)
 
 
 ## Conclusions
