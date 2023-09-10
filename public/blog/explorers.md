@@ -20,12 +20,17 @@ You can see the mono-explorer in action by visiting either the [Ordzaar Explorer
 If you take a closer look at [either](https://testnet.explorer.sado.space/address/tb1pwemxdz4rr4d6cj6lz8rtuumev5eyxha4htnnftr0m2yy776d9udqnkhkrj) of these two [example](https://testnet.explorer.sado.space/address/tb1pudqjep9ae6zv7u8puw3zha3hvj5srndcgd8vr980ejqvm88lnarshcv32x) wallet address, you will see that we provide four different tabs:
 
 * __Inscriptions__ - with support for HTML, video, audio and images
-* [![INSCRIPTIONS](https://sado.space/images/EXPLORER-01.png)](https://sado.space/images/EXPLORER-01.png)
 * __Ordinals__ - allowing you to validate names, numbers and rarity
 * __Orders__ - detailed information regarding sado [orderbook](https://marketplace.sado.space/) updates
 * __Inputs & Outputs__ - the regular data found at traditional UTXO explorers
 
+[![INSCRIPTIONS](https://sado.space/images/EXPLORER-01.png)](https://sado.space/images/EXPLORER-01.png)
+[![INSCRIPTIONS](https://sado.space/images/EXPLORER-02.png)](https://sado.space/images/EXPLORER-02.png)
+
 Due to supporting HTML recursive, we also have full support for chunking large files via [OIP-04](https://www.oips.io/oip-04-chunking-of-inscriptions-for-larger-files), which can be seen in this [four minute](https://testnet.explorer.sado.space/inscription/a68c9acd693df046e92b767a1c418e92e174269e313ca86da33866a617dbfda3i0) audio clip with poster image or this [1MB video](https://testnet.explorer.sado.space/inscription/35b6270586c9d79651f0bed49600e2c9018242899320318c3556ee6b56563079i0) - both of which also showcase [OIP-01](https://www.oips.io/oip-01-inscription-metadata) metadata.
+
+[![INSCRIPTIONS](https://sado.space/images/EXPLORER-03.png)](https://sado.space/images/EXPLORER-03.png)
+[![INSCRIPTIONS](https://sado.space/images/EXPLORER-04.png)](https://sado.space/images/EXPLORER-04.png)
 
 
 ## Conclusions
