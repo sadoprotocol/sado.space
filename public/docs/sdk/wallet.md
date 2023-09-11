@@ -96,6 +96,34 @@ wallet.setDefaultAddress("legacy");
 
 ---
 
+### Generate address
+
+Generate Address by Type - Legacy, Segwit, Nested-segwit, Taproot
+
+```ts
+wallet.generateAddress("legacy")
+```
+
+{% data title="Parameters" %}
+      {% data-item name="string" required=true  /%}
+    {% data-value name="legacy" description="Address derived using BIP44 path. Usually starts with 1." /%}
+    {% data-value name="segwit" description="Address derived using BIP49 path. Usually starts with 3." /%}
+    {% data-value name="bech32" description="Address derived using BIP84 path. Usually starts with bc1q." /%}
+    {% data-value name="taproot" description="Address derived using BIP86 path. Usually starts with bc1p." /%}
+    
+    {% data-item name="account" type="number" required=true default="testnet" %}
+    
+    {% data-item name="AddressIndex" type="number" required=true default="testnet" %}
+
+  {% /data-item %}
+{% /data %}
+
+{% data title="Response" %}
+    {% data-item name="address" type="Address" type-link="#offer" description="Object of type Address." /%}
+{% /data %}
+
+---
+
 ### Sign PSBT
 
 Sign a Partially signed bitcoin transaction. You must provide PSBT in hex or base64 format as first arg or second arg. Both shouldn't be provided at once.
