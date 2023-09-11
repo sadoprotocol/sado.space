@@ -189,20 +189,20 @@ Full example of the inscription flow using `Ordit` class
 ```js
 import { Ordit } from "@sadoprotocol/ordit-sdk"
 
-const MNEMONIC = "<12-words-mnemonic>"
+const MNEMONIC = process.env.MNEMONIC; //12-words-mnemonic
 
 async function main() {
   // init wallet
   const wallet = new Ordit({
     bip39: MNEMONIC,
-    network: "testnet"
+    network: process.env.NETWORK //testnet
   });
 
   wallet.setDefaultAddress('taproot')
 
   // new inscription tx
   const transaction = Ordit.inscription.new({
-    network: "testnet",
+    network: process.env.NETWORK, //testnet
     publicKey: wallet.publicKey,
     changeAddress: wallet.selectedAddress,
     destination: wallet.selectedAddress,
