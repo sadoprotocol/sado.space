@@ -141,6 +141,20 @@ Once your transaction is ready (`transaction.ready // true`), you can move forwa
 ```ts
 const build = transaction.build();
 ```
+---
+
+### To PSBT
+
+Generates the PSBT that can be signed and relayed
+
+```ts
+const toPsbt = transaction.toPsbt();
+```
+
+{% data title="Response" %}
+    {% data-item name="PSBT" type="object"/%}
+{% /data %}
+
 
 ---
 
