@@ -101,21 +101,22 @@ wallet.setDefaultAddress("legacy");
 Generate Address by Type - Legacy, Segwit, Nested-segwit, Taproot
 
 ```ts
-wallet.generateAddress("legacy")
+wallet.generateAddress("legacy", account, addressIndex)
 ```
 
 {% data title="Parameters" %}
-      {% data-item name="string" required=true  /%}
+      {% data-item name="string" description="Type of Address" required=true  %}
     {% data-value name="legacy" description="Address derived using BIP44 path. Usually starts with 1." /%}
     {% data-value name="segwit" description="Address derived using BIP49 path. Usually starts with 3." /%}
     {% data-value name="bech32" description="Address derived using BIP84 path. Usually starts with bc1q." /%}
     {% data-value name="taproot" description="Address derived using BIP86 path. Usually starts with bc1p." /%}
+    {% /data-item %}
     
-    {% data-item name="account" type="number" required=true default="testnet" %}
+    {% data-item name="number" description="Account" required=true  %}
+    {% /data-item %}
     
-    {% data-item name="AddressIndex" type="number" required=true default="testnet" %}
-
-  {% /data-item %}
+    {% data-item name="number" description="Address index" required=true  %}
+    {% /data-item %}
 {% /data %}
 
 {% data title="Response" %}
