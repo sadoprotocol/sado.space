@@ -1,6 +1,6 @@
 ---
 title: Address
-pageTitle: Ordit API - Address
+pageTitle: Trinity API - Address
 description: List of API methods for retrieving network data related to an address.
 ---
 

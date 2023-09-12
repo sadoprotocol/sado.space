@@ -1,6 +1,6 @@
 ---
 title: Ordinals
-pageTitle: Ordit API - Ordinals
+pageTitle: Trinity API - Ordinals
 description: List of API methods for retrieving ordinal related data.
 ---
 
@@ -10,9 +10,13 @@ Inscriptions are indexed by looking for ord envelopes in blockchain witness scri
 
 Satoshis are currently being indexed by [ord](https://github.com/ordinals/ord) and consumed internally by the API to related individual satoshis and ordinal information to the consumer and our own indexes.
 
+---
+
 ## Methods
 
 List of JSON-RPC 2.0 methods made available for retrieving ordinal related data.
+
+---
 
 ### Get Ordinals
 
@@ -49,6 +53,8 @@ Retrieve list of ordinals for the given location.
 
 {% /preview %}
 
+---
+
 ### Get Inscription
 
 Get an inscription by inscription id.
@@ -83,6 +89,8 @@ Get an inscription by inscription id.
   {% /preview-section %}
 
 {% /preview %}
+
+---
 
 ### Get Inscriptions
 

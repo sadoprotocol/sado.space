@@ -32,7 +32,7 @@ export const navigation: Navigation = {
       title: "API",
       links: [
         { title: "Address", href: "/docs/api-address", file: "/docs/api/address.md" },
-        { title: "Blockchain", href: "/docs/api-blockchain", file: "/docs/api/blockchain.md" },
+        { title: "Transactions", href: "/docs/api-transactions", file: "/docs/api/transactions.md" },
         { title: "Ordinals", href: "/docs/api-ordinals", file: "/docs/api/ordinals.md" }
       ]
     },
