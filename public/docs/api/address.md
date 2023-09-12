@@ -4,9 +4,52 @@ pageTitle: Trinity API - Address
 description: List of API methods for retrieving network data related to an address.
 ---
 
+This section provides an overview of the methods that can executed against the API to retrieve blockchain related information for addresses.
+
+---
+
 ## Methods
 
 List of JSON-RPC 2.0 methods made available for retrieving network data related to an address.
+
+---
+
+### Get Balance
+
+Get the total balance of available for an address.
+
+{% preview tabs=["API"] %}
+
+  {% preview-section %}
+
+    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+
+    ```json {% preview=true %}
+    {
+      "jsonrpc": "2.0",
+      "method": "Address.GetBalance",
+      "params": {
+        "address": "<string>"
+      },
+      "id": 0
+    }
+    ```
+
+    {% preview-object title="Parameters" %}
+      {% preview-object-item name="address" type="string" required=true description="Address you wish to retrieve balance for." /%}
+    {% /preview-object %}
+
+    {% preview-object title="Response" %}
+      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+      {% preview-object-item name="result" type="number" description="Total available balance for the provided address." /%}
+      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
+    {% /preview-object %}
+
+  {% /preview-section %}
+
+{% /preview %}
+
+---
 
 ### GetUnspents
 
@@ -21,13 +64,19 @@ Get a list of all unspent utxos under the given address.
     ```json {% preview=true %}
     {
       "jsonrpc": "2.0",
-      "method": "GetUnspents",
+      "method": "Address.GetUnspents",
       "params": {
         "address": "<address>",
         "options": {
-          "ord": true,
           "safetospend": true,
           "allowedrarity": ["common"]
+        },
+        "sort": {
+          "value": "asc"
+        },
+        "pagination": {
+          "limit": 10,
+          "next": "<cursor>"
         }
       },
       "id": 0
@@ -37,23 +86,30 @@ Get a list of all unspent utxos under the given address.
     {% preview-object title="Parameters" %}
       {% preview-object-item name="address" type="string" required=true description="Address to list unspent utxos for." /%}
       {% preview-object-item name="options" type="object" required=false description="List of options to modify the api result." /%}
-      {% preview-object-item name="options.ord" type="boolean" required=false default="true" description="Resolve ordinals and inscriptions." /%}
       {% preview-object-item name="options.safetospend" type="boolean" required=false default="false" description="Only return safe to spend utxos." /%}
       {% preview-object-item name="options.allowedrarity" type="boolean" required=false default="[\"common\", \"uncommon\"]" description="List of rarities that defines safe to spend treshold." /%}
     {% /preview-object %}
 
     {% preview-object title="Response" %}
-      {% preview-object-item name="txid" type="string" description="Transaction id the utxo belongs to." /%}
-      {% preview-object-item name="n" type="number" description="Index position of the utxo in the parent transaction." /%}
-      {% preview-object-item name="blockHash" type="string" description="Hash of the block the utxo belongs to." /%}
-      {% preview-object-item name="blockN" type="number" description="Height of the block the utxo belongs to." /%}
-      {% preview-object-item name="scriptPubKey" type="ScriptPubKey" description="Script pub key of the utxo." /%}
-      {% preview-object-item name="value" type="number" description="Utxo value in BTC" /%}
-      {% preview-object-item name="sats" type="BigNumber" description="Utxo value in SATS" /%}
-      {% preview-object-item name="ordinals" type="Ordinal[]" description="List of ordinals residing with the utxo." /%}
-      {% preview-object-item name="inscriptions" type="Inscription[]" description="List of inscriptions residing with the utxo." /%}
-      {% preview-object-item name="safeToSpend" type="boolean" description="Is the utxo safe to spend in a new transaction?" note="Safety is determined by the APIs ability to communicate with the ordinals service. If the API could not retrieve valid data from the ordinals service the utxo is considered 'unsafe' to spend. If any of the ordinals is of a rarity higher than the provided treshold the utxo is considered 'unsafe' to spend." /%}
-      {% preview-object-item name="confirmations" type="number" description="Number of blocks created after the utxo was added to the network." /%}
+      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+      {% preview-object-item name="result" type="string" description="Transaction id the utxo belongs to." /%}  
+      {% preview-object-item name="result.unspents" type="Unspent[]" description="Transaction id the utxo belongs to." /%}
+      {% preview-object-item name="result.unspents.txid" type="string" description="Transaction id the utxo belongs to." /%}
+      {% preview-object-item name="result.unspents.n" type="number" description="Index position of the utxo in the parent transaction." /%}
+      {% preview-object-item name="result.unspents.blockHash" type="string" description="Hash of the block the utxo belongs to." /%}
+      {% preview-object-item name="result.unspents.blockN" type="number" description="Height of the block the utxo belongs to." /%}
+      {% preview-object-item name="result.unspents.scriptPubKey" type="ScriptPubKey" description="Script pub key of the utxo." /%}
+      {% preview-object-item name="result.unspents.value" type="number" description="Utxo value in BTC" /%}
+      {% preview-object-item name="result.unspents.sats" type="BigNumber" description="Utxo value in SATS" /%}
+      {% preview-object-item name="result.unspents.ordinals" type="Ordinal[]" description="List of ordinals residing with the utxo." /%}
+      {% preview-object-item name="result.unspents.inscriptions" type="Inscription[]" description="List of inscriptions residing with the utxo." /%}
+      {% preview-object-item name="result.unspents.safeToSpend" type="boolean" description="Is the utxo safe to spend in a new transaction?" note="Safety is determined by the existence of ordinals and/or inscriptions on the utxo. If the utxo contains a inscription or a ordinal with a rarity outside of the allowed treshold this value is false. Be aware that in some cases where the inscription or ordinal data is incorrect because of blockchain or latency based innacuracies this value is an estimate based on available information. It is still highly recommended to keep ordinal and blockchain wallets separate so you do not have to rely on this tag." /%}
+      {% preview-object-item name="result.unspents.confirmations" type="number" description="Number of blocks created after the utxo was added to the network." /%}
+      {% preview-object-item name="result.pagination" type="object" description="Pagination results containing information for how to load prev and next results." /%}
+      {% preview-object-item name="result.pagination.limit" type="number" description="Number of unspents set for the current request result." /%}
+      {% preview-object-item name="result.pagination.prev" type="string" description="Value to provide to the pagination object in the next request." /%}
+      {% preview-object-item name="result.pagination.next" type="string" description="Value to provide to the pagination object in the next request." /%}
+      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
     {% /preview-object %}
 
   {% /preview-section %}
