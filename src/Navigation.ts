@@ -33,7 +33,8 @@ export const navigation: Navigation = {
       links: [
         { title: "Address", href: "/docs/api-address", file: "/docs/api/address.md" },
         { title: "Transactions", href: "/docs/api-transactions", file: "/docs/api/transactions.md" },
-        { title: "Ordinals", href: "/docs/api-ordinals", file: "/docs/api/ordinals.md" }
+        { title: "Ordinals", href: "/docs/api-ordinals", file: "/docs/api/ordinals.md" },
+        { title: "Regtest", href: "/docs/api-regtest", file: "/docs/api/regtest.md" }
       ]
     },
     {
