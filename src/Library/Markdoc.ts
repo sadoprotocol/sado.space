@@ -7,6 +7,7 @@ import { router } from "~Services/Router";
 
 import { getNavigationByLocation, NavigationCategory, NavigationLink } from "../Navigation";
 import { nodes } from "./Nodes";
+import { partials } from "./Partials";
 import { render } from "./Render";
 import { tags } from "./Tags";
 
@@ -33,7 +34,7 @@ function getParsedDocument(doc: string): MarkdownDocument {
   const tokenizer = new Markdoc.Tokenizer({ allowIndentation: true });
   const tokens = tokenizer.tokenize(doc);
   const ast = Markdoc.parse(tokens);
-  const content = Markdoc.transform(ast, { tags, nodes });
+  const content = Markdoc.transform(ast, { tags, nodes, partials });
   const frontmatter = getFrontmatter(ast);
   const [previousPage, nextPage] = getPageLinks();
   const path = router.history.location.pathname;

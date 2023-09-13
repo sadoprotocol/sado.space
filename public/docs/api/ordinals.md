@@ -43,11 +43,9 @@ Retrieve list of ordinals for the given location.
       {% preview-object-item name="location" type="string" required=true description="Location you wish to retrieve ordinals for." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+    {% jsonrpc-response %}
       {% preview-object-item name="result" type="Ordinal[]" description="List of ordinals." /%}
-      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+    {% /jsonrpc-response %}
 
   {% /preview-section %}
 
@@ -80,11 +78,9 @@ Get an inscription by inscription id.
       {% preview-object-item name="id" type="string" required=true description="Inscription id to retrieve from the API." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+    {% jsonrpc-response %}
       {% preview-object-item name="result" type="Inscription" description="Inscription for the id requested." /%}
-      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+    {% /jsonrpc-response %}
 
   {% /preview-section %}
 
@@ -142,16 +138,12 @@ Get a list of indexed inscriptions.
       {% preview-object-item name="pagination.next" type="string" required=false description="Value to start at when retrieving next records from the cursor point." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+    {% jsonrpc-response %}
       {% preview-object-item name="result" type="Inscription" description="Inscriptions and pagination information returned by the request." /%}
       {% preview-object-item name="result.inscriptions" type="Inscription[]" description="Array of inscriptions." /%}
-      {% preview-object-item name="result.pagination" type="object" description="Pagination results containing information for how to load prev and next results." /%}
-      {% preview-object-item name="result.pagination.limit" type="number" description="Number of inscriptions set for the current request result." /%}
-      {% preview-object-item name="result.pagination.prev" type="string" description="Value to provide to the pagination object in the next request." /%}
-      {% preview-object-item name="result.pagination.next" type="string" description="Value to provide to the pagination object in the next request." /%}
+      {% partial file="pagination-response" %}
       {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+    {% /jsonrpc-response %}
 
   {% /preview-section %}
 

@@ -4,6 +4,7 @@ import { Callout } from "./Callout";
 import { Data, DataItem, DataModel, DataValue } from "./Data";
 import { Endpoint } from "./Endpoint";
 import { Fence } from "./Fence";
+import { JsonRpcResponse } from "./JsonRpcResponse";
 import { Preview, PreviewSection } from "./Preview";
 import { PreviewModel, PreviewObject, PreviewObjectItem, PreviewObjectValue } from "./PreviewObject";
 import { QuickLink, QuickLinks } from "./QuickLinks";
@@ -16,6 +17,7 @@ export const components = {
   DataValue,
   Endpoint,
   Fence,
+  JsonRpcResponse,
   Preview,
   PreviewSection,
   PreviewModel,

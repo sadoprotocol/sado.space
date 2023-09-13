@@ -43,10 +43,7 @@ Once the method is executed the provided address is funded and a block is mined 
       {% preview-object-item name="value" type="number" required=true description="Amount of satoshis to send to address." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
-      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+    {% jsonrpc-response / %}
 
   {% /preview-section %}
 

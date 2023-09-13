@@ -49,6 +49,9 @@ export const tags: Config["tags"] = {
       url: { type: String, required: true }
     }
   },
+  "jsonrpc-response": {
+    render: "JsonRpcResponse"
+  },
   preview: {
     render: "Preview",
     attributes: {

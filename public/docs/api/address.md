@@ -39,11 +39,9 @@ Get the total balance of available for an address.
       {% preview-object-item name="address" type="string" required=true description="Address you wish to retrieve balance for." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+    {% jsonrpc-response %}
       {% preview-object-item name="result" type="number" description="Total available balance for the provided address." /%}
-      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+    {% /jsonrpc-response %}
 
   {% /preview-section %}
 
@@ -90,8 +88,7 @@ Get a list of all unspent utxos under the given address.
       {% preview-object-item name="options.allowedrarity" type="boolean" required=false default="[\"common\", \"uncommon\"]" description="List of rarities that defines safe to spend treshold." /%}
     {% /preview-object %}
 
-    {% preview-object title="Response" %}
-      {% preview-object-item name="jsonrpc" type="string" description="JSON-RPC protocol version." /%}
+    {% jsonrpc-response %}
       {% preview-object-item name="result" type="string" description="Transaction id the utxo belongs to." /%}  
       {% preview-object-item name="result.unspents" type="Unspent[]" description="Transaction id the utxo belongs to." /%}
       {% preview-object-item name="result.unspents.txid" type="string" description="Transaction id the utxo belongs to." /%}
@@ -105,12 +102,8 @@ Get a list of all unspent utxos under the given address.
       {% preview-object-item name="result.unspents.inscriptions" type="Inscription[]" description="List of inscriptions residing with the utxo." /%}
       {% preview-object-item name="result.unspents.safeToSpend" type="boolean" description="Is the utxo safe to spend in a new transaction?" note="Safety is determined by the existence of ordinals and/or inscriptions on the utxo. If the utxo contains a inscription or a ordinal with a rarity outside of the allowed treshold this value is false. Be aware that in some cases where the inscription or ordinal data is incorrect because of blockchain or latency based innacuracies this value is an estimate based on available information. It is still highly recommended to keep ordinal and blockchain wallets separate so you do not have to rely on this tag." /%}
       {% preview-object-item name="result.unspents.confirmations" type="number" description="Number of blocks created after the utxo was added to the network." /%}
-      {% preview-object-item name="result.pagination" type="object" description="Pagination results containing information for how to load prev and next results." /%}
-      {% preview-object-item name="result.pagination.limit" type="number" description="Number of unspents set for the current request result." /%}
-      {% preview-object-item name="result.pagination.prev" type="string" description="Value to provide to the pagination object in the next request." /%}
-      {% preview-object-item name="result.pagination.next" type="string" description="Value to provide to the pagination object in the next request." /%}
-      {% preview-object-item name="id" type="string" description="Id provided with the request." /%}
-    {% /preview-object %}
+      {% partial file="pagination-response" %}
+    {% /jsonrpc-response %}
 
   {% /preview-section %}
 
