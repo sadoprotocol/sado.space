@@ -1,22 +1,26 @@
+import { Show } from "solid-js";
 import { Dynamic } from "solid-js/web";
 
 import { Header } from "~Components/Header";
-import { Hero } from "~Components/Hero";
-import { MobileNavigation } from "~Components/Navigation";
-import { DesktopNavigation } from "~Components/Navigation/DesktopNavigation";
+import { loadPages } from "~Library/Page";
+import { getRoutedChildComponent } from "~Library/Routing/Utilities";
 
-import { DocsController } from "./Docs.Controller";
+import { MobileNavigation } from "../Components/Navigation";
+import { DesktopNavigation } from "../Components/Navigation/DesktopNavigation";
 
-export const DocsView = DocsController.view(({ state }) => {
+export function DocsView(props: any) {
+  const routed = getRoutedChildComponent(props.routeId);
+  const resume = loadPages();
   return (
     <>
       <Header />
-      <Hero />
       <div class="relative mx-auto flex max-w-8xl justify-center sm:px-2 lg:px-8 xl:px-12">
         <DesktopNavigation />
         <MobileNavigation />
-        <Dynamic component={state.routed} />
+        <Show when={resume() && routed()}>
+          <Dynamic component={routed().component} {...routed().props} />
+        </Show>
       </div>
     </>
   );
-});
+}

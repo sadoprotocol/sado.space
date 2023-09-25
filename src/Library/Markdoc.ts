@@ -138,7 +138,7 @@ function getNodeText(node) {
  |--------------------------------------------------------------------------------
  */
 
-type MarkdownDocument = {
+export type MarkdownDocument = {
   title: string;
   pageTitle: string;
   description: string;

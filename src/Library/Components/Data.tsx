@@ -1,31 +1,30 @@
 import { Icon } from "solid-heroicons";
 import { chevronDown } from "solid-heroicons/solid";
-import { Match, Show, Switch } from "solid-js";
+import { createSignal, Match, Show, Switch } from "solid-js";
 
-import { DataController } from "./Data.Controller";
-
-export const Data = DataController.view(({ props, state, actions }) => {
+export function Data({ title, children }) {
+  const [show, setShow] = createSignal(false);
   return (
     <div class="mt-4 rounded-md bg-sky-50 dark:divide-gray-700 dark:border-gray-700 dark:bg-slate-800/50 dark:ring-1 dark:ring-slate-300/10">
       <button
         class="flex w-full items-center justify-between border-b border-slate-300/10 px-4 py-2 text-left font-medium text-gray-500 first:rounded-t-lg last:rounded-b-lg dark:text-gray-400"
-        onClick={actions.toggle}
+        onClick={() => setShow(!show())}
       >
-        {props.title}
+        {title}
         <Icon
           path={chevronDown}
           classList={{
             ["h-6 w-6 shrink-0"]: true,
-            ["rotate-180"]: state.show
+            ["rotate-180"]: show()
           }}
         />
       </button>
-      <Show when={state.show}>
-        <div class="p-5">{props.children}</div>
+      <Show when={show()}>
+        <div class="p-5">{children}</div>
       </Show>
     </div>
   );
-});
+}
 
 export function DataModel(props: any) {
   return (

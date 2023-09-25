@@ -12,6 +12,7 @@
     "isolatedModules": true,
     "paths": {
       "~Components/*": ["./src/Components/*"],
+      "~Database": ["./src/Database"],
       "~Library/*": ["./src/Library/*"],
       "~Middleware/*": ["./src/Middleware/*"],
       "~Services/*": ["./src/Services/*"]

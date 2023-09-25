@@ -1,6 +1,6 @@
-import { Document, IndexedDatabase } from "@valkyr/db";
+import { IndexedDatabase } from "@valkyr/db";
 
-export const db = new IndexedDatabase<{
+const db = new IndexedDatabase<{
   docs: Doc;
 }>({
   name: "module:docs",
@@ -13,7 +13,9 @@ export const db = new IndexedDatabase<{
   ]
 });
 
-export type Doc = Document<{
+export const collection = db.collection("docs");
+
+export type Doc = {
   path: string;
   body: string;
-}>;
+};

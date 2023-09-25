@@ -1,9 +1,23 @@
-import { createMemo, For } from "solid-js";
+import { createMemo, createSignal, For, onCleanup } from "solid-js";
 
-import { Link } from "../Link";
-import { NavigationController } from "./Navigation.Controller";
+import { Link } from "~Components/Link";
+import { router } from "~Services/Router";
 
-export const Navigation = NavigationController.view(({ props, state }) => {
+import { getNavigationByLocation } from "../../Navigation";
+
+export function Navigation(props: any) {
+  const [path, setPath] = createSignal(router.history.location.pathname);
+  const [navigation, setNavigation] = createSignal(getNavigationByLocation());
+
+  const subscription = router.subscribe(() => {
+    setPath(router.history.location.pathname);
+    setNavigation(getNavigationByLocation());
+  });
+
+  onCleanup(() => {
+    subscription.unsubscribe();
+  });
+
   return (
     <nav
       classList={{
@@ -12,7 +26,7 @@ export const Navigation = NavigationController.view(({ props, state }) => {
       }}
     >
       <ul role="list" class="space-y-9">
-        <For each={state.navigation}>
+        <For each={navigation()}>
           {(section) => (
             <li>
               <h2 class="font-display font-medium text-slate-900 dark:text-white">{section.title}</h2>
@@ -23,9 +37,9 @@ export const Navigation = NavigationController.view(({ props, state }) => {
                 <For each={section.links}>
                   {(link) => {
                     const classList = createMemo(() => ({
-                      ["font-semibold text-sky-500 before:bg-sky-500"]: state.path === link.href,
+                      ["font-semibold text-sky-500 before:bg-sky-500"]: path() === link.href,
                       ["text-slate-500 before:hidden before:bg-slate-300 hover:text-slate-600 hover:before:block dark:text-slate-400 dark:before:bg-slate-700 dark:hover:text-slate-300"]:
-                        state.path !== link.href
+                        path() !== link.href
                     }));
                     return (
                       <li class="relative">
@@ -48,4 +62,4 @@ export const Navigation = NavigationController.view(({ props, state }) => {
       </ul>
     </nav>
   );
-});
+}

@@ -9,9 +9,10 @@ import { Logo } from "~Components/Logo";
 import { closeNavigation, isNavigationOpen, openNavigation } from "~Components/Navigation";
 import { network } from "~Services/Network";
 
-import { HeaderController } from "./Header.Controller";
+import { createHeaderState } from "./State";
 
-export const Header = HeaderController.view(({ state }) => {
+export function Header() {
+  const active = createHeaderState();
   return (
     <header class="sticky top-0 z-50 mx-auto flex max-w-8xl flex-wrap items-center justify-between border-b border-slate-800 bg-white bg-white px-4 py-3 shadow-md shadow-slate-900/5 transition duration-500 dark:bg-slate-900 dark:shadow-none sm:px-6 lg:px-8">
       <div class="relative flex flex-grow basis-0 items-center">
@@ -36,8 +37,8 @@ export const Header = HeaderController.view(({ state }) => {
           href="/"
           class="ml-5 hidden lg:block"
           classList={() => ({
-            ["dark:text-sky-500"]: state.active === "blog",
-            ["dark:text-white"]: state.active !== "blog"
+            ["dark:text-sky-500"]: active() === "blog",
+            ["dark:text-white"]: active() !== "blog"
           })}
           aria-label="blog"
         >
@@ -47,8 +48,8 @@ export const Header = HeaderController.view(({ state }) => {
           href="/docs"
           class="ml-5 hidden lg:block"
           classList={() => ({
-            ["dark:text-sky-500"]: state.active === "docs",
-            ["dark:text-white"]: state.active !== "docs"
+            ["dark:text-sky-500"]: active() === "docs",
+            ["dark:text-white"]: active() !== "docs"
           })}
           aria-label="docs"
         >
@@ -107,7 +108,7 @@ export const Header = HeaderController.view(({ state }) => {
       </div>
     </header>
   );
-});
+}
 
 function setNetwork(event: any) {
   event.preventDefault();

@@ -1,14 +1,15 @@
 import { Dialog, DialogPanel } from "solid-headless";
 import { createSignal } from "solid-js";
 
-import { HeaderController } from "~Components/Header/Header.Controller";
+import { createHeaderState } from "~Components/Header/State";
 import { Link } from "~Components/Link";
 
 import { Navigation } from "./Navigation";
 
 export const [isNavigationOpen, setIsOpen] = createSignal(false);
 
-export const MobileNavigation = HeaderController.view(({ state }) => {
+export function MobileNavigation() {
+  const active = createHeaderState();
   return (
     <Dialog
       isOpen={isNavigationOpen()}
@@ -23,8 +24,8 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
             href="/"
             class="block py-2"
             classList={() => ({
-              ["dark:text-sky-500"]: state.active === "blog",
-              ["dark:text-white"]: state.active !== "blog"
+              ["dark:text-sky-500"]: active() === "blog",
+              ["dark:text-white"]: active() !== "blog"
             })}
             aria-label="blog"
             onClicked={closeNavigation}
@@ -35,8 +36,8 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
             href="/docs"
             class="block py-2"
             classList={() => ({
-              ["dark:text-sky-500"]: state.active === "docs",
-              ["dark:text-white"]: state.active !== "docs"
+              ["dark:text-sky-500"]: active() === "docs",
+              ["dark:text-white"]: active() !== "docs"
             })}
             aria-label="docs"
             onClicked={closeNavigation}
@@ -57,7 +58,7 @@ export const MobileNavigation = HeaderController.view(({ state }) => {
       </DialogPanel>
     </Dialog>
   );
-});
+}
 
 export function openNavigation() {
   setIsOpen(true);
