@@ -34,6 +34,7 @@ export const navigation: Navigation = {
         { title: "Address", href: "/docs/api-address", file: "/docs/api/address.md" },
         { title: "Transactions", href: "/docs/api-transactions", file: "/docs/api/transactions.md" },
         { title: "Ordinals", href: "/docs/api-ordinals", file: "/docs/api/ordinals.md" },
+        { title: "BRC-20", href: "/docs/api-brc20", file: "/docs/api/brc20.md" },
         { title: "Regtest", href: "/docs/api-regtest", file: "/docs/api/regtest.md" }
       ]
     },
