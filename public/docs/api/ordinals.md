@@ -26,7 +26,7 @@ Retrieve list of ordinals for the given location.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -61,7 +61,7 @@ Get an inscription by inscription id.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -96,7 +96,7 @@ Get a list of indexed inscriptions.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {

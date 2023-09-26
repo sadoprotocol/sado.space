@@ -22,7 +22,7 @@ Get the total balance of available for an address.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -57,7 +57,7 @@ Get a list of all unspent utxos under the given address.
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://proto.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -70,10 +70,11 @@ Get a list of all unspent utxos under the given address.
           "allowedrarity": ["common"]
         },
         "sort": {
-          "value": "asc"
+          "value": "<direction>"
         },
         "pagination": {
           "limit": 10,
+          "next": "<cursor>",
           "next": "<cursor>"
         }
       },
@@ -98,9 +99,7 @@ Get a list of all unspent utxos under the given address.
       {% preview-object-item name="result.unspents.scriptPubKey" type="ScriptPubKey" description="Script pub key of the utxo." /%}
       {% preview-object-item name="result.unspents.value" type="number" description="Utxo value in BTC" /%}
       {% preview-object-item name="result.unspents.sats" type="BigNumber" description="Utxo value in SATS" /%}
-      {% preview-object-item name="result.unspents.ordinals" type="Ordinal[]" description="List of ordinals residing with the utxo." /%}
-      {% preview-object-item name="result.unspents.inscriptions" type="Inscription[]" description="List of inscriptions residing with the utxo." /%}
-      {% preview-object-item name="result.unspents.safeToSpend" type="boolean" description="Is the utxo safe to spend in a new transaction?" note="Safety is determined by the existence of ordinals and/or inscriptions on the utxo. If the utxo contains a inscription or a ordinal with a rarity outside of the allowed treshold this value is false. Be aware that in some cases where the inscription or ordinal data is incorrect because of blockchain or latency based innacuracies this value is an estimate based on available information. It is still highly recommended to keep ordinal and blockchain wallets separate so you do not have to rely on this tag." /%}
+      {% preview-object-item name="result.unspents.safeToSpend" type="boolean" description="Is the utxo safe to spend in a new transaction?" /%}
       {% preview-object-item name="result.unspents.confirmations" type="number" description="Number of blocks created after the utxo was added to the network." /%}
       {% partial file="pagination-response" %}
     {% /jsonrpc-response %}

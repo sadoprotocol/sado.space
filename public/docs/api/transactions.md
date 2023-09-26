@@ -22,7 +22,7 @@ Get a transaction from the blockchain with optional projection and ordinal detai
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://proto.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
@@ -72,7 +72,7 @@ See [sendrawtransaction](https://developer.bitcoin.org/reference/rpc/sendrawtran
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://mainnet.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {

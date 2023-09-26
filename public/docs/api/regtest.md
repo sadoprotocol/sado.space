@@ -24,7 +24,7 @@ Once the method is executed the provided address is funded and a block is mined 
 
   {% preview-section %}
 
-    {% endpoint type="POST" url="https://trinity-regtest.ordit.io/rpc" /%}
+    {% endpoint type="POST" url="https://regtest.ordit.io/rpc" /%}
 
     ```json {% preview=true %}
     {
