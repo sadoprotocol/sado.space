@@ -98,6 +98,29 @@ const commitDetails = transaction.generateCommit();
 
 ---
 
+### Recover
+
+Once you send BTC to the commit address -- if the wrong amount is sent the inscription process fails and there's no easy way to recover. However, Taproot enables fund recovery and we have it enabled
+
+```ts
+const recover = transaction.recover();
+
+```
+---
+
+### Fetch And Select Suitable Unspent
+
+Gives the ability to select suitable UTXO for a commit address
+
+```ts
+const fetchAndSelectSuitableUnspent = transction.fetchAndSelectSuitableUnspent();
+```
+{% data title="Response" %}
+    {% data-item name="UTXO" type="object"/%}
+{% /data %}
+
+---
+
 ### Transaction Readiness
 
 Once you've funded your deposit address you have access to another method from the same transaction instance to check if the deposit address has been funded. You can poll this method to check if the transaction is ready with funds it need.
@@ -116,8 +139,22 @@ const ready = await transaction.isReady();
 Once your transaction is ready (`transaction.ready // true`), you can move forward with building the PSBT fully, ready to be signed by a wallet. See the implementation below:
 
 ```ts
-const ready = transaction.build();
+const build = transaction.build();
 ```
+---
+
+### To PSBT
+
+Generates the PSBT that can be signed and relayed
+
+```ts
+const toPsbt = transaction.toPsbt();
+```
+
+{% data title="Response" %}
+    {% data-item name="PSBT" type="object"/%}
+{% /data %}
+
 
 ---
 
@@ -151,21 +188,22 @@ Full example of the inscription flow using `Ordit` class
 
 ```js
 import { Ordit } from "@sadoprotocol/ordit-sdk"
+import 'dotenv/config' // https://www.npmjs.com/package/dotenv
 
-const MNEMONIC = "<12-words-mnemonic>"
+const MNEMONIC = process.env.MNEMONIC; //12-words-mnemonic
 
 async function main() {
   // init wallet
   const wallet = new Ordit({
     bip39: MNEMONIC,
-    network: "testnet"
+    network: process.env.NETWORK, // testnet or mainnet or regtest
   });
 
   wallet.setDefaultAddress('taproot')
 
   // new inscription tx
   const transaction = Ordit.inscription.new({
-    network: "testnet",
+    network: process.env.NETWORK, // testnet or mainnet or regtest
     publicKey: wallet.publicKey,
     changeAddress: wallet.selectedAddress,
     destination: wallet.selectedAddress,
