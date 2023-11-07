@@ -13,7 +13,7 @@ Ordit is specifically engineered to address challenges around Bitcoin ordinals, 
 To get started with the JavaScript SDK you can install with [NPM](https://www.npmjs.com/)
 
 ```sh
-$ npm i --save @sadoprotocol/sado-sdk
+$ npm i --save @sadoprotocol/ordit-sdk
 ```
 
 ---
